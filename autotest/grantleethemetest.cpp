@@ -177,7 +177,7 @@ void GrantleeThemeTest::testRenderTemplate()
     const QString themePath = QStringLiteral(GRANTLEETHEME_DATA_DIR) + QDir::separator() + dirname;
 
     QVariantHash data;
-    data[QStringLiteral("icon")] = QStringLiteral("kmail");
+    data[QStringLiteral("icon")] = QStringLiteral("kde");
     data[QStringLiteral("name")] = QStringLiteral("KMail");
     data[QStringLiteral("subtitle")] = QStringLiteral("...just rocks!");
     data[QStringLiteral("title")] = QStringLiteral("Something's going on");
