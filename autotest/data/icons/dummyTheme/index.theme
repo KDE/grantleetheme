@@ -1,0 +1,8 @@
+[Icon Theme]
+Name=DummyTheme
+
+Directories=128x128/apps
+
+[128x128/apps]
+Size=128
+Context=Applications
