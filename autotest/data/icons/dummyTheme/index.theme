@@ -1,5 +1,10 @@
 [Icon Theme]
 Name=DummyTheme
+Name[nl]=DummyThema
+Name[pt_BR]=Tema de teste
+Name[sl]=DummyTheme
+Name[uk]=Фіктивна тема
+Name[x-test]=xxDummyThemexx
 
 Directories=128x128/apps
 
