@@ -1,5 +1,8 @@
 [Icon Theme]
 Name=DummyTheme
+Name[ca]=Tema de prova
+Name[ca@valencia]=Tema de prova
+Name[de]=DummyTheme
 Name[nl]=DummyThema
 Name[pt_BR]=Tema de teste
 Name[sl]=DummyTheme
