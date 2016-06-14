@@ -8,6 +8,7 @@ set(libgrantleetheme_SRCS
     grantleetheme.cpp
     grantleethememanager.cpp
     grantleeki18nlocalizer.cpp
+    qtresourcetemplateloader.cpp
 )
 
 configure_file(config-grantleetheme.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config-grantleetheme.h)
@@ -45,6 +46,7 @@ ecm_generate_headers(GrantleeTheme_CamelCase_HEADERS
   HEADER_NAMES
   GrantleeThemeManager
   GrantleeTheme
+  QtResourceTemplateLoader
   REQUIRED_HEADERS GrantleeTheme_HEADERS
   PREFIX GrantleeTheme
 )
