@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 2.8.12)
 
 project(GrantleeTheme)
 
-set(KF5_VERSION "5.22.0")
+set(KF5_VERSION "5.23.0")
 find_package(ECM ${KF5_VERSION} CONFIG REQUIRED)
 set(CMAKE_MODULE_PATH ${ECM_MODULE_PATH})
 set(LIBRARY_NAMELINK)
@@ -22,7 +22,7 @@ include(ECMAddTests)
 set(PIM_VERSION "5.2.41")
 set(GRANTLEETHEME_LIB_VERSION ${PIM_VERSION})
 
-set(QT_REQUIRED_VERSION "5.4.0")
+set(QT_REQUIRED_VERSION "5.5.0")
 set(GRANTLEE_VERSION "5.0.0")
 
 find_package(Qt5 ${QT_REQUIRED_VERSION} CONFIG REQUIRED Widgets Test Network)
