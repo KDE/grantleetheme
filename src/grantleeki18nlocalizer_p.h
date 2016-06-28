@@ -45,12 +45,16 @@ public:
 
     // Only exception, Grantlee's implementation is not using QLocale for this
     // for some reason
-    QString localizeMonetaryValue(qreal value, const QString &currenctCode) const Q_DECL_OVERRIDE;
+    QString localizeMonetaryValue(qreal value, const QString &currentCode) const Q_DECL_OVERRIDE;
 
     QString currentLocale() const Q_DECL_OVERRIDE;
+
+
+    void setApplicationDomain(const QByteArray &domain);
 private:
     QString processArguments(const KLocalizedString &str,
                              const QVariantList &arguments) const;
+    QByteArray mApplicationDomain;
 };
 
 #endif // GRANTLEEKI18NLOCALIZER_H

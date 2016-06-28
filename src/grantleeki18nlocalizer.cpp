@@ -77,8 +77,8 @@ QString GrantleeKi18nLocalizer::processArguments(const KLocalizedString &kstr,
     }
 
     // Return localized in the currenctly active locale
-    const QString translatedStr = str.toString(str.applicationDomain().constData());
-    //qDebug() << " translatedStr"<< translatedStr << " domain :" << str.applicationDomain() << " currentLocale() "<< currentLocale();
+    const QString translatedStr = str.toString(mApplicationDomain.isEmpty() ? str.applicationDomain().constData() : mApplicationDomain.constData());
+    qDebug() << " translatedStr"<< translatedStr << " domain :" << str.applicationDomain() << " currentLocale() "<< currentLocale() << " Specific applicationDomain" << mApplicationDomain;
     return translatedStr;
 }
 
@@ -121,4 +121,9 @@ QString GrantleeKi18nLocalizer::currentLocale() const
         locale.truncate(f);
     }
     return locale;
+}
+
+void GrantleeKi18nLocalizer::setApplicationDomain(const QByteArray &domain)
+{
+    mApplicationDomain = domain;
 }

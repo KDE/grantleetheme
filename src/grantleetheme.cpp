@@ -80,12 +80,12 @@ void ThemePrivate::setupLoader()
     sEngine->addTemplateLoader(loader);
 }
 
-Grantlee::Context ThemePrivate::createContext(const QVariantHash &data)
+Grantlee::Context ThemePrivate::createContext(const QVariantHash &data, const QByteArray &applicationDomain)
 {
     if (!sLocalizer) {
         sLocalizer.reset(new GrantleeKi18nLocalizer());
     }
-
+    sLocalizer->setApplicationDomain(applicationDomain);
     Grantlee::Context ctx(data);
     ctx.setLocalizer(sLocalizer);
     return ctx;
@@ -198,7 +198,7 @@ QString Theme::authorEmail() const
     return d->email;
 }
 
-QString Theme::render(const QString &templateName, const QVariantHash &data)
+QString Theme::render(const QString &templateName, const QVariantHash &data, const QByteArray &applicationDomain)
 {
     if (!d->loader) {
         d->setupLoader();
@@ -215,7 +215,7 @@ QString Theme::render(const QString &templateName, const QVariantHash &data)
         return d->errorTemplate(i18n("Template parsing error"), templateName, tpl);
     }
 
-    Grantlee::Context ctx = d->createContext(data);
+    Grantlee::Context ctx = d->createContext(data, applicationDomain);
     const QString result = tpl->render(&ctx);
     if (tpl->error()) {
         return d->errorTemplate(i18n("Template rendering error"), templateName, tpl);

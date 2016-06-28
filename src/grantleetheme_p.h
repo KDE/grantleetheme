@@ -37,7 +37,7 @@ public:
 
     static void setupEngine();
     void setupLoader();
-    Grantlee::Context createContext(const QVariantHash &data = QVariantHash());
+    Grantlee::Context createContext(const QVariantHash &data = QVariantHash(), const QByteArray &applicationDomain = QByteArray());
     QString errorTemplate(const QString &reason,
                           const QString &templateName,
                           const Grantlee::Template &errorTemplate);
