@@ -47,6 +47,7 @@ public:
     // for some reason
     QString localizeMonetaryValue(qreal value, const QString &currenctCode) const Q_DECL_OVERRIDE;
 
+    QString currentLocale() const Q_DECL_OVERRIDE;
 private:
     QString processArguments(const KLocalizedString &str,
                              const QVariantList &arguments) const;
