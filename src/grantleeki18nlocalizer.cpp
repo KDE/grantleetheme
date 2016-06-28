@@ -77,8 +77,8 @@ QString GrantleeKi18nLocalizer::processArguments(const KLocalizedString &kstr,
     }
 
     // Return localized in the currenctly active locale
-    const QString translatedStr = str.toString({ currentLocale() });
-    qDebug() << " translatedStr"<< translatedStr << " domain :" << str.applicationDomain() << " currentLocale() "<< currentLocale();
+    const QString translatedStr = str.toString(str.applicationDomain().constData());
+    //qDebug() << " translatedStr"<< translatedStr << " domain :" << str.applicationDomain() << " currentLocale() "<< currentLocale();
     return translatedStr;
 }
 
@@ -112,7 +112,6 @@ QString GrantleeKi18nLocalizer::localizeMonetaryValue(qreal value, const QString
 {
     return QLocale(currentLocale()).toCurrencyString(value, currencySymbol);
 }
-
 
 QString GrantleeKi18nLocalizer::currentLocale() const
 {
