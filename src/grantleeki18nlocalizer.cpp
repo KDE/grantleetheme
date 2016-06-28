@@ -79,7 +79,7 @@ QString GrantleeKi18nLocalizer::processArguments(const KLocalizedString &kstr,
 
     // Return localized in the currenctly active locale
     const QString translatedStr = str.toString(mApplicationDomain.isEmpty() ? str.applicationDomain().constData() : mApplicationDomain.constData());
-    qDebug() << " translatedStr"<< translatedStr << " domain :" << str.applicationDomain() << " currentLocale() "<< currentLocale() << " Specific applicationDomain" << mApplicationDomain;
+    //qDebug() << " translatedStr"<< translatedStr << " domain :" << str.applicationDomain() << " currentLocale() "<< currentLocale() << " Specific applicationDomain" << mApplicationDomain;
     return translatedStr;
 }
 
