@@ -77,7 +77,9 @@ QString GrantleeKi18nLocalizer::processArguments(const KLocalizedString &kstr,
     }
 
     // Return localized in the currenctly active locale
-    return str.toString({ currentLocale() });
+    const QString translatedStr = str.toString({ currentLocale() });
+    qDebug() << " translatedStr"<< translatedStr << " domain :" << str.applicationDomain() << " currentLocale() "<< currentLocale();
+    return translatedStr;
 }
 
 QString GrantleeKi18nLocalizer::localizeContextString(const QString &string, const QString &context, const QVariantList &arguments) const
