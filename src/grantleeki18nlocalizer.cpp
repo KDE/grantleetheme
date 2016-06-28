@@ -17,7 +17,7 @@
  *
  */
 
-#include "grantleeki18nlocalizer_p.h"
+#include "grantleeki18nlocalizer.h"
 #include "grantleetheme_debug.h"
 
 #include <QLocale>

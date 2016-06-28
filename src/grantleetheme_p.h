@@ -19,7 +19,7 @@
 #define GRANTLEETHEME_THEME_P_H
 
 #include "grantleetheme.h"
-#include "grantleeki18nlocalizer_p.h"
+#include "grantleeki18nlocalizer.h"
 
 #include <grantlee/template.h>
 #include <grantlee/templateloader.h>

@@ -47,6 +47,7 @@ ecm_generate_headers(GrantleeTheme_CamelCase_HEADERS
   GrantleeThemeManager
   GrantleeTheme
   QtResourceTemplateLoader
+  GrantleeKi18nLocalizer
   REQUIRED_HEADERS GrantleeTheme_HEADERS
   PREFIX GrantleeTheme
 )

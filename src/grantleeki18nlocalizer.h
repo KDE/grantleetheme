@@ -20,6 +20,7 @@
 #ifndef GRANTLEEKI18NLOCALIZER_H
 #define GRANTLEEKI18NLOCALIZER_H
 
+#include "grantleetheme_export.h"
 #include <grantlee/qtlocalizer.h>
 
 #include <QLocale>
@@ -27,7 +28,7 @@
 
 class KLocalizedString;
 
-class GrantleeKi18nLocalizer : public Grantlee::QtLocalizer
+class GRANTLEETHEME_EXPORT GrantleeKi18nLocalizer : public Grantlee::QtLocalizer
 {
 public:
     explicit GrantleeKi18nLocalizer();
