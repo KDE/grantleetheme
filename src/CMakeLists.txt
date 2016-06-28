@@ -59,7 +59,7 @@ ecm_generate_pri_file(BASE_NAME GrantleeTheme
 
 
 install(FILES
-    ${GrantleeTheme_HEADERS}
+    ${GrantleeTheme_CamelCase_HEADERS}
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF5}/GrantleeTheme
     COMPONENT Devel
 )
