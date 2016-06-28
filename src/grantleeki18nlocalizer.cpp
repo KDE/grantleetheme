@@ -27,6 +27,7 @@
 #include <grantlee/safestring.h>
 
 #include <KLocalizedString>
+using namespace GrantleeTheme;
 
 GrantleeKi18nLocalizer::GrantleeKi18nLocalizer()
     : Grantlee::QtLocalizer()

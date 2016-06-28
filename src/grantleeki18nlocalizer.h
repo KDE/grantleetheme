@@ -27,7 +27,8 @@
 #include <QVariantHash>
 
 class KLocalizedString;
-
+namespace GrantleeTheme
+{
 class GRANTLEETHEME_EXPORT GrantleeKi18nLocalizer : public Grantlee::QtLocalizer
 {
 public:
@@ -57,5 +58,6 @@ private:
                              const QVariantList &arguments) const;
     QByteArray mApplicationDomain;
 };
+}
 
 #endif // GRANTLEEKI18NLOCALIZER_H
