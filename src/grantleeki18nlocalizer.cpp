@@ -117,7 +117,7 @@ QString GrantleeKi18nLocalizer::localizeMonetaryValue(qreal value, const QString
 QString GrantleeKi18nLocalizer::currentLocale() const
 {
     QString locale = Grantlee::QtLocalizer::currentLocale();
-    int f = locale.indexOf(QLatin1Char('_'));
+    const int f = locale.indexOf(QLatin1Char('_'));
     if (f >= 0) {
         locale.truncate(f);
     }
