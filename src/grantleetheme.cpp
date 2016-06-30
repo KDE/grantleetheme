@@ -18,6 +18,7 @@
 #include "grantleetheme.h"
 #include "grantleetheme_p.h"
 #include "grantleetheme_debug.h"
+#include "grantleethemeengine.h"
 #include "config-grantleetheme.h"
 
 #include <KConfig>
@@ -57,11 +58,7 @@ ThemePrivate::~ThemePrivate()
 
 void ThemePrivate::setupEngine()
 {
-    sEngine = new Grantlee::Engine;
-    sEngine->addPluginPath(QStringLiteral(GRANTLEE_PLUGIN_INSTALL_DIR));
-    sEngine->addDefaultLibrary(QStringLiteral("grantlee_i18ntags"));
-    sEngine->addDefaultLibrary(QStringLiteral("kde_grantlee_plugin"));
-    sEngine->setSmartTrimEnabled(true);
+    sEngine = new GrantleeTheme::Engine();
 }
 
 void ThemePrivate::setupLoader()

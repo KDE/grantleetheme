@@ -7,6 +7,7 @@ add_subdirectory(plugin)
 set(libgrantleetheme_SRCS
     grantleetheme.cpp
     grantleethememanager.cpp
+    grantleethemeengine.cpp
     grantleeki18nlocalizer.cpp
     qtresourcetemplateloader.cpp
 )
@@ -46,6 +47,7 @@ ecm_generate_headers(GrantleeTheme_CamelCase_HEADERS
   HEADER_NAMES
   GrantleeThemeManager
   GrantleeTheme
+  GrantleeThemeEngine
   QtResourceTemplateLoader
   GrantleeKi18nLocalizer
   REQUIRED_HEADERS GrantleeTheme_HEADERS
