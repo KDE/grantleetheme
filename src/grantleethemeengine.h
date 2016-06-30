@@ -26,20 +26,19 @@
 namespace GrantleeTheme {
 
 class GrantleeKi18nLocalizer;
-
+class EnginePrivate;
 class GRANTLEETHEME_EXPORT Engine : public Grantlee::Engine
 {
     Q_OBJECT
 
 public:
-    Engine(QObject *parent = Q_NULLPTR);
+    explicit Engine(QObject *parent = Q_NULLPTR);
     ~Engine() Q_DECL_OVERRIDE;
 
     QSharedPointer<GrantleeKi18nLocalizer> localizer() const;
 
 private:
-    class Private;
-    Private *const d;
+    EnginePrivate *const d;
 };
 
 }

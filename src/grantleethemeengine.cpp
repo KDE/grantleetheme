@@ -22,14 +22,14 @@
 
 using namespace GrantleeTheme;
 
-class GrantleeTheme::Engine::Private
+class GrantleeTheme::EnginePrivate
 {
 public:
-    Private()
+    EnginePrivate()
     {
     }
 
-    ~Private()
+    ~EnginePrivate()
     {
     }
 
@@ -39,7 +39,7 @@ public:
 
 Engine::Engine(QObject *parent)
     : Grantlee::Engine(parent)
-    , d(new Private)
+    , d(new GrantleeTheme::EnginePrivate)
 {
     addPluginPath(QStringLiteral(GRANTLEE_PLUGIN_INSTALL_DIR));
     addDefaultLibrary(QStringLiteral("grantlee_i18ntags"));
