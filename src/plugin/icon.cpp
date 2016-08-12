@@ -23,7 +23,6 @@
 #include <grantlee/parser.h>
 #include <grantlee/variable.h>
 
-#include <QDebug>
 
 #include <KIconLoader>
 
