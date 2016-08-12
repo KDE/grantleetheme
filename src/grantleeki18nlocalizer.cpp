@@ -21,7 +21,6 @@
 #include "grantleetheme_debug.h"
 
 #include <QLocale>
-#include <QDate>
 #include <QDebug>
 
 #include <grantlee/safestring.h>
