@@ -72,4 +72,4 @@ if (BUILD_TESTING)
    add_subdirectory(autotest)
 endif()
 
-install( FILES grantleetheme.categories DESTINATION ${KDE_INSTALL_CONFDIR} )
+install( FILES grantleetheme.renamecategories grantleetheme.categories DESTINATION ${KDE_INSTALL_CONFDIR} )

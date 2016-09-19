@@ -14,7 +14,7 @@ set(libgrantleetheme_SRCS
 
 configure_file(config-grantleetheme.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config-grantleetheme.h)
 
-ecm_qt_declare_logging_category(libgrantleetheme_SRCS HEADER grantleetheme_debug.h IDENTIFIER GRANTLEETHEME_LOG CATEGORY_NAME log_grantleetheme)
+ecm_qt_declare_logging_category(libgrantleetheme_SRCS HEADER grantleetheme_debug.h IDENTIFIER GRANTLEETHEME_LOG CATEGORY_NAME org.kde.pim.grantleetheme)
 
 add_library(KF5GrantleeTheme ${libgrantleetheme_SRCS})
 generate_export_header(KF5GrantleeTheme BASE_NAME grantleetheme)
