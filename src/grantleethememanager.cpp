@@ -165,16 +165,18 @@ public:
             return;
         }
         QString themeActivated;
+
+        QAction *selectedAction = actionGroup->checkedAction();
+        if (selectedAction) {
+            themeActivated = selectedAction->data().toString();
+        }
+
         Q_FOREACH (KToggleAction *action, themesActionList) {
-            if (action->isChecked()) {
-                themeActivated = action->data().toString();
-            }
             actionGroup->removeAction(action);
+            menu->removeAction(action);
             if (actionCollection) {
                 actionCollection->removeAction(action);
             }
-            menu->removeAction(action);
-            delete action;
         }
         menu->removeAction(separatorAction);
         menu->removeAction(downloadThemesAction);
