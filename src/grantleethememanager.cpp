@@ -224,7 +224,7 @@ public:
     void slotThemeSelected()
     {
         if (q->sender()) {
-            KToggleAction *act = dynamic_cast<KToggleAction *>(q->sender());
+            KToggleAction *act = qobject_cast<KToggleAction *>(q->sender());
             selectTheme(act);
             Q_EMIT q->grantleeThemeSelected();
         }
