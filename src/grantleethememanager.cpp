@@ -37,7 +37,18 @@
 #include <QStandardPaths>
 
 using namespace GrantleeTheme;
+#if QT_VERSION < QT_VERSION_CHECK(5,7,0)
+namespace QtPrivate {
+template <typename T> struct QAddConst { typedef const T Type; };
+}
 
+// this adds const to non-const objects (like std::as_const)
+template <typename T>
+Q_DECL_CONSTEXPR typename QtPrivate::QAddConst<T>::Type &qAsConst(T &t) Q_DECL_NOTHROW { return t; }
+// prevent rvalue arguments:
+template <typename T>
+void qAsConst(const T &&) Q_DECL_EQ_DELETE;
+#endif
 class Q_DECL_HIDDEN ThemeManager::Private
 {
 public:
@@ -83,7 +94,7 @@ public:
 
     ~Private()
     {
-        Q_FOREACH (KToggleAction *action, themesActionList) {
+        for (KToggleAction *action : qAsConst(themesActionList)) {
             if (actionGroup) {
                 actionGroup->removeAction(action);
             }
@@ -118,7 +129,7 @@ public:
     {
         if (!init) {
             if (!themesDirectories.isEmpty()) {
-                Q_FOREACH (const QString &directory, themesDirectories) {
+                for (const QString &directory : qAsConst(themesDirectories)) {
                     watch->removeDir(directory);
                 }
             } else {
@@ -129,7 +140,7 @@ public:
         // clear all previous theme information
         themes.clear();
 
-        Q_FOREACH (const QString &directory, themesDirectories) {
+        for (const QString &directory : qAsConst(themesDirectories)) {
             QDirIterator dirIt(directory, QStringList(), QDir::AllDirs | QDir::NoDotAndDotDot);
             QStringList alreadyLoadedThemeName;
             while (dirIt.hasNext()) {
@@ -171,7 +182,7 @@ public:
             themeActivated = selectedAction->data().toString();
         }
 
-        Q_FOREACH (KToggleAction *action, themesActionList) {
+        for (KToggleAction *action : qAsConst(themesActionList)) {
             actionGroup->removeAction(action);
             menu->removeAction(action);
             if (actionCollection) {
@@ -239,7 +250,7 @@ public:
         if (themeName.isEmpty()) {
             return 0;
         }
-        Q_FOREACH (KToggleAction *act, themesActionList) {
+        for (KToggleAction *act : qAsConst(themesActionList)) {
             if (act->data().toString() == themeName) {
                 return static_cast<KToggleAction *>(act);
             }
@@ -355,7 +366,7 @@ QString ThemeManager::pathFromThemes(const QString &themesRelativePath,
                 themesDirectories.append(localDirectory);
             }
         }
-        Q_FOREACH (const QString &directory, themesDirectories) {
+        for (const QString &directory : qAsConst(themesDirectories)) {
             QDirIterator dirIt(directory, QStringList(), QDir::AllDirs | QDir::NoDotAndDotDot);
             while (dirIt.hasNext()) {
                 dirIt.next();
