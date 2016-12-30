@@ -3,3 +3,7 @@ ecm_add_test(grantleethemetest.cpp
     NAME_PREFIX "grantleetheme-"
     LINK_LIBRARIES Qt5::Test KF5::GrantleeTheme KF5::ConfigCore
 )
+ecm_add_test(grantleethememanagertest.cpp
+    NAME_PREFIX "grantleetheme-"
+    LINK_LIBRARIES Qt5::Test KF5::GrantleeTheme KF5::ConfigCore KF5::XmlGui
+)

@@ -94,7 +94,7 @@ void GrantleeThemeTest::shouldLoadTheme()
     QFETCH(bool, isvalid);
     QFETCH(QStringList, displayExtraVariables);
 
-    GrantleeTheme::Theme theme(QStringLiteral(GRANTLEETHEME_DATA_DIR) + QDir::separator() + dirname, dirname, filename);
+    GrantleeTheme::Theme theme(QStringLiteral(GRANTLEETHEME_DATA_DIR "/themes/")  + dirname, dirname, filename);
     QCOMPARE(theme.isValid(), isvalid);
     QCOMPARE(theme.displayExtraVariables(), displayExtraVariables);
     QCOMPARE(theme.dirName(), dirname);
@@ -182,7 +182,7 @@ void GrantleeThemeTest::testRenderTemplate()
     QFETCH(QString, filename);
     QFETCH(QString, templateBasename);
 
-    const QString themePath = QStringLiteral(GRANTLEETHEME_DATA_DIR) + QDir::separator() + dirname;
+    const QString themePath = QStringLiteral(GRANTLEETHEME_DATA_DIR "/themes/") + dirname;
 
     QVariantHash data;
     data[QStringLiteral("icon")] = QStringLiteral("kde");
