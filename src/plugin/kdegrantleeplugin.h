@@ -30,7 +30,7 @@ class KDEGrantleePlugin : public QObject
     Q_PLUGIN_METADATA(IID "org.kde.KDEGrantleePlugin")
 
 public:
-    explicit KDEGrantleePlugin(QObject *parent = Q_NULLPTR);
+    explicit KDEGrantleePlugin(QObject *parent = nullptr);
     ~KDEGrantleePlugin();
 
     QHash<QString, Grantlee::Filter *> filters(const QString  &name) Q_DECL_OVERRIDE;

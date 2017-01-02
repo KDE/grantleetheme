@@ -31,7 +31,7 @@
 using namespace GrantleeTheme;
 
 QSharedPointer<GrantleeKi18nLocalizer> GrantleeTheme::ThemePrivate::sLocalizer;
-Grantlee::Engine *GrantleeTheme::ThemePrivate::sEngine = Q_NULLPTR;
+Grantlee::Engine *GrantleeTheme::ThemePrivate::sEngine = nullptr;
 
 ThemePrivate::ThemePrivate()
     : QSharedData()

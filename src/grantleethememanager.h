@@ -35,9 +35,9 @@ class GRANTLEETHEME_EXPORT ThemeManager : public QObject
 public:
     explicit ThemeManager(const QString &themeType,
                           const QString &defaultDesktopFileName,
-                          KActionCollection *actionCollection = Q_NULLPTR,
+                          KActionCollection *actionCollection = nullptr,
                           const QString &path = QString(),
-                          QObject *parent = Q_NULLPTR);
+                          QObject *parent = nullptr);
     ~ThemeManager();
 
     QMap<QString, GrantleeTheme::Theme> themes() const;
