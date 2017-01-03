@@ -1,8 +1,10 @@
-cmake_minimum_required(VERSION 2.8.12)
-
-project(GrantleeTheme)
+cmake_minimum_required(VERSION 3.0)
 
 set(KF5_VERSION "5.28.0")
+set(PIM_VERSION "5.4.40")
+
+project(GrantleeTheme VERSION ${PIM_VERSION})
+
 find_package(ECM ${KF5_VERSION} CONFIG REQUIRED)
 set(CMAKE_MODULE_PATH ${ECM_MODULE_PATH})
 set(LIBRARY_NAMELINK)
@@ -10,7 +12,7 @@ include(GenerateExportHeader)
 include(ECMSetupVersion)
 include(ECMGenerateHeaders)
 include(ECMGeneratePriFile)
-include(ECMPackageConfigHelpers)
+include(CMakePackageConfigHelpers)
 include(ECMSetupVersion)
 include(FeatureSummary)
 include(KDEInstallDirs)
@@ -21,7 +23,6 @@ include(ECMAddTests)
 include(ECMCoverageOption)
 
 
-set(PIM_VERSION "5.4.40")
 set(GRANTLEETHEME_LIB_VERSION ${PIM_VERSION})
 
 set(QT_REQUIRED_VERSION "5.6.0")
@@ -34,7 +35,7 @@ find_package(KF5NewStuff ${KF5_VERSION} CONFIG REQUIRED)
 
 find_package(Grantlee5 ${GRANTLEE_VERSION} CONFIG REQUIRED)
 
-ecm_setup_version(${GRANTLEETHEME_LIB_VERSION} VARIABLE_PREFIX GRANTLEETHEME
+ecm_setup_version(PROJECT VARIABLE_PREFIX GRANTLEETHEME
                         VERSION_HEADER "${CMAKE_CURRENT_BINARY_DIR}/grantleetheme_version.h"
                         PACKAGE_VERSION_FILE "${CMAKE_CURRENT_BINARY_DIR}/KF5GrantleeThemeConfigVersion.cmake"
                         SOVERSION 5
@@ -47,7 +48,7 @@ add_definitions(-DQT_DISABLE_DEPRECATED_BEFORE=0)
 ########### CMake Config Files ###########
 set(CMAKECONFIG_INSTALL_DIR "${KDE_INSTALL_CMAKEPACKAGEDIR}/KF5GrantleeTheme")
 
-ecm_configure_package_config_file(
+configure_package_config_file(
   "${CMAKE_CURRENT_SOURCE_DIR}/KF5GrantleeThemeConfig.cmake.in"
   "${CMAKE_CURRENT_BINARY_DIR}/KF5GrantleeThemeConfig.cmake"
   INSTALL_DESTINATION  ${CMAKECONFIG_INSTALL_DIR}
