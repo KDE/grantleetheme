@@ -205,4 +205,4 @@ void GrantleeThemeTest::testRenderTemplate()
     }
 }
 
-QTEST_MAIN(GrantleeThemeTest)
+QTEST_GUILESS_MAIN(GrantleeThemeTest)
