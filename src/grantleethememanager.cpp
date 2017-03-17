@@ -248,14 +248,14 @@ public:
         const QString themeName = group.readEntry(QStringLiteral("themeName"), QStringLiteral("default"));
 
         if (themeName.isEmpty()) {
-            return 0;
+            return nullptr;
         }
         for (KToggleAction *act : qAsConst(themesActionList)) {
             if (act->data().toString() == themeName) {
                 return static_cast<KToggleAction *>(act);
             }
         }
-        return 0;
+        return nullptr;
     }
 
     void initThemesDirectories(const QString &themesRelativePath)
