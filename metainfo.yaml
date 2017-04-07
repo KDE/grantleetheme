@@ -10,7 +10,7 @@ release: false
 libraries:
  - qmake: GrantleeTheme
    cmake: "KF5::GrantleeTheme"
-cmakename: KF5GrantleeTheme
+   cmakename: KF5GrantleeTheme
 
 public_lib: true
 group: kdepim
