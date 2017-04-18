@@ -25,7 +25,7 @@ include(ECMCoverageOption)
 
 set(GRANTLEETHEME_LIB_VERSION ${PIM_VERSION})
 
-set(QT_REQUIRED_VERSION "5.6.0")
+set(QT_REQUIRED_VERSION "5.7.0")
 set(GRANTLEE_VERSION "5.1")
 
 find_package(Qt5 ${QT_REQUIRED_VERSION} CONFIG REQUIRED Widgets Test Network)
