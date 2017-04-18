@@ -102,7 +102,10 @@ QString ThemePrivate::errorTemplate(const QString &reason,
     Grantlee::Context ctx = createContext();
     ctx.insert(QStringLiteral("error"), reason);
     ctx.insert(QStringLiteral("templateName"), origTemplateName);
-    ctx.insert(QStringLiteral("errorMessage"), failedTemplate->errorString());
+    const QString errorString = failedTemplate
+            ? failedTemplate->errorString()
+            : i18n("(null template)");
+    ctx.insert(QStringLiteral("errorMessage"), errorString);
     return tpl->render(&ctx);
 }
 
@@ -208,7 +211,7 @@ QString Theme::render(const QString &templateName, const QVariantHash &data, con
     }
 
     Grantlee::Template tpl = d->loader->loadByName(templateName, ThemePrivate::sEngine);
-    if (tpl->error()) {
+    if (!tpl || tpl->error()) {
         return d->errorTemplate(i18n("Template parsing error"), templateName, tpl);
     }
 
