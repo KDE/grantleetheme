@@ -33,8 +33,8 @@ public:
     explicit KDEGrantleePlugin(QObject *parent = nullptr);
     ~KDEGrantleePlugin();
 
-    QHash<QString, Grantlee::Filter *> filters(const QString  &name) Q_DECL_OVERRIDE;
-    QHash<QString, Grantlee::AbstractNodeFactory *> nodeFactories(const QString &name) Q_DECL_OVERRIDE;
+    QHash<QString, Grantlee::Filter *> filters(const QString  &name) override;
+    QHash<QString, Grantlee::AbstractNodeFactory *> nodeFactories(const QString &name) override;
 };
 
 #endif // KDEGRANTLEEPLUGIN_H

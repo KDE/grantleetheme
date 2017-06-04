@@ -33,7 +33,7 @@ class GRANTLEETHEME_EXPORT Engine : public Grantlee::Engine
 
 public:
     explicit Engine(QObject *parent = nullptr);
-    ~Engine() Q_DECL_OVERRIDE;
+    ~Engine() override;
 
     QSharedPointer<GrantleeKi18nLocalizer> localizer() const;
 
