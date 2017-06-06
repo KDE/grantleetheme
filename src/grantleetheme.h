@@ -26,9 +26,7 @@
 
 class GrantleeThemeTest;
 
-namespace GrantleeTheme
-{
-
+namespace GrantleeTheme {
 class ThemeManager;
 class ThemePrivate;
 

@@ -36,7 +36,6 @@ class GrantleeThemeManagerTest : public QObject
 private Q_SLOTS:
     void initTestCase();
     void updateActionList();
-
 };
 
 void GrantleeThemeManagerTest::initTestCase()

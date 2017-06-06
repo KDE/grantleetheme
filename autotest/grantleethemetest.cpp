@@ -39,7 +39,6 @@ GrantleeThemeTest::GrantleeThemeTest(QObject *parent)
 
 GrantleeThemeTest::~GrantleeThemeTest()
 {
-
 }
 
 void GrantleeThemeTest::shouldHaveDefaultValue()

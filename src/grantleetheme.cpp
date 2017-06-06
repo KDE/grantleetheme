@@ -88,23 +88,21 @@ Grantlee::Context ThemePrivate::createContext(const QVariantHash &data, const QB
     return ctx;
 }
 
-QString ThemePrivate::errorTemplate(const QString &reason,
-                                    const QString &origTemplateName,
-                                    const Grantlee::Template &failedTemplate)
+QString ThemePrivate::errorTemplate(const QString &reason, const QString &origTemplateName, const Grantlee::Template &failedTemplate)
 {
     Grantlee::Template tpl = sEngine->newTemplate(
-                                 QStringLiteral("<h1>{{ error }}</h1>\n"
-                                         "<b>%1:</b> {{ templateName }}<br>\n"
-                                         "<b>%2:</b> {{ errorMessage }}")
-                                 .arg(i18n("Template"), i18n("Error message")),
-                                 QStringLiteral("TemplateError"));
+        QStringLiteral("<h1>{{ error }}</h1>\n"
+                       "<b>%1:</b> {{ templateName }}<br>\n"
+                       "<b>%2:</b> {{ errorMessage }}")
+        .arg(i18n("Template"), i18n("Error message")),
+        QStringLiteral("TemplateError"));
 
     Grantlee::Context ctx = createContext();
     ctx.insert(QStringLiteral("error"), reason);
     ctx.insert(QStringLiteral("templateName"), origTemplateName);
     const QString errorString = failedTemplate
-            ? failedTemplate->errorString()
-            : i18n("(null template)");
+                                ? failedTemplate->errorString()
+                                : i18n("(null template)");
     ctx.insert(QStringLiteral("errorMessage"), errorString);
     return tpl->render(&ctx);
 }

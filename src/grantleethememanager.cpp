@@ -40,16 +40,13 @@ using namespace GrantleeTheme;
 class Q_DECL_HIDDEN ThemeManager::Private
 {
 public:
-    Private(const QString &type,
-            const QString &desktopFileName,
-            KActionCollection *ac,
-            const QString &relativePath, ThemeManager *qq)
-        : applicationType(type),
-          defaultDesktopFileName(desktopFileName),
-          actionGroup(0),
-          menu(0),
-          actionCollection(ac),
-          q(qq)
+    Private(const QString &type, const QString &desktopFileName, KActionCollection *ac, const QString &relativePath, ThemeManager *qq)
+        : applicationType(type)
+        , defaultDesktopFileName(desktopFileName)
+        , actionGroup(0)
+        , menu(0)
+        , actionCollection(ac)
+        , q(qq)
     {
         watch = new KDirWatch(q);
         initThemesDirectories(relativePath);
@@ -249,7 +246,6 @@ public:
     void initThemesDirectories(const QString &themesRelativePath)
     {
         if (!themesRelativePath.isEmpty()) {
-
             themesDirectories = QStandardPaths::locateAll(QStandardPaths::GenericDataLocation, themesRelativePath, QStandardPaths::LocateDirectory);
             if (themesDirectories.count() < 2) {
                 //Make sure to add local directory
@@ -260,6 +256,7 @@ public:
             }
         }
     }
+
     QString applicationType;
     QString defaultDesktopFileName;
     QString downloadConfigFileName;
@@ -277,11 +274,7 @@ public:
     ThemeManager *q;
 };
 
-ThemeManager::ThemeManager(const QString &applicationType,
-                           const QString &defaultDesktopFileName,
-                           KActionCollection *actionCollection,
-                           const QString &path,
-                           QObject *parent)
+ThemeManager::ThemeManager(const QString &applicationType, const QString &defaultDesktopFileName, KActionCollection *actionCollection, const QString &path, QObject *parent)
     : QObject(parent)
     , d(new Private(applicationType, defaultDesktopFileName, actionCollection, path, this))
 {
@@ -340,9 +333,7 @@ void ThemeManager::setDownloadNewStuffConfigFile(const QString &configFileName)
     d->downloadConfigFileName = configFileName;
 }
 
-QString ThemeManager::pathFromThemes(const QString &themesRelativePath,
-                                     const QString &themeName,
-                                     const QString &defaultDesktopFileName)
+QString ThemeManager::pathFromThemes(const QString &themesRelativePath, const QString &themeName, const QString &defaultDesktopFileName)
 {
     QStringList themesDirectories;
     if (!themesRelativePath.isEmpty()) {
@@ -371,9 +362,7 @@ QString ThemeManager::pathFromThemes(const QString &themesRelativePath,
     return QString();
 }
 
-GrantleeTheme::Theme ThemeManager::loadTheme(const QString &themePath,
-        const QString &dirName,
-        const QString &defaultDesktopFileName)
+GrantleeTheme::Theme ThemeManager::loadTheme(const QString &themePath, const QString &dirName, const QString &defaultDesktopFileName)
 {
     const GrantleeTheme::Theme theme(themePath, dirName, defaultDesktopFileName);
     return theme;

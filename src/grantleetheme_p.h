@@ -25,9 +25,7 @@
 #include <grantlee/templateloader.h>
 #include <grantlee/engine.h>
 
-namespace GrantleeTheme
-{
-
+namespace GrantleeTheme {
 class GRANTLEETHEME_NO_EXPORT ThemePrivate : public QSharedData
 {
 public:
@@ -38,9 +36,7 @@ public:
     static void setupEngine();
     void setupLoader();
     Grantlee::Context createContext(const QVariantHash &data = QVariantHash(), const QByteArray &applicationDomain = QByteArray());
-    QString errorTemplate(const QString &reason,
-                          const QString &templateName,
-                          const Grantlee::Template &errorTemplate);
+    QString errorTemplate(const QString &reason, const QString &templateName, const Grantlee::Template &errorTemplate);
 
     QStringList displayExtraVariables;
     QString themeFileName;
@@ -56,7 +52,6 @@ public:
     static QSharedPointer<GrantleeKi18nLocalizer> sLocalizer;
     static Grantlee::Engine *sEngine;
 };
-
 }
 
 #endif

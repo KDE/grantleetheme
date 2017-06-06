@@ -36,7 +36,6 @@ public:
     QWeakPointer<GrantleeKi18nLocalizer> localizer;
 };
 
-
 Engine::Engine(QObject *parent)
     : Grantlee::Engine(parent)
     , d(new GrantleeTheme::EnginePrivate)

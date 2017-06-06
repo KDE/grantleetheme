@@ -24,7 +24,6 @@
 #include "grantleetheme_export.h"
 
 namespace GrantleeTheme {
-
 class GrantleeKi18nLocalizer;
 class EnginePrivate;
 class GRANTLEETHEME_EXPORT Engine : public Grantlee::Engine
@@ -40,7 +39,6 @@ public:
 private:
     EnginePrivate *const d;
 };
-
 }
 
 #endif

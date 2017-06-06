@@ -27,17 +27,12 @@ class KActionCollection;
 class KToggleAction;
 class KActionMenu;
 
-namespace GrantleeTheme
-{
+namespace GrantleeTheme {
 class GRANTLEETHEME_EXPORT ThemeManager : public QObject
 {
     Q_OBJECT
 public:
-    explicit ThemeManager(const QString &themeType,
-                          const QString &defaultDesktopFileName,
-                          KActionCollection *actionCollection = nullptr,
-                          const QString &path = QString(),
-                          QObject *parent = nullptr);
+    explicit ThemeManager(const QString &themeType, const QString &defaultDesktopFileName, KActionCollection *actionCollection = nullptr, const QString &path = QString(), QObject *parent = nullptr);
     ~ThemeManager();
 
     QMap<QString, GrantleeTheme::Theme> themes() const;
@@ -57,11 +52,8 @@ public:
     QString configuredThemeName() const;
     static QString configuredThemeName(const QString &themeType);
 
-    static QString pathFromThemes(const QString &path, const QString &themeName,
-                                  const QString &defaultDesktopFilename);
-    static GrantleeTheme::Theme loadTheme(const QString &themePath,
-                                          const QString &dirName,
-                                          const QString &defaultDesktopFilename);
+    static QString pathFromThemes(const QString &path, const QString &themeName, const QString &defaultDesktopFilename);
+    static GrantleeTheme::Theme loadTheme(const QString &themePath, const QString &dirName, const QString &defaultDesktopFilename);
 
 Q_SIGNALS:
     void themesChanged();

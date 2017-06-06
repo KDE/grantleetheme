@@ -21,8 +21,7 @@
 #define QTRESOURCETEMPLATELOADER_H
 #include "grantlee/templateloader.h"
 #include "grantleetheme_export.h"
-namespace GrantleeTheme
-{
+namespace GrantleeTheme {
 class GRANTLEETHEME_EXPORT QtResourceTemplateLoader : public Grantlee::FileSystemTemplateLoader
 {
 public:

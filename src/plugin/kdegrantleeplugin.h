@@ -22,8 +22,7 @@
 
 #include <grantlee/taglibraryinterface.h>
 
-class KDEGrantleePlugin : public QObject
-    , public Grantlee::TagLibraryInterface
+class KDEGrantleePlugin : public QObject, public Grantlee::TagLibraryInterface
 {
     Q_OBJECT
     Q_INTERFACES(Grantlee::TagLibraryInterface)
@@ -33,7 +32,7 @@ public:
     explicit KDEGrantleePlugin(QObject *parent = nullptr);
     ~KDEGrantleePlugin();
 
-    QHash<QString, Grantlee::Filter *> filters(const QString  &name) override;
+    QHash<QString, Grantlee::Filter *> filters(const QString &name) override;
     QHash<QString, Grantlee::AbstractNodeFactory *> nodeFactories(const QString &name) override;
 };
 
