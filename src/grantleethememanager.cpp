@@ -25,6 +25,7 @@
 #include <KToggleAction>
 #include <KLocalizedString>
 #include <KNS3/DownloadDialog>
+#include <KAuthorized>
 #include <KCoreAddons/kaboutdata.h>
 #include <KActionMenu>
 #include <QDebug>
@@ -50,15 +51,17 @@ public:
     {
         watch = new KDirWatch(q);
         initThemesDirectories(relativePath);
-        downloadThemesAction = new QAction(i18n("Download New Themes..."), q);
-        downloadThemesAction->setIcon(QIcon::fromTheme(QStringLiteral("get-hot-new-stuff")));
-        if (actionCollection) {
-            actionCollection->addAction(QStringLiteral("download_header_themes"), downloadThemesAction);
+        if (KAuthorized::authorize(QStringLiteral("ghns"))) {
+            downloadThemesAction = new QAction(i18n("Download New Themes..."), q);
+            downloadThemesAction->setIcon(QIcon::fromTheme(QStringLiteral("get-hot-new-stuff")));
+            if (actionCollection) {
+                actionCollection->addAction(QStringLiteral("download_header_themes"), downloadThemesAction);
+            }
+            separatorAction = new QAction(q);
+            separatorAction->setSeparator(true);
+            q->connect(downloadThemesAction, SIGNAL(triggered(bool)), q, SLOT(slotDownloadHeaderThemes()));
         }
-        separatorAction = new QAction(q);
-        separatorAction->setSeparator(true);
 
-        q->connect(downloadThemesAction, SIGNAL(triggered(bool)), q, SLOT(slotDownloadHeaderThemes()));
         q->connect(watch, SIGNAL(dirty(QString)), SLOT(directoryChanged()));
         updateThemesPath(true);
 
@@ -174,8 +177,10 @@ public:
                 actionCollection->removeAction(action);
             }
         }
-        menu->removeAction(separatorAction);
-        menu->removeAction(downloadThemesAction);
+        if (separatorAction) {
+            menu->removeAction(separatorAction);
+            menu->removeAction(downloadThemesAction);
+        }
         themesActionList.clear();
 
         bool themeActivatedFound = false;
@@ -203,8 +208,10 @@ public:
                 selectTheme(act);
             }
         }
-        menu->addAction(separatorAction);
-        menu->addAction(downloadThemesAction);
+        if (separatorAction) {
+            menu->addAction(separatorAction);
+            menu->addAction(downloadThemesAction);
+        }
     }
 
     void selectTheme(KToggleAction *act)
@@ -267,9 +274,9 @@ public:
     QActionGroup *actionGroup;
     KActionMenu *menu;
     KActionCollection *actionCollection;
-    QAction *separatorAction;
+    QAction *separatorAction = nullptr;
 
-    QAction *downloadThemesAction;
+    QAction *downloadThemesAction = nullptr;
     QWeakPointer<KNS3::DownloadDialog> downloadThemesDialog;
     ThemeManager *q;
 };
