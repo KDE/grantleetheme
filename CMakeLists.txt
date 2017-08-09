@@ -28,7 +28,7 @@ set(GRANTLEETHEME_LIB_VERSION ${PIM_VERSION})
 set(QT_REQUIRED_VERSION "5.7.0")
 set(GRANTLEE_VERSION "5.1")
 
-find_package(Qt5 ${QT_REQUIRED_VERSION} CONFIG REQUIRED Widgets Test Network)
+find_package(Qt5 ${QT_REQUIRED_VERSION} CONFIG REQUIRED Widgets Network)
 find_package(KF5I18n ${KF5_VERSION} CONFIG REQUIRED)
 find_package(KF5IconThemes ${KF5_VERSION} CONFIG REQUIRED)
 find_package(KF5NewStuff ${KF5_VERSION} CONFIG REQUIRED)
@@ -75,6 +75,7 @@ feature_summary(WHAT ALL FATAL_ON_MISSING_REQUIRED_PACKAGES)
 
 add_subdirectory(src)
 if (BUILD_TESTING)
+    find_package(Qt5 ${QT_REQUIRED_VERSION} CONFIG REQUIRED Test)
    add_subdirectory(autotest)
 endif()
 
