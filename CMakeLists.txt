@@ -14,7 +14,7 @@ if (RUN_UNINSTALL)
 endif()
 
 find_package(ECM ${ECM_VERSION} CONFIG REQUIRED)
-set(CMAKE_MODULE_PATH ${ECM_MODULE_PATH})
+set(CMAKE_MODULE_PATH ${GrantleeTheme_SOURCE_DIR}/cmake ${ECM_MODULE_PATH})
 set(LIBRARY_NAMELINK)
 include(GenerateExportHeader)
 include(ECMSetupVersion)
@@ -29,7 +29,7 @@ include(KDEFrameworkCompilerSettings NO_POLICY_SCOPE)
 include(ECMQtDeclareLoggingCategory)
 include(ECMAddTests)
 include(ECMCoverageOption)
-
+include(KPIMGrantleeMacros)
 
 set(GRANTLEETHEME_LIB_VERSION ${PIM_VERSION})
 
@@ -79,7 +79,6 @@ install(FILES
   DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF5} COMPONENT Devel
 )
 
-feature_summary(WHAT ALL FATAL_ON_MISSING_REQUIRED_PACKAGES)
 
 add_subdirectory(src)
 if (BUILD_TESTING)
@@ -88,3 +87,6 @@ if (BUILD_TESTING)
 endif()
 
 install( FILES grantleetheme.renamecategories grantleetheme.categories DESTINATION ${KDE_INSTALL_CONFDIR} )
+
+feature_summary(WHAT ALL FATAL_ON_MISSING_REQUIRED_PACKAGES)
+

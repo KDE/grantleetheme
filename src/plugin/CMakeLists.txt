@@ -6,7 +6,7 @@ set(grantleeplugin_SRCS
 )
 
 add_library(kde_grantlee_plugin MODULE ${grantleeplugin_SRCS})
-grantlee_adjust_plugin_name(kde_grantlee_plugin)
+kpim_grantlee_adjust_plugin_name(kde_grantlee_plugin)
 target_link_libraries(kde_grantlee_plugin
     Grantlee5::Templates
     KF5::IconThemes
