@@ -20,6 +20,7 @@
 #include "grantleetheme_debug.h"
 #include "grantleethemeengine.h"
 #include "config-grantleetheme.h"
+#include "qtresourcetemplateloader.h"
 
 #include <KConfig>
 #include <KConfigGroup>
@@ -67,7 +68,7 @@ void ThemePrivate::setupLoader()
     QDir dir(absolutePath);
     dir.cdUp();
 
-    loader = QSharedPointer<Grantlee::FileSystemTemplateLoader>::create();
+    loader = QSharedPointer<GrantleeTheme::QtResourceTemplateLoader>::create();
     loader->setTemplateDirs({ dir.absolutePath() });
     loader->setTheme(dirName);
 
