@@ -270,10 +270,10 @@ public:
     QStringList themesDirectories;
     QMap<QString, GrantleeTheme::Theme> themes;
     QList<KToggleAction *> themesActionList;
-    KDirWatch *watch;
-    QActionGroup *actionGroup;
-    KActionMenu *menu;
-    KActionCollection *actionCollection;
+    KDirWatch *watch = nullptr;
+    QActionGroup *actionGroup = nullptr;
+    KActionMenu *menu = nullptr;
+    KActionCollection *actionCollection = nullptr;
     QAction *separatorAction = nullptr;
 
     QAction *downloadThemesAction = nullptr;
