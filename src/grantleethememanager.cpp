@@ -26,7 +26,6 @@
 #include <KLocalizedString>
 #include <KNS3/DownloadDialog>
 #include <KAuthorized>
-#include <KCoreAddons/kaboutdata.h>
 #include <KActionMenu>
 #include <QDebug>
 #include <QAction>
