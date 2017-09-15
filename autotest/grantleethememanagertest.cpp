@@ -19,10 +19,8 @@
 #include "grantleethememanager.h"
 
 #include <qtest.h>
-#include <QDir>
 #include <QStandardPaths>
 #include <QMenu>
-#include <QDebug>
 
 #include <KConfigGroup>
 #include <KSharedConfig>

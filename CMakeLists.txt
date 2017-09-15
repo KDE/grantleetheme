@@ -26,6 +26,10 @@ include(ECMAddTests)
 include(ECMCoverageOption)
 include(KPIMGrantleeMacros)
 
+if (POLICY CMP0053)
+    cmake_policy(SET CMP0053 NEW)
+endif()
+
 set(GRANTLEETHEME_LIB_VERSION ${PIM_VERSION})
 
 set(QT_REQUIRED_VERSION "5.8.0")
