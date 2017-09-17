@@ -83,25 +83,25 @@ QString GrantleeKi18nLocalizer::processArguments(const KLocalizedString &kstr, c
 
 QString GrantleeKi18nLocalizer::localizeContextString(const QString &string, const QString &context, const QVariantList &arguments) const
 {
-    const KLocalizedString str = kxi18nc(qPrintable(context), qPrintable(string));
+    const KLocalizedString str = ki18nc(qPrintable(context), qPrintable(string));
     return processArguments(str, arguments);
 }
 
 QString GrantleeKi18nLocalizer::localizeString(const QString &string, const QVariantList &arguments) const
 {
-    const KLocalizedString str = kxi18n(qPrintable(string));
+    const KLocalizedString str = ki18n(qPrintable(string));
     return processArguments(str, arguments);
 }
 
 QString GrantleeKi18nLocalizer::localizePluralContextString(const QString &string, const QString &pluralForm, const QString &context, const QVariantList &arguments) const
 {
-    const KLocalizedString str = kxi18ncp(qPrintable(context), qPrintable(string), qPrintable(pluralForm));
+    const KLocalizedString str = ki18ncp(qPrintable(context), qPrintable(string), qPrintable(pluralForm));
     return processArguments(str, arguments);
 }
 
 QString GrantleeKi18nLocalizer::localizePluralString(const QString &string, const QString &pluralForm, const QVariantList &arguments) const
 {
-    const KLocalizedString str = kxi18np(qPrintable(string), qPrintable(pluralForm));
+    const KLocalizedString str = ki18np(qPrintable(string), qPrintable(pluralForm));
     return processArguments(str, arguments);
 }
 
