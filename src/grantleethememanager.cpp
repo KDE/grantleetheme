@@ -43,8 +43,8 @@ public:
     Private(const QString &type, const QString &desktopFileName, KActionCollection *ac, const QString &relativePath, ThemeManager *qq)
         : applicationType(type)
         , defaultDesktopFileName(desktopFileName)
-        , actionGroup(0)
-        , menu(0)
+        , actionGroup(nullptr)
+        , menu(nullptr)
         , actionCollection(ac)
         , q(qq)
     {
