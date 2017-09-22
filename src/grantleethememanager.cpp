@@ -58,10 +58,10 @@ public:
             }
             separatorAction = new QAction(q);
             separatorAction->setSeparator(true);
-            q->connect(downloadThemesAction, SIGNAL(triggered(bool)), q, SLOT(slotDownloadHeaderThemes()));
+            q->connect(downloadThemesAction, &QAction::triggered, q, [this]() { slotDownloadHeaderThemes(); });
         }
 
-        q->connect(watch, SIGNAL(dirty(QString)), SLOT(directoryChanged()));
+        q->connect(watch, &KDirWatch::dirty, q, [this]() { directoryChanged(); } );
         updateThemesPath(true);
 
         // Migrate the old configuration format that only support mail and addressbook
@@ -197,7 +197,7 @@ public:
             themesActionList.append(act);
             actionGroup->addAction(act);
             menu->addAction(act);
-            q->connect(act, SIGNAL(triggered(bool)), q, SLOT(slotThemeSelected()));
+            q->connect(act, &KToggleAction::triggered, q, [this]() { slotThemeSelected(); });
         }
         if (!themeActivatedFound) {
             if (!themesActionList.isEmpty() && !themeActivated.isEmpty()) {
