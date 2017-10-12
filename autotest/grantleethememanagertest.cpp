@@ -30,7 +30,12 @@
 class GrantleeThemeManagerTest : public QObject
 {
     Q_OBJECT
+public:
+    explicit GrantleeThemeManagerTest(QObject *parent = nullptr)
+        : QObject(parent)
+    {
 
+    }
 private Q_SLOTS:
     void initTestCase();
     void updateActionList();
