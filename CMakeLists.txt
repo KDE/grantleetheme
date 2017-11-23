@@ -5,8 +5,6 @@ set(PIM_VERSION "5.6.90")
 
 project(GrantleeTheme VERSION ${PIM_VERSION})
 
-option(RUN_UNINSTALL "test run uninstalled apps (experimental)" FALSE)
-
 
 find_package(ECM ${KF5_VERSION} CONFIG REQUIRED)
 set(CMAKE_MODULE_PATH ${GrantleeTheme_SOURCE_DIR}/cmake ${ECM_MODULE_PATH})
