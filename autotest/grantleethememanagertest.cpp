@@ -39,6 +39,7 @@ public:
 private Q_SLOTS:
     void initTestCase();
     void updateActionList();
+    void destructionOrderTest();
 };
 
 void GrantleeThemeManagerTest::initTestCase()
@@ -72,7 +73,37 @@ void GrantleeThemeManagerTest::updateActionList()
     QVERIFY(QMetaObject::invokeMethod(manager, "directoryChanged"));
     QCOMPARE(menu2.menu()->actions().count(), 4);
 
-    delete manager; // must be deleted while the action group still exists
+    delete manager; // deleted while the action group still exists
+}
+
+
+void GrantleeThemeManagerTest::destructionOrderTest()
+{
+    KActionCollection coll(this);
+    GrantleeTheme::ThemeManager *manager(new GrantleeTheme::ThemeManager(QStringLiteral("Stuff"), QStringLiteral("filename.testdesktop"), &coll, QStringLiteral("themes")));
+    QCOMPARE(manager->themes().count(), 2);
+    QVERIFY(!manager->actionForTheme()); // Bug? No "default" theme.
+
+    QActionGroup* actionGroup = new QActionGroup(this);
+    manager->setActionGroup(actionGroup);
+
+    KActionMenu* menu = new KActionMenu(this);
+    manager->setThemeMenu(menu);
+    QCOMPARE(menu->menu()->actions().count(), 4); // 2 themes + separator + download
+
+    KActionMenu* menu2 = new KActionMenu(this);
+    manager->setThemeMenu(menu2);
+    QCOMPARE(menu2->menu()->actions().count(), 4);
+
+    QVERIFY(QMetaObject::invokeMethod(manager, "directoryChanged"));
+    QCOMPARE(menu2->menu()->actions().count(), 4);
+
+    manager->setThemeMenu(nullptr);
+    delete menu;
+    delete menu2;
+    manager->setActionGroup(nullptr);
+    delete actionGroup;
+    delete manager; // deleted with the action group already deleted (as happens in kmail)
 }
 
 QTEST_MAIN(GrantleeThemeManagerTest)

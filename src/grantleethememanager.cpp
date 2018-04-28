@@ -85,16 +85,7 @@ public:
 
     ~Private()
     {
-        for (KToggleAction *action : qAsConst(themesActionList)) {
-            if (actionGroup) {
-                actionGroup->removeAction(action);
-            }
-            if (actionCollection) {
-                actionCollection->removeAction(action);
-            }
-            delete action;
-        }
-        themesActionList.clear();
+        removeActions();
         themes.clear();
         if (downloadThemesDialog) {
             delete downloadThemesDialog.data();
@@ -161,18 +152,11 @@ public:
         watch->startScan();
     }
 
-    void updateActionList()
+    void removeActions()
     {
         if (!actionGroup || !menu) {
             return;
         }
-        QString themeActivated;
-
-        QAction *selectedAction = actionGroup->checkedAction();
-        if (selectedAction) {
-            themeActivated = selectedAction->data().toString();
-        }
-
         for (KToggleAction *action : qAsConst(themesActionList)) {
             actionGroup->removeAction(action);
             menu->removeAction(action);
@@ -185,6 +169,21 @@ public:
             menu->removeAction(downloadThemesAction);
         }
         themesActionList.clear();
+    }
+
+    void updateActionList()
+    {
+        if (!actionGroup || !menu) {
+            return;
+        }
+        QString themeActivated;
+
+        QAction *selectedAction = actionGroup->checkedAction();
+        if (selectedAction) {
+            themeActivated = selectedAction->data().toString();
+        }
+
+        removeActions();
 
         bool themeActivatedFound = false;
         QMapIterator<QString, GrantleeTheme::Theme> i(themes);
@@ -305,6 +304,7 @@ QMap<QString, GrantleeTheme::Theme> ThemeManager::themes() const
 void ThemeManager::setActionGroup(QActionGroup *actionGroup)
 {
     if (d->actionGroup != actionGroup) {
+        d->removeActions();
         d->actionGroup = actionGroup;
         d->updateActionList();
     }
