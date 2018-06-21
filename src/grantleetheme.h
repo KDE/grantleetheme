@@ -37,21 +37,21 @@ public:
     Theme(const Theme &other);
     ~Theme();
 
-    bool operator==(const Theme &other) const;
+    Q_REQUIRED_RESULT bool operator==(const Theme &other) const;
     Theme &operator=(const Theme &other);
 
-    bool isValid() const;
+    Q_REQUIRED_RESULT bool isValid() const;
 
-    QString description() const;
-    QString themeFilename() const;
-    QString name() const;
-    QStringList displayExtraVariables() const;
-    QString dirName() const;
-    QString absolutePath() const;
-    QString author() const;
-    QString authorEmail() const;
+    Q_REQUIRED_RESULT QString description() const;
+    Q_REQUIRED_RESULT QString themeFilename() const;
+    Q_REQUIRED_RESULT QString name() const;
+    Q_REQUIRED_RESULT QStringList displayExtraVariables() const;
+    Q_REQUIRED_RESULT QString dirName() const;
+    Q_REQUIRED_RESULT QString absolutePath() const;
+    Q_REQUIRED_RESULT QString author() const;
+    Q_REQUIRED_RESULT QString authorEmail() const;
 
-    QString render(const QString &templateName, const QVariantHash &data, const QByteArray &applicationDomain = QByteArray());
+    Q_REQUIRED_RESULT QString render(const QString &templateName, const QVariantHash &data, const QByteArray &applicationDomain = QByteArray());
 
     static void addPluginPath(const QString &path);
 

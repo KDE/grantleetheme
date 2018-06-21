@@ -34,7 +34,7 @@ public:
     explicit Engine(QObject *parent = nullptr);
     ~Engine() override;
 
-    QSharedPointer<GrantleeKi18nLocalizer> localizer() const;
+    Q_REQUIRED_RESULT QSharedPointer<GrantleeKi18nLocalizer> localizer() const;
 
 private:
     EnginePrivate *const d;
