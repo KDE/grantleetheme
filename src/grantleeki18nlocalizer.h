@@ -32,7 +32,7 @@ class GRANTLEETHEME_EXPORT GrantleeKi18nLocalizer : public Grantlee::QtLocalizer
 {
 public:
     explicit GrantleeKi18nLocalizer();
-    ~GrantleeKi18nLocalizer();
+    ~GrantleeKi18nLocalizer() override;
 
     // Only reimplement string localization to use KLocalizedString instead of
     // tr(), the remaining methods use QLocale internally, so we can reuse them
