@@ -30,6 +30,7 @@
 #include <QDebug>
 #include <QAction>
 #include <QIcon>
+#include <QPointer>
 
 #include <QDir>
 #include <QDirIterator>
@@ -281,7 +282,7 @@ public:
     QAction *separatorAction = nullptr;
 
     QAction *downloadThemesAction = nullptr;
-    QWeakPointer<KNS3::DownloadDialog> downloadThemesDialog;
+    QPointer<KNS3::DownloadDialog> downloadThemesDialog;
     ThemeManager *q;
 };
 
