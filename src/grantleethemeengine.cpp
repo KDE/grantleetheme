@@ -18,7 +18,7 @@
 #include "grantleethemeengine.h"
 #include "grantleeki18nlocalizer.h"
 
-#include "config-grantleetheme.h"
+#include <config-grantleetheme.h>
 
 using namespace GrantleeTheme;
 

@@ -19,7 +19,7 @@
 #include "grantleetheme_p.h"
 #include "grantleetheme_debug.h"
 #include "grantleethemeengine.h"
-#include "config-grantleetheme.h"
+#include <config-grantleetheme.h>
 #include "qtresourcetemplateloader.h"
 
 #include <KConfig>

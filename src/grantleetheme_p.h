@@ -15,8 +15,8 @@
   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
-#ifndef GRANTLEETHEME_THEME_P_H
-#define GRANTLEETHEME_THEME_P_H
+#ifndef GRANTLEE_THEME_P_H
+#define GRANTLEE_THEME_P_H
 
 #include "grantleetheme.h"
 #include "grantleeki18nlocalizer.h"
