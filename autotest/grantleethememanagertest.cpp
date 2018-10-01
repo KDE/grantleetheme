@@ -76,7 +76,6 @@ void GrantleeThemeManagerTest::updateActionList()
     delete manager; // deleted while the action group still exists
 }
 
-
 void GrantleeThemeManagerTest::destructionOrderTest()
 {
     KActionCollection coll(this);
@@ -84,14 +83,14 @@ void GrantleeThemeManagerTest::destructionOrderTest()
     QCOMPARE(manager->themes().count(), 2);
     QVERIFY(!manager->actionForTheme()); // Bug? No "default" theme.
 
-    QActionGroup* actionGroup = new QActionGroup(this);
+    QActionGroup *actionGroup = new QActionGroup(this);
     manager->setActionGroup(actionGroup);
 
-    KActionMenu* menu = new KActionMenu(this);
+    KActionMenu *menu = new KActionMenu(this);
     manager->setThemeMenu(menu);
     QCOMPARE(menu->menu()->actions().count(), 4); // 2 themes + separator + download
 
-    KActionMenu* menu2 = new KActionMenu(this);
+    KActionMenu *menu2 = new KActionMenu(this);
     manager->setThemeMenu(menu2);
     QCOMPARE(menu2->menu()->actions().count(), 4);
 
