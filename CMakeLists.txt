@@ -21,7 +21,7 @@ include(KDECMakeSettings)
 include(KDEFrameworkCompilerSettings NO_POLICY_SCOPE)
 include(ECMQtDeclareLoggingCategory)
 include(ECMAddTests)
-include(ECMCoverageOption)
+
 include(KPIMGrantleeMacros)
 
 if (POLICY CMP0053)
