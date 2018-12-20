@@ -1,12 +1,12 @@
 cmake_minimum_required(VERSION 3.5)
 
-set(KF5_VERSION "5.53.0")
+set(KF5_MIN_VERSION "5.53.0")
 set(PIM_VERSION "5.10.40")
 
 project(GrantleeTheme VERSION ${PIM_VERSION})
 
 
-find_package(ECM ${KF5_VERSION} CONFIG REQUIRED)
+find_package(ECM ${KF5_MIN_VERSION} CONFIG REQUIRED)
 set(CMAKE_MODULE_PATH ${GrantleeTheme_SOURCE_DIR}/cmake ${ECM_MODULE_PATH})
 set(LIBRARY_NAMELINK)
 include(GenerateExportHeader)
@@ -34,9 +34,9 @@ set(QT_REQUIRED_VERSION "5.10.0")
 set(GRANTLEE_VERSION "5.1")
 
 find_package(Qt5 ${QT_REQUIRED_VERSION} CONFIG REQUIRED Widgets Network)
-find_package(KF5I18n ${KF5_VERSION} CONFIG REQUIRED)
-find_package(KF5IconThemes ${KF5_VERSION} CONFIG REQUIRED)
-find_package(KF5NewStuff ${KF5_VERSION} CONFIG REQUIRED)
+find_package(KF5I18n ${KF5_MIN_VERSION} CONFIG REQUIRED)
+find_package(KF5IconThemes ${KF5_MIN_VERSION} CONFIG REQUIRED)
+find_package(KF5NewStuff ${KF5_MIN_VERSION} CONFIG REQUIRED)
 
 find_package(Grantlee5 ${GRANTLEE_VERSION} CONFIG REQUIRED)
 
