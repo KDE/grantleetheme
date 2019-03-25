@@ -260,13 +260,8 @@ public:
     {
         if (!themesRelativePath.isEmpty()) {
             themesDirectories = QStandardPaths::locateAll(QStandardPaths::GenericDataLocation, themesRelativePath, QStandardPaths::LocateDirectory);
-            if (themesDirectories.count() < 2) {
-                //Make sure to add local directory
-                const QString localDirectory = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1Char('/') + themesRelativePath;
-                if (!themesDirectories.contains(localDirectory)) {
-                    themesDirectories.append(localDirectory);
-                }
-            }
+            const QString localDirectory = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1Char('/') + themesRelativePath;
+            themesDirectories.append(localDirectory);
         }
     }
 
