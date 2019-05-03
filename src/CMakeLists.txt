@@ -3,6 +3,7 @@ add_definitions(-DTRANSLATION_DOMAIN=\"libgrantleetheme\")
 add_subdirectory(plugin)
 
 set(libgrantleetheme_SRCS
+    genericformatter.cpp
     grantleetheme.cpp
     grantleethememanager.cpp
     grantleethemeengine.cpp
@@ -43,6 +44,7 @@ install(TARGETS
 
 ecm_generate_headers(GrantleeTheme_CamelCase_HEADERS
   HEADER_NAMES
+  GenericFormatter
   GrantleeThemeManager
   GrantleeTheme
   GrantleeThemeEngine
@@ -74,5 +76,3 @@ install(FILES
 install(FILES
     ${PRI_FILENAME}
     DESTINATION ${ECM_MKSPECS_INSTALL_DIR})
-
-
