@@ -270,7 +270,7 @@ public:
     QString downloadConfigFileName;
     QStringList themesDirectories;
     QMap<QString, GrantleeTheme::Theme> themes;
-    QList<KToggleAction *> themesActionList;
+    QVector<KToggleAction *> themesActionList;
     KDirWatch *watch = nullptr;
     QActionGroup *actionGroup = nullptr;
     KActionMenu *menu = nullptr;
