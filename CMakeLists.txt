@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.5)
 
-set(KF5_MIN_VERSION "5.58.0")
+set(KF5_MIN_VERSION "5.59.0")
 set(PIM_VERSION "5.11.41")
 
 project(GrantleeTheme VERSION ${PIM_VERSION})
@@ -82,11 +82,7 @@ if (BUILD_TESTING)
    add_subdirectory(autotest)
 endif()
 
-if (${ECM_VERSION} STRGREATER "5.58.0")
-    install(FILES grantleetheme.renamecategories grantleetheme.categories  DESTINATION  ${KDE_INSTALL_LOGGINGCATEGORIESDIR})
-else()
-    install(FILES grantleetheme.renamecategories grantleetheme.categories  DESTINATION ${KDE_INSTALL_CONFDIR})
-endif()
+install(FILES grantleetheme.renamecategories grantleetheme.categories  DESTINATION  ${KDE_INSTALL_LOGGINGCATEGORIESDIR})
 
 feature_summary(WHAT ALL FATAL_ON_MISSING_REQUIRED_PACKAGES)
 
