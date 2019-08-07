@@ -233,6 +233,6 @@ void Theme::addPluginPath(const QString &path)
     QStringList paths = ThemePrivate::sEngine->pluginPaths();
     if (!paths.contains(path)) {
         paths.prepend(path);
+        ThemePrivate::sEngine->setPluginPaths(paths);
     }
-    ThemePrivate::sEngine->setPluginPaths(paths);
 }
