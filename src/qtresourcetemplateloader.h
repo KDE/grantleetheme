@@ -22,6 +22,10 @@
 #include "grantlee/templateloader.h"
 #include "grantleetheme_export.h"
 namespace GrantleeTheme {
+/**
+ * @brief The QtResourceTemplateLoader class
+ * @author Laurent montel <montel@kde.org>
+ */
 class GRANTLEETHEME_EXPORT QtResourceTemplateLoader : public Grantlee::FileSystemTemplateLoader
 {
 public:

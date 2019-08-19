@@ -28,6 +28,9 @@
 
 class KLocalizedString;
 namespace GrantleeTheme {
+/**
+ * @brief The GrantleeKi18nLocalizer class
+ */
 class GRANTLEETHEME_EXPORT GrantleeKi18nLocalizer : public Grantlee::QtLocalizer
 {
 public:

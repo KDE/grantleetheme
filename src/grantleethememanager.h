@@ -29,6 +29,10 @@ class KToggleAction;
 class KActionMenu;
 
 namespace GrantleeTheme {
+/**
+ * @brief The ThemeManager class
+ * @author Laurent montel <montel@kde.org>
+ */
 class GRANTLEETHEME_EXPORT ThemeManager : public QObject
 {
     Q_OBJECT

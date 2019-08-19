@@ -30,7 +30,9 @@ class GrantleeThemeTest;
 namespace GrantleeTheme {
 class ThemeManager;
 class ThemePrivate;
-
+/**
+ * @brief The Theme class
+ */
 class GRANTLEETHEME_EXPORT Theme
 {
 public:
