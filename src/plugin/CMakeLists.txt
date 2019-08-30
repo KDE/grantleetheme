@@ -2,7 +2,9 @@ kde_enable_exceptions()
 
 set(grantleeplugin_SRCS
     kdegrantleeplugin.cpp
+    color.cpp
     icon.cpp
+    palette.cpp
 )
 
 add_library(kde_grantlee_plugin MODULE ${grantleeplugin_SRCS})
@@ -10,6 +12,7 @@ kpim_grantlee_adjust_plugin_name(kde_grantlee_plugin)
 target_link_libraries(kde_grantlee_plugin
     Grantlee5::Templates
     KF5::IconThemes
+    KF5::GuiAddons
 )
 
 install(TARGETS kde_grantlee_plugin

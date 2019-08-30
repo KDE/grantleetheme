@@ -1,0 +1,23 @@
+<html>
+Color name: {{ pal.button|colorHexRgb }}
+RGBA: {{ pal.button|colorCssRgba }}
+Color lighter: {{ pal.button|colorLighter:150|colorHexRgb }}
+Color darker: {{ pal.button|colorDarker:150|colorHexRgb }}
+
+Active: {{ pal.activeBase|colorHexRgb }}
+Inactive: {{ pal.inactiveBase|colorHexRgb }}
+Disabled: {{ pal.disabledBase|colorHexRgb }}
+Default: {{ pal.base|colorHexRgb }}
+
+Red: {{ pal.button.red }}
+Name: {{ pal.button.hexRgb }}
+RGBA: {{ pal.button.cssRgba }}
+
+Mix literal/literal: {% colorMix "#ff0000" "#0000ff" 0.75 %}
+Mix var/literal: {% colorMix pal.button "#0000ff" 0.5 %}
+Mix var/var: {% colorMix pal.button pal.inactiveBase 0.25 %}
+
+Color literal: {{ "lightsteelblue"|colorHexRgb }}
+
+Mix filtered: {% colorMix pal.button "#0000ff" 0.5 as myColor %}{{ myColor|colorDarker:200|colorCssRgba }}
+</html>

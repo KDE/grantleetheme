@@ -18,12 +18,16 @@
  */
 
 #include "kdegrantleeplugin.h"
+#include "color.h"
 #include "icon.h"
+#include "palette.h"
 
 KDEGrantleePlugin::KDEGrantleePlugin(QObject *parent)
     : QObject(parent)
     , Grantlee::TagLibraryInterface()
 {
+    Color::registerMetaType();
+    Palette::registerMetaType();
 }
 
 KDEGrantleePlugin::~KDEGrantleePlugin()
@@ -35,6 +39,7 @@ QHash<QString, Grantlee::AbstractNodeFactory *> KDEGrantleePlugin::nodeFactories
     Q_UNUSED(name);
 
     QHash<QString, Grantlee::AbstractNodeFactory *> nodeFactories;
+    nodeFactories[QStringLiteral("colorMix")] = new ColorMixTag();
     nodeFactories[QStringLiteral("icon")] = new IconTag();
 
     return nodeFactories;
@@ -42,5 +47,11 @@ QHash<QString, Grantlee::AbstractNodeFactory *> KDEGrantleePlugin::nodeFactories
 
 QHash<QString, Grantlee::Filter *> KDEGrantleePlugin::filters(const QString &name)
 {
-    return Grantlee::TagLibraryInterface::filters(name);
+    Q_UNUSED(name)
+    QHash<QString, Grantlee::Filter *> filters;
+    filters.insert(QStringLiteral("colorHexRgb"), new ColorHexRgbFilter());
+    filters.insert(QStringLiteral("colorCssRgba"), new ColorCssRgbaFilter());
+    filters.insert(QStringLiteral("colorLighter"), new ColorLighterFilter());
+    filters.insert(QStringLiteral("colorDarker"), new ColorDarkerFilter());
+    return filters;
 }

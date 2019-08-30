@@ -21,6 +21,7 @@
 
 #include <qtest.h>
 #include <QDir>
+#include <QPalette>
 #include <QProcess>
 #include <QStandardPaths>
 
@@ -173,6 +174,7 @@ void GrantleeThemeTest::testRenderTemplate_data()
 
     QTest::newRow("valid theme") << QStringLiteral("valid") << true << QStringLiteral("filename.testdesktop") << QStringLiteral("header");
     QTest::newRow("invalid theme") << QStringLiteral("invalid") << false << QStringLiteral("filename.testdesktop") << QString();
+    QTest::newRow("color") << QStringLiteral("color") << true << QStringLiteral("color.testdesktop") << QStringLiteral("color");
 }
 
 void GrantleeThemeTest::testRenderTemplate()
@@ -190,6 +192,13 @@ void GrantleeThemeTest::testRenderTemplate()
     data[QStringLiteral("subtitle")] = QStringLiteral("...just rocks!");
     data[QStringLiteral("title")] = QStringLiteral("Something's going on");
     data[QStringLiteral("subtext")] = QStringLiteral("Please wait, it will be over soon.");
+
+    QPalette pal;
+    pal.setColor(QPalette::Button, Qt::red);
+    pal.setColor(QPalette::Active, QPalette::Base, Qt::red);
+    pal.setColor(QPalette::Inactive, QPalette::Base, Qt::green);
+    pal.setColor(QPalette::Disabled, QPalette::Base, Qt::blue);
+    data[QStringLiteral("pal")] = QVariant::fromValue(pal);
 
     GrantleeTheme::Theme theme(themePath, dirname, filename);
     QCOMPARE(theme.isValid(), isValid);
