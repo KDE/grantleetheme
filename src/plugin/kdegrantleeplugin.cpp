@@ -19,6 +19,7 @@
 
 #include "kdegrantleeplugin.h"
 #include "color.h"
+#include "colorscheme.h"
 #include "icon.h"
 #include "palette.h"
 
@@ -27,6 +28,7 @@ KDEGrantleePlugin::KDEGrantleePlugin(QObject *parent)
     , Grantlee::TagLibraryInterface()
 {
     Color::registerMetaType();
+    ColorScheme::registerMetaType();
     Palette::registerMetaType();
 }
 

@@ -20,4 +20,13 @@ Mix var/var: {% colorMix pal.button pal.inactiveBase 0.25 %}
 Color literal: {{ "lightsteelblue"|colorHexRgb }}
 
 Mix filtered: {% colorMix pal.button "#0000ff" 0.5 as myColor %}{{ myColor|colorDarker:200|colorCssRgba }}
+
+## Color scheme
+Normal background: {{ colorScheme.normalBackground.hexRgb }}
+Link background: {{ colorScheme.linkBackground.hexRgb }}
+Normal text: {{ colorScheme.normalText.hexRgb }}
+Link text: {{ colorScheme.linkText.hexRgb }}
+Hover color: {{ colorScheme.hoverColor.hexRgb }}
+Focus color: {{ colorScheme.focusColor.hexRgb }}
+
 </html>

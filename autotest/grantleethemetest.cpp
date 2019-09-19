@@ -25,6 +25,7 @@
 #include <QProcess>
 #include <QStandardPaths>
 
+#include <KColorScheme>
 #include <KConfigGroup>
 #include <KSharedConfig>
 
@@ -199,6 +200,7 @@ void GrantleeThemeTest::testRenderTemplate()
     pal.setColor(QPalette::Inactive, QPalette::Base, Qt::green);
     pal.setColor(QPalette::Disabled, QPalette::Base, Qt::blue);
     data[QStringLiteral("pal")] = QVariant::fromValue(pal);
+    data[QStringLiteral("colorScheme")] = QVariant::fromValue(KColorScheme(QPalette::Normal, KColorScheme::View));
 
     GrantleeTheme::Theme theme(themePath, dirname, filename);
     QCOMPARE(theme.isValid(), isValid);
