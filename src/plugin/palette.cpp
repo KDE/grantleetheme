@@ -41,7 +41,9 @@ static const struct {
     ROLE(LinkVisited),
     ROLE(Mid),
     ROLE(Midlight),
+#if QT_VERSION >= QT_VERSION_CHECK(5, 12, 0)
     ROLE(PlaceholderText),
+#endif    
     ROLE(Shadow),
     ROLE(Text),
     ROLE(ToolTipBase),
