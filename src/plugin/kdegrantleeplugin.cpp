@@ -55,5 +55,6 @@ QHash<QString, Grantlee::Filter *> KDEGrantleePlugin::filters(const QString &nam
     filters.insert(QStringLiteral("colorCssRgba"), new ColorCssRgbaFilter());
     filters.insert(QStringLiteral("colorLighter"), new ColorLighterFilter());
     filters.insert(QStringLiteral("colorDarker"), new ColorDarkerFilter());
+    filters.insert(QStringLiteral("colorSetAlpha"), new ColorSetAlphaFilter());
     return filters;
 }

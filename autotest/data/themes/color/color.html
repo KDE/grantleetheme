@@ -3,6 +3,7 @@ Color name: {{ pal.button|colorHexRgb }}
 RGBA: {{ pal.button|colorCssRgba }}
 Color lighter: {{ pal.button|colorLighter:150|colorHexRgb }}
 Color darker: {{ pal.button|colorDarker:150|colorHexRgb }}
+Color set alpha: {{ pal.button|colorSetAlpha:42|colorCssRgba }}
 
 Active: {{ pal.activeBase|colorHexRgb }}
 Inactive: {{ pal.inactiveBase|colorHexRgb }}

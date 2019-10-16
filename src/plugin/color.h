@@ -83,6 +83,21 @@ public:
 };
 
 /**
+ * @name colorSetAlpha filter
+ * @brief Provides colorSetAlpha filter for setting a fixed alpha value on the given color.
+ *
+ * The syntax is:
+ * @code
+ * {{ myColor|colorSetAlpha:<alpha-value-from-0-to-255> }}
+ * @endcode
+ */
+class ColorSetAlphaFilter : public Grantlee::Filter
+{
+public:
+    QVariant doFilter(const QVariant &input, const QVariant &arg, bool autoescape) const override;
+};
+
+/**
  * @name colorMix tag
  * @brief Provides {% colorMix %} tag for mixing two colors
  *

@@ -101,6 +101,14 @@ QVariant ColorDarkerFilter::doFilter(const QVariant& input, const QVariant& arg,
     return color.darker(factor);
 }
 
+QVariant ColorSetAlphaFilter::doFilter(const QVariant& input, const QVariant& arg, bool autoescape) const
+{
+    Q_UNUSED(autoescape)
+
+    auto color = inputToColor(input);
+    color.setAlpha(arg.toInt());
+    return color;
+}
 
 ColorMixTag::ColorMixTag(QObject *parent)
     : Grantlee::AbstractNodeFactory(parent)
