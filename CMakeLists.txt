@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.5)
 
-set(KF5_MIN_VERSION "5.63.0")
-set(PIM_VERSION "5.12.80")
+set(KF5_MIN_VERSION "5.64.0")
+set(PIM_VERSION "5.13.40")
 
 project(GrantleeTheme VERSION ${PIM_VERSION})
 
@@ -32,7 +32,7 @@ endif()
 
 set(GRANTLEETHEME_LIB_VERSION ${PIM_VERSION})
 
-set(QT_REQUIRED_VERSION "5.11.0")
+set(QT_REQUIRED_VERSION "5.12.0")
 set(GRANTLEE_VERSION "5.1")
 
 find_package(Qt5 ${QT_REQUIRED_VERSION} CONFIG REQUIRED Widgets Network)
