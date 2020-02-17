@@ -13,7 +13,14 @@ set(libgrantleetheme_SRCS
 
 configure_file(config-grantleetheme.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config-grantleetheme.h)
 
-ecm_qt_declare_logging_category(libgrantleetheme_SRCS HEADER grantleetheme_debug.h IDENTIFIER GRANTLEETHEME_LOG CATEGORY_NAME org.kde.pim.grantleetheme)
+if (ECM_VERSION VERSION_LESS "5.68.0")
+    ecm_qt_declare_logging_category(libgrantleetheme_SRCS HEADER grantleetheme_debug.h IDENTIFIER GRANTLEETHEME_LOG CATEGORY_NAME org.kde.pim.grantleetheme)
+else()
+    ecm_qt_declare_logging_category(libgrantleetheme_SRCS HEADER grantleetheme_debug.h IDENTIFIER GRANTLEETHEME_LOG CATEGORY_NAME org.kde.pim.grantleetheme
+        OLD_CATEGORY_NAMES log_grantleetheme
+        DESCRIPTION "kdepim (grantleetheme)" EXPORT LIBGRANTLEETHEME)
+endif()
+
 
 add_library(KF5GrantleeTheme ${libgrantleetheme_SRCS})
 generate_export_header(KF5GrantleeTheme BASE_NAME grantleetheme)
@@ -76,3 +83,8 @@ install(FILES
 install(FILES
     ${PRI_FILENAME}
     DESTINATION ${ECM_MKSPECS_INSTALL_DIR})
+
+
+if (NOT ECM_VERSION VERSION_LESS "5.68.0")
+   ecm_qt_install_logging_categories(EXPORT LIBGRANTLEETHEME FILE grantleetheme.categories DESTINATION ${KDE_INSTALL_LOGGINGCATEGORIESDIR})
+endif()

@@ -89,7 +89,9 @@ if (BUILD_TESTING)
    add_subdirectory(autotest)
 endif()
 
-install(FILES grantleetheme.renamecategories grantleetheme.categories  DESTINATION  ${KDE_INSTALL_LOGGINGCATEGORIESDIR})
+if (ECM_VERSION VERSION_LESS "5.68.0")
+    install(FILES grantleetheme.renamecategories grantleetheme.categories  DESTINATION  ${KDE_INSTALL_LOGGINGCATEGORIESDIR})
+endif()
 
 feature_summary(WHAT ALL FATAL_ON_MISSING_REQUIRED_PACKAGES)
 
