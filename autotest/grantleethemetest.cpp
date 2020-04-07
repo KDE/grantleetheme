@@ -211,8 +211,8 @@ void GrantleeThemeTest::testRenderTemplate()
         QVERIFY(validateHtml(themePath, templateBasename, result));
         QVERIFY(compareHtml(themePath, templateBasename));
 
-        QFile::remove(themePath + QDir::separator() + templateBasename + QStringLiteral(".out"));
-        QFile::remove(themePath + QDir::separator() + templateBasename + QStringLiteral(".out.html"));
+        QFile::remove(themePath + QLatin1Char('/') + templateBasename + QStringLiteral(".out"));
+        QFile::remove(themePath + QLatin1Char('/') + templateBasename + QStringLiteral(".out.html"));
     }
 }
 

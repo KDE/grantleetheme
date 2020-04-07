@@ -117,7 +117,7 @@ Theme::Theme()
 Theme::Theme(const QString &themePath, const QString &dirName, const QString &defaultDesktopFileName)
     : d(new ThemePrivate)
 {
-    const QString themeInfoFile = themePath + QDir::separator() + defaultDesktopFileName;
+    const QString themeInfoFile = themePath + QLatin1Char('/') + defaultDesktopFileName;
     KConfig config(themeInfoFile);
     KConfigGroup group(&config, QStringLiteral("Desktop Entry"));
     if (group.isValid()) {
