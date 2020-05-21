@@ -47,7 +47,7 @@ ThemePrivate::ThemePrivate(const ThemePrivate &other)
     , description(other.description)
     , name(other.name)
     , dirName(other.dirName)
-    , absolutePath(other.absolutePath)
+    , absolutePaths(other.absolutePaths)
     , author(other.author)
     , email(other.email)
     , loader(other.loader)
@@ -66,11 +66,16 @@ void ThemePrivate::setupEngine()
 void ThemePrivate::setupLoader()
 {
     // Get the parent dir with themes, we set the theme directory separately
-    QDir dir(absolutePath);
-    dir.cdUp();
+
+    QStringList templatePaths;
+    for (const QString &absolutePath : qAsConst(absolutePaths)) {
+        QDir dir(absolutePath);
+        dir.cdUp();
+        templatePaths << dir.absolutePath();
+    }
 
     loader = QSharedPointer<GrantleeTheme::QtResourceTemplateLoader>::create();
-    loader->setTemplateDirs({ dir.absolutePath() });
+    loader->setTemplateDirs(templatePaths);
     loader->setTheme(dirName);
 
     if (!sEngine) {
@@ -122,7 +127,7 @@ Theme::Theme(const QString &themePath, const QString &dirName, const QString &de
     KConfigGroup group(&config, QStringLiteral("Desktop Entry"));
     if (group.isValid()) {
         d->dirName = dirName;
-        d->absolutePath = themePath;
+        d->absolutePaths.append(themePath);
         d->name = group.readEntry("Name", QString());
         d->description = group.readEntry("Description", QString());
         d->themeFileName = group.readEntry("FileName", QString());
@@ -141,7 +146,7 @@ Theme::~Theme()
 
 bool Theme::operator==(const Theme &other) const
 {
-    return isValid() && other.isValid() && d->absolutePath == other.absolutePath();
+    return isValid() && other.isValid() && d->absolutePaths == other.d->absolutePaths;
 }
 
 Theme &Theme::operator=(const Theme &other)
@@ -185,7 +190,7 @@ QString Theme::dirName() const
 
 QString Theme::absolutePath() const
 {
-    return d->absolutePath;
+    return d->absolutePaths.at(0); // ####
 }
 
 QString Theme::author() const
@@ -198,6 +203,11 @@ QString Theme::authorEmail() const
     return d->email;
 }
 
+void Theme::addThemePath(const QString &path)
+{
+    d->absolutePaths.append(path);
+}
+
 QString Theme::render(const QString &templateName, const QVariantHash &data, const QByteArray &applicationDomain)
 {
     if (!d->loader) {
@@ -206,7 +216,7 @@ QString Theme::render(const QString &templateName, const QVariantHash &data, con
     Q_ASSERT(d->loader);
 
     if (!d->loader->canLoadTemplate(templateName)) {
-        qCWarning(GRANTLEETHEME_LOG) << "Cannot load template" << templateName << ", please check your installation";
+        qCWarning(GRANTLEETHEME_LOG) << "Cannot load template" << templateName << ", please check your installation. Tried in these dirs:" << d->loader->templateDirs();
         return QString();
     }
 

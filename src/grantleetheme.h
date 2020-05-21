@@ -54,6 +54,8 @@ public:
     Q_REQUIRED_RESULT QString author() const;
     Q_REQUIRED_RESULT QString authorEmail() const;
 
+    void addThemePath(const QString &path);
+
     Q_REQUIRED_RESULT QString render(const QString &templateName, const QVariantHash &data, const QByteArray &applicationDomain = QByteArray());
 
     static void addPluginPath(const QString &path);

@@ -44,7 +44,7 @@ public:
     QString description;
     QString name;
     QString dirName;
-    QString absolutePath;
+    QStringList absolutePaths;
     QString author;
     QString email;
 

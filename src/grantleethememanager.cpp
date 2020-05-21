@@ -143,8 +143,12 @@ public:
                         theme.d->name = themeName;
                     }
                     alreadyLoadedThemeName << themeName;
-                    themes.insert(dirName, theme);
-                    //qDebug()<<" theme.name()"<<theme.name();
+                    auto it = themes.find(dirName);
+                    if (it != themes.end()) {
+                        (*it).addThemePath(dirIt.filePath());
+                    } else {
+                        themes.insert(dirName, theme);
+                    }
                 }
             }
             watch->addDir(directory);
