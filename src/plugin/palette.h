@@ -19,9 +19,8 @@
 #ifndef GRANTLEETHEME_PALETTE_H
 #define GRANTLEETHEME_PALETTE_H
 
-namespace Palette
-{
-    void registerMetaType();
+namespace Palette {
+void registerMetaType();
 }
 
 #endif // GRANTLEETHEME_PALETTE_H

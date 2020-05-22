@@ -38,7 +38,6 @@ public:
     Grantlee::Template mTemplate;
 };
 
-
 GenericFormatter::GenericFormatter(const QString &defaultHtmlMain, const QString &themePath)
     : d(new GenericFormatterPrivate)
 {

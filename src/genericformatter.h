@@ -28,7 +28,6 @@
 class QString;
 
 namespace GrantleeTheme {
-
 class GenericFormatterPrivate;
 
 /** Convenience class for using a Grantlee theme. */
@@ -56,7 +55,6 @@ public:
 private:
     std::unique_ptr<GenericFormatterPrivate> const d;
 };
-
 }
 
 #endif // GRANTLEETHEME_GENERICFORMATTER_H

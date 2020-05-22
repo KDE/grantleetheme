@@ -132,9 +132,8 @@ private:
     double m_ratio;
 };
 
-namespace Color
-{
-    void registerMetaType();
+namespace Color {
+void registerMetaType();
 }
 
 #endif // GRANTLEETHEME_COLOR_H

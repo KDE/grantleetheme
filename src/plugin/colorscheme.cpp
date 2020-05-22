@@ -29,30 +29,29 @@
 #define DECORATION_PROP(PROP) PROP_IMPL(PROP, decoration)
 
 GRANTLEE_BEGIN_LOOKUP(KColorScheme)
-    BACKGROUND_PROP(NormalBackground)
-    BACKGROUND_PROP(AlternateBackground)
-    BACKGROUND_PROP(ActiveBackground)
-    BACKGROUND_PROP(LinkBackground)
-    BACKGROUND_PROP(VisitedBackground)
-    BACKGROUND_PROP(NegativeBackground)
-    BACKGROUND_PROP(NeutralBackground)
-    BACKGROUND_PROP(PositiveBackground)
+BACKGROUND_PROP(NormalBackground)
+BACKGROUND_PROP(AlternateBackground)
+BACKGROUND_PROP(ActiveBackground)
+BACKGROUND_PROP(LinkBackground)
+BACKGROUND_PROP(VisitedBackground)
+BACKGROUND_PROP(NegativeBackground)
+BACKGROUND_PROP(NeutralBackground)
+BACKGROUND_PROP(PositiveBackground)
 
-    FOREGROUND_PROP(NormalText)
-    FOREGROUND_PROP(InactiveText)
-    FOREGROUND_PROP(ActiveText)
-    FOREGROUND_PROP(LinkText)
-    FOREGROUND_PROP(VisitedText)
-    FOREGROUND_PROP(NegativeText)
-    FOREGROUND_PROP(NeutralText)
-    FOREGROUND_PROP(PositiveText)
+FOREGROUND_PROP(NormalText)
+FOREGROUND_PROP(InactiveText)
+FOREGROUND_PROP(ActiveText)
+FOREGROUND_PROP(LinkText)
+FOREGROUND_PROP(VisitedText)
+FOREGROUND_PROP(NegativeText)
+FOREGROUND_PROP(NeutralText)
+FOREGROUND_PROP(PositiveText)
 
-    DECORATION_PROP(FocusColor)
-    DECORATION_PROP(HoverColor)
+DECORATION_PROP(FocusColor)
+DECORATION_PROP(HoverColor)
 
-    return {};
+return {};
 GRANTLEE_END_LOOKUP
-
 
 void ColorScheme::registerMetaType()
 {

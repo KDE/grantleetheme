@@ -38,26 +38,26 @@ static QColor inputToColor(const QVariant &v)
 static QString rgbaString(const QColor &c)
 {
     return QLatin1String("rgba(")
-        + QString::number(c.red()) + QLatin1String(", ")
-        + QString::number(c.green()) + QLatin1String(", ")
-        + QString::number(c.blue()) + QLatin1String(", ")
-        + QString::number(c.alphaF()) + QLatin1Char(')');
+           + QString::number(c.red()) + QLatin1String(", ")
+           + QString::number(c.green()) + QLatin1String(", ")
+           + QString::number(c.blue()) + QLatin1String(", ")
+           + QString::number(c.alphaF()) + QLatin1Char(')');
 }
 
 #define COLOR_PROP(name) if (property == QLatin1String(#name)) { return object.name(); }
 
 GRANTLEE_BEGIN_LOOKUP(QColor)
-    COLOR_PROP(red)
-    COLOR_PROP(green)
-    COLOR_PROP(blue)
-    COLOR_PROP(alpha)
-    if (property == QLatin1String("hexRgb")) {
-        return object.name();
-    }
-    if (property == QLatin1String("cssRgba")) {
-        return rgbaString(object);
-    }
-    return {};
+COLOR_PROP(red)
+COLOR_PROP(green)
+COLOR_PROP(blue)
+COLOR_PROP(alpha)
+if (property == QLatin1String("hexRgb")) {
+    return object.name();
+}
+if (property == QLatin1String("cssRgba")) {
+    return rgbaString(object);
+}
+return {};
 GRANTLEE_END_LOOKUP
 
 void Color::registerMetaType()
@@ -83,7 +83,7 @@ QVariant ColorCssRgbaFilter::doFilter(const QVariant &input, const QVariant &arg
     return rgbaString(color);
 }
 
-QVariant ColorLighterFilter::doFilter(const QVariant& input, const QVariant& arg, bool autoescape) const
+QVariant ColorLighterFilter::doFilter(const QVariant &input, const QVariant &arg, bool autoescape) const
 {
     Q_UNUSED(autoescape)
 
@@ -92,7 +92,7 @@ QVariant ColorLighterFilter::doFilter(const QVariant& input, const QVariant& arg
     return color.lighter(factor);
 }
 
-QVariant ColorDarkerFilter::doFilter(const QVariant& input, const QVariant& arg, bool autoescape) const
+QVariant ColorDarkerFilter::doFilter(const QVariant &input, const QVariant &arg, bool autoescape) const
 {
     Q_UNUSED(autoescape)
 
@@ -101,7 +101,7 @@ QVariant ColorDarkerFilter::doFilter(const QVariant& input, const QVariant& arg,
     return color.darker(factor);
 }
 
-QVariant ColorSetAlphaFilter::doFilter(const QVariant& input, const QVariant& arg, bool autoescape) const
+QVariant ColorSetAlphaFilter::doFilter(const QVariant &input, const QVariant &arg, bool autoescape) const
 {
     Q_UNUSED(autoescape)
 
@@ -117,7 +117,7 @@ ColorMixTag::ColorMixTag(QObject *parent)
 
 ColorMixTag::~ColorMixTag() = default;
 
-Grantlee::Node* ColorMixTag::getNode(const QString &tagContent, Grantlee::Parser *p) const
+Grantlee::Node *ColorMixTag::getNode(const QString &tagContent, Grantlee::Parser *p) const
 {
     Q_UNUSED(p);
     const auto parts = smartSplit(tagContent);

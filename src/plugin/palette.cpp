@@ -25,7 +25,7 @@
 #define ROLE(R) { #R, QPalette::R }
 
 static const struct {
-    const char* name;
+    const char *name;
     QPalette::ColorRole role;
 } color_roles[] = {
     ROLE(AlternateBase),
@@ -51,26 +51,26 @@ static const struct {
 };
 
 GRANTLEE_BEGIN_LOOKUP(QPalette)
-    auto group = QPalette::Inactive;
-    auto roleName = property;
+auto group = QPalette::Inactive;
+auto roleName = property;
 
-    if (property.startsWith(QLatin1String("active"))) {
-        roleName = property.mid(6);
-        group = QPalette::Active;
-    } else if (property.startsWith(QLatin1String("disabled"))) {
-        roleName = property.mid(8);
-        group = QPalette::Disabled;
-    } else if (property.startsWith(QLatin1String("inactive"))) {
-        roleName = property.mid(8);
-        group = QPalette::Inactive;
-    }
+if (property.startsWith(QLatin1String("active"))) {
+    roleName = property.mid(6);
+    group = QPalette::Active;
+} else if (property.startsWith(QLatin1String("disabled"))) {
+    roleName = property.mid(8);
+    group = QPalette::Disabled;
+} else if (property.startsWith(QLatin1String("inactive"))) {
+    roleName = property.mid(8);
+    group = QPalette::Inactive;
+}
 
-    for (const auto &role : color_roles) {
-        if (roleName.compare(QLatin1String(role.name), Qt::CaseInsensitive) == 0) {
-            return object.color(group, role.role);
-        }
+for (const auto &role : color_roles) {
+    if (roleName.compare(QLatin1String(role.name), Qt::CaseInsensitive) == 0) {
+        return object.color(group, role.role);
     }
-    return {};
+}
+return {};
 GRANTLEE_END_LOOKUP
 
 void Palette::registerMetaType()
