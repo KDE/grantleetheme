@@ -28,7 +28,6 @@
 #include <KNS3/DownloadDialog>
 #include <KAuthorized>
 #include <KActionMenu>
-#include <QDebug>
 #include <QAction>
 #include <QIcon>
 #include <QPointer>

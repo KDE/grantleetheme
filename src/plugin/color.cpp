@@ -25,7 +25,6 @@
 
 #include <KColorUtils>
 #include <QColor>
-#include <QDebug>
 
 static QColor inputToColor(const QVariant &v)
 {

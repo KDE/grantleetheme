@@ -20,7 +20,6 @@
 #include "grantleetheme.h"
 
 #include <qtest.h>
-#include <QDir>
 #include <QPalette>
 #include <QProcess>
 #include <QStandardPaths>
