@@ -32,7 +32,7 @@ endif()
 set(GRANTLEETHEME_LIB_VERSION ${PIM_VERSION})
 
 set(QT_REQUIRED_VERSION "5.13.0")
-set(GRANTLEE_VERSION "5.1")
+set(GRANTLEE_VERSION "5.2")
 
 find_package(Qt5 ${QT_REQUIRED_VERSION} CONFIG REQUIRED Widgets Network)
 find_package(KF5GuiAddons ${KF5_MIN_VERSION} CONFIG REQUIRED)
@@ -55,6 +55,8 @@ add_definitions(-DKF_DISABLE_DEPRECATED_BEFORE_AND_AT=0x054700)
 
 add_definitions(-DQT_NO_FOREACH)
 add_definitions(-DQT_NO_KEYWORDS)
+set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 
 ########### CMake Config Files ###########
