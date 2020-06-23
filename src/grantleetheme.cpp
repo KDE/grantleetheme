@@ -190,7 +190,10 @@ QString Theme::dirName() const
 
 QString Theme::absolutePath() const
 {
-    return d->absolutePaths.at(0); // ####
+    if (!d->absolutePaths.isEmpty()) {
+        return d->absolutePaths.at(0); // ####
+    }
+    return {};
 }
 
 QString Theme::author() const
