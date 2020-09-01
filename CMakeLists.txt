@@ -8,7 +8,6 @@ project(GrantleeTheme VERSION ${PIM_VERSION})
 
 find_package(ECM ${KF5_MIN_VERSION} CONFIG REQUIRED)
 set(CMAKE_MODULE_PATH ${GrantleeTheme_SOURCE_DIR}/cmake ${ECM_MODULE_PATH})
-set(LIBRARY_NAMELINK)
 
 include(KDEInstallDirs)
 include(KDECMakeSettings)
