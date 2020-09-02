@@ -20,7 +20,7 @@ public:
 
     QString mThemePath;
     QString mDefaultMainFile;
-    std::unique_ptr<Engine> mEngine;
+    std::unique_ptr<Engine> const mEngine;
     QString mErrorMessage;
     QSharedPointer<Grantlee::FileSystemTemplateLoader> mTemplateLoader;
     Grantlee::Template mTemplate;

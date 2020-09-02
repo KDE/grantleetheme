@@ -32,8 +32,6 @@ public:
     Private(const QString &type, const QString &desktopFileName, KActionCollection *ac, const QString &relativePath, ThemeManager *qq)
         : applicationType(type)
         , defaultDesktopFileName(desktopFileName)
-        , actionGroup(nullptr)
-        , menu(nullptr)
         , actionCollection(ac)
         , q(qq)
     {
@@ -265,12 +263,12 @@ public:
     KDirWatch *watch = nullptr;
     QActionGroup *actionGroup = nullptr;
     KActionMenu *menu = nullptr;
-    KActionCollection *actionCollection = nullptr;
+    KActionCollection *const actionCollection;
     QAction *separatorAction = nullptr;
 
     QAction *downloadThemesAction = nullptr;
     QPointer<KNS3::DownloadDialog> downloadThemesDialog;
-    ThemeManager *q;
+    ThemeManager *const q;
 };
 
 ThemeManager::ThemeManager(const QString &applicationType, const QString &defaultDesktopFileName, KActionCollection *actionCollection, const QString &path, QObject *parent)
