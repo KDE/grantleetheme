@@ -8,7 +8,6 @@
 #include "grantleeki18nlocalizer.h"
 #include "grantleetheme_debug.h"
 
-#include <QLocale>
 #include <QDebug>
 
 #include <grantlee/safestring.h>
