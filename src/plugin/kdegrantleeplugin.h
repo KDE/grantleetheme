@@ -18,7 +18,7 @@ class KDEGrantleePlugin : public QObject, public Grantlee::TagLibraryInterface
 
 public:
     explicit KDEGrantleePlugin(QObject *parent = nullptr);
-    ~KDEGrantleePlugin();
+    ~KDEGrantleePlugin() override;
 
     QHash<QString, Grantlee::Filter *> filters(const QString &name) override;
     QHash<QString, Grantlee::AbstractNodeFactory *> nodeFactories(const QString &name) override;

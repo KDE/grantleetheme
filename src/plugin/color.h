@@ -101,7 +101,7 @@ class ColorMixTag : public Grantlee::AbstractNodeFactory
     Q_OBJECT
 public:
     explicit ColorMixTag(QObject *parent = nullptr);
-    ~ColorMixTag();
+    ~ColorMixTag() override;
     Grantlee::Node *getNode(const QString &tagContent, Grantlee::Parser *p) const override;
 };
 
@@ -110,7 +110,7 @@ class ColorMixNode : public Grantlee::Node
     Q_OBJECT
 public:
     explicit ColorMixNode(const QString &color1Name, const QString &color2Name, double ratio, const QString &varName, QObject *parent = nullptr);
-    ~ColorMixNode();
+    ~ColorMixNode() override;
     void render(Grantlee::OutputStream *stream, Grantlee::Context *c) const override;
 
 private:
