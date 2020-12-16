@@ -19,6 +19,9 @@ ecm_qt_declare_logging_category(libgrantleetheme_SRCS HEADER grantleetheme_debug
 
 
 add_library(KF5GrantleeTheme ${libgrantleetheme_SRCS})
+if (COMPILE_WITH_UNITY_CMAKE_SUPPORT)
+    set_target_properties(KF5GrantleeTheme PROPERTIES UNITY_BUILD ON)
+endif()
 generate_export_header(KF5GrantleeTheme BASE_NAME grantleetheme)
 
 add_library(KF5::GrantleeTheme ALIAS KF5GrantleeTheme)

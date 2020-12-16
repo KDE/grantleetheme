@@ -9,6 +9,9 @@ set(grantleeplugin_SRCS
 )
 
 add_library(kde_grantlee_plugin MODULE ${grantleeplugin_SRCS})
+if (COMPILE_WITH_UNITY_CMAKE_SUPPORT)
+    set_target_properties(kde_grantlee_plugin PROPERTIES UNITY_BUILD ON)
+endif()
 kpim_grantlee_adjust_plugin_name(kde_grantlee_plugin)
 target_link_libraries(kde_grantlee_plugin
     Grantlee5::Templates
