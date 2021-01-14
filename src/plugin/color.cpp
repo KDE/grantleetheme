@@ -106,7 +106,7 @@ ColorMixTag::~ColorMixTag() = default;
 
 Grantlee::Node *ColorMixTag::getNode(const QString &tagContent, Grantlee::Parser *p) const
 {
-    Q_UNUSED(p);
+    Q_UNUSED(p)
     const auto parts = smartSplit(tagContent);
     if (parts.size() != 4 && parts.size() != 6) {
         throw Grantlee::Exception(Grantlee::TagSyntaxError, QStringLiteral("colormix tag needs 3 or 5 arguments"));

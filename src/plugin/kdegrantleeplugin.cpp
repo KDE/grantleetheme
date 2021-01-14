@@ -26,7 +26,7 @@ KDEGrantleePlugin::~KDEGrantleePlugin()
 
 QHash<QString, Grantlee::AbstractNodeFactory *> KDEGrantleePlugin::nodeFactories(const QString &name)
 {
-    Q_UNUSED(name);
+    Q_UNUSED(name)
 
     QHash<QString, Grantlee::AbstractNodeFactory *> nodeFactories;
     nodeFactories[QStringLiteral("colorMix")] = new ColorMixTag();
