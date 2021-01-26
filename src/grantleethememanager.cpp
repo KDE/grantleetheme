@@ -7,22 +7,22 @@
 #include "grantleethememanager.h"
 #include "grantleetheme_p.h"
 
-#include <KDirWatch>
-#include <KSharedConfig>
-#include <KConfigGroup>
 #include <KActionCollection>
-#include <KToggleAction>
+#include <KActionMenu>
+#include <KAuthorized>
+#include <KConfigGroup>
+#include <KDirWatch>
 #include <KLocalizedString>
 #include <KNS3/DownloadDialog>
-#include <KAuthorized>
-#include <KActionMenu>
+#include <KSharedConfig>
+#include <KToggleAction>
 #include <QAction>
 #include <QIcon>
 #include <QPointer>
 
+#include <QActionGroup>
 #include <QDir>
 #include <QDirIterator>
-#include <QActionGroup>
 #include <QStandardPaths>
 
 using namespace GrantleeTheme;
@@ -197,7 +197,7 @@ public:
         }
         if (!themeActivatedFound) {
             if (!themesActionList.isEmpty() && !themeActivated.isEmpty()) {
-                //Activate first item if we removed theme.
+                // Activate first item if we removed theme.
                 KToggleAction *act = themesActionList.at(0);
                 act->setChecked(true);
                 selectTheme(act);
@@ -271,7 +271,11 @@ public:
     ThemeManager *const q;
 };
 
-ThemeManager::ThemeManager(const QString &applicationType, const QString &defaultDesktopFileName, KActionCollection *actionCollection, const QString &path, QObject *parent)
+ThemeManager::ThemeManager(const QString &applicationType,
+                           const QString &defaultDesktopFileName,
+                           KActionCollection *actionCollection,
+                           const QString &path,
+                           QObject *parent)
     : QObject(parent)
     , d(new Private(applicationType, defaultDesktopFileName, actionCollection, path, this))
 {
@@ -337,7 +341,7 @@ QString ThemeManager::pathFromThemes(const QString &themesRelativePath, const QS
     if (!themesRelativePath.isEmpty()) {
         themesDirectories = QStandardPaths::locateAll(QStandardPaths::GenericDataLocation, themesRelativePath, QStandardPaths::LocateDirectory);
         if (themesDirectories.count() < 2) {
-            //Make sure to add local directory
+            // Make sure to add local directory
             const QString localDirectory = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1Char('/') + themesRelativePath;
             if (!themesDirectories.contains(localDirectory)) {
                 themesDirectories.append(localDirectory);

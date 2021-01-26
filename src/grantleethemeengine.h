@@ -7,12 +7,13 @@
 #ifndef GRANTLEETHEMEENGINE_H
 #define GRANTLEETHEMEENGINE_H
 
-#include <grantlee/engine.h>
 #include <QSharedPointer>
+#include <grantlee/engine.h>
 
 #include "grantleetheme_export.h"
 
-namespace GrantleeTheme {
+namespace GrantleeTheme
+{
 class GrantleeKi18nLocalizer;
 class EnginePrivate;
 /**

@@ -9,14 +9,15 @@
 
 #include "grantleetheme.h"
 #include "grantleetheme_export.h"
-#include <QObject>
 #include <QMap>
+#include <QObject>
 class QActionGroup;
 class KActionCollection;
 class KToggleAction;
 class KActionMenu;
 
-namespace GrantleeTheme {
+namespace GrantleeTheme
+{
 /**
  * @brief The ThemeManager class
  * @author Laurent montel <montel@kde.org>
@@ -25,7 +26,11 @@ class GRANTLEETHEME_EXPORT ThemeManager : public QObject
 {
     Q_OBJECT
 public:
-    explicit ThemeManager(const QString &themeType, const QString &defaultDesktopFileName, KActionCollection *actionCollection = nullptr, const QString &path = QString(), QObject *parent = nullptr);
+    explicit ThemeManager(const QString &themeType,
+                          const QString &defaultDesktopFileName,
+                          KActionCollection *actionCollection = nullptr,
+                          const QString &path = QString(),
+                          QObject *parent = nullptr);
     ~ThemeManager();
 
     Q_REQUIRED_RESULT QMap<QString, GrantleeTheme::Theme> themes() const;

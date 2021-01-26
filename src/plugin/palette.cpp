@@ -10,32 +10,18 @@
 
 #include <QPalette>
 
-#define ROLE(R) { #R, QPalette::R }
+#define ROLE(R)                                                                                                                                                \
+    {                                                                                                                                                          \
+#R, QPalette::R                                                                                                                                        \
+    }
 
 static const struct {
     const char *name;
     QPalette::ColorRole role;
 } color_roles[] = {
-    ROLE(AlternateBase),
-    ROLE(Base),
-    ROLE(BrightText),
-    ROLE(Button),
-    ROLE(ButtonText),
-    ROLE(Dark),
-    ROLE(Highlight),
-    ROLE(HighlightedText),
-    ROLE(Light),
-    ROLE(Link),
-    ROLE(LinkVisited),
-    ROLE(Mid),
-    ROLE(Midlight),
-    ROLE(PlaceholderText),
-    ROLE(Shadow),
-    ROLE(Text),
-    ROLE(ToolTipBase),
-    ROLE(ToolTipText),
-    ROLE(Window),
-    ROLE(WindowText),
+    ROLE(AlternateBase),   ROLE(Base),  ROLE(BrightText),  ROLE(Button),      ROLE(ButtonText), ROLE(Dark),       ROLE(Highlight),
+    ROLE(HighlightedText), ROLE(Light), ROLE(Link),        ROLE(LinkVisited), ROLE(Mid),        ROLE(Midlight),   ROLE(PlaceholderText),
+    ROLE(Shadow),          ROLE(Text),  ROLE(ToolTipBase), ROLE(ToolTipText), ROLE(Window),     ROLE(WindowText),
 };
 
 GRANTLEE_BEGIN_LOOKUP(QPalette)

@@ -7,7 +7,8 @@
 #ifndef GRANTLEETHEME_COLORSCHEME_H
 #define GRANTLEETHEME_COLORSCHEME_H
 
-namespace ColorScheme {
+namespace ColorScheme
+{
 void registerMetaType();
 }
 

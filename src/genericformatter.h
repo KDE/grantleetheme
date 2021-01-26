@@ -15,7 +15,8 @@
 
 class QString;
 
-namespace GrantleeTheme {
+namespace GrantleeTheme
+{
 class GenericFormatterPrivate;
 
 /** Convenience class for using a Grantlee theme. */

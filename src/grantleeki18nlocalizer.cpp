@@ -64,7 +64,8 @@ QString GrantleeKi18nLocalizer::processArguments(const KLocalizedString &kstr, c
 
     // Return localized in the currenctly active locale
     const QString translatedStr = str.toString(mApplicationDomain.isEmpty() ? str.applicationDomain().constData() : mApplicationDomain.constData());
-    //qDebug() << " translatedStr"<< translatedStr << " domain :" << str.applicationDomain() << " currentLocale() "<< currentLocale() << " Specific applicationDomain" << mApplicationDomain;
+    // qDebug() << " translatedStr"<< translatedStr << " domain :" << str.applicationDomain() << " currentLocale() "<< currentLocale() << " Specific
+    // applicationDomain" << mApplicationDomain;
     return translatedStr;
 }
 
@@ -80,7 +81,10 @@ QString GrantleeKi18nLocalizer::localizeString(const QString &string, const QVar
     return processArguments(str, arguments);
 }
 
-QString GrantleeKi18nLocalizer::localizePluralContextString(const QString &string, const QString &pluralForm, const QString &context, const QVariantList &arguments) const
+QString GrantleeKi18nLocalizer::localizePluralContextString(const QString &string,
+                                                            const QString &pluralForm,
+                                                            const QString &context,
+                                                            const QVariantList &arguments) const
 {
     const KLocalizedString str = ki18ncp(qPrintable(context), qPrintable(string), qPrintable(pluralForm));
     return processArguments(str, arguments);

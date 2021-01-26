@@ -9,7 +9,8 @@
 #define QTRESOURCETEMPLATELOADER_H
 #include "grantlee/templateloader.h"
 #include "grantleetheme_export.h"
-namespace GrantleeTheme {
+namespace GrantleeTheme
+{
 /**
  * @brief The QtResourceTemplateLoader class
  * @author Laurent montel <montel@kde.org>

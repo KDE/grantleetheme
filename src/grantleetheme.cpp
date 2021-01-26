@@ -5,11 +5,11 @@
 */
 
 #include "grantleetheme.h"
-#include "grantleetheme_p.h"
 #include "grantleetheme_debug.h"
+#include "grantleetheme_p.h"
 #include "grantleethemeengine.h"
-#include <config-grantleetheme.h>
 #include "qtresourcetemplateloader.h"
+#include <config-grantleetheme.h>
 
 #include <KConfig>
 #include <KConfigGroup>
@@ -85,19 +85,16 @@ Grantlee::Context ThemePrivate::createContext(const QVariantHash &data, const QB
 
 QString ThemePrivate::errorTemplate(const QString &reason, const QString &origTemplateName, const Grantlee::Template &failedTemplate)
 {
-    Grantlee::Template tpl = sEngine->newTemplate(
-        QStringLiteral("<h1>{{ error }}</h1>\n"
-                       "<b>%1:</b> {{ templateName }}<br>\n"
-                       "<b>%2:</b> {{ errorMessage }}")
-        .arg(i18n("Template"), i18n("Error message")),
-        QStringLiteral("TemplateError"));
+    Grantlee::Template tpl = sEngine->newTemplate(QStringLiteral("<h1>{{ error }}</h1>\n"
+                                                                 "<b>%1:</b> {{ templateName }}<br>\n"
+                                                                 "<b>%2:</b> {{ errorMessage }}")
+                                                      .arg(i18n("Template"), i18n("Error message")),
+                                                  QStringLiteral("TemplateError"));
 
     Grantlee::Context ctx = createContext();
     ctx.insert(QStringLiteral("error"), reason);
     ctx.insert(QStringLiteral("templateName"), origTemplateName);
-    const QString errorString = failedTemplate
-                                ? failedTemplate->errorString()
-                                : i18n("(null template)");
+    const QString errorString = failedTemplate ? failedTemplate->errorString() : i18n("(null template)");
     ctx.insert(QStringLiteral("errorMessage"), errorString);
     return tpl->render(&ctx);
 }
@@ -207,7 +204,8 @@ QString Theme::render(const QString &templateName, const QVariantHash &data, con
     Q_ASSERT(d->loader);
 
     if (!d->loader->canLoadTemplate(templateName)) {
-        qCWarning(GRANTLEETHEME_LOG) << "Cannot load template" << templateName << ", please check your installation. Tried in these dirs:" << d->loader->templateDirs();
+        qCWarning(GRANTLEETHEME_LOG) << "Cannot load template" << templateName
+                                     << ", please check your installation. Tried in these dirs:" << d->loader->templateDirs();
         return QString();
     }
 

@@ -120,7 +120,8 @@ private:
     double m_ratio;
 };
 
-namespace Color {
+namespace Color
+{
 void registerMetaType();
 }
 

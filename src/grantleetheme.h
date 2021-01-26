@@ -8,14 +8,15 @@
 
 #include "grantleetheme_export.h"
 
+#include <QSharedDataPointer>
 #include <QString>
 #include <QStringList>
 #include <QVariantHash>
-#include <QSharedDataPointer>
 
 class GrantleeThemeTest;
 
-namespace GrantleeTheme {
+namespace GrantleeTheme
+{
 class ThemeManager;
 class ThemePrivate;
 /**

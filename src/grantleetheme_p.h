@@ -7,14 +7,15 @@
 #ifndef GRANTLEE_THEME_P_H
 #define GRANTLEE_THEME_P_H
 
-#include "grantleetheme.h"
 #include "grantleeki18nlocalizer.h"
+#include "grantleetheme.h"
 
+#include <grantlee/engine.h>
 #include <grantlee/template.h>
 #include <grantlee/templateloader.h>
-#include <grantlee/engine.h>
 
-namespace GrantleeTheme {
+namespace GrantleeTheme
+{
 class GRANTLEETHEME_NO_EXPORT ThemePrivate : public QSharedData
 {
 public:

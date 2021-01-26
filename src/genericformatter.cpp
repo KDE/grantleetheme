@@ -5,8 +5,8 @@
 */
 
 #include "genericformatter.h"
-#include "grantleethemeengine.h"
 #include "grantleeki18nlocalizer.h"
+#include "grantleethemeengine.h"
 
 using namespace GrantleeTheme;
 

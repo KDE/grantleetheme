@@ -24,14 +24,14 @@ static QColor inputToColor(const QVariant &v)
 
 static QString rgbaString(const QColor &c)
 {
-    return QLatin1String("rgba(")
-           + QString::number(c.red()) + QLatin1String(", ")
-           + QString::number(c.green()) + QLatin1String(", ")
-           + QString::number(c.blue()) + QLatin1String(", ")
-           + QString::number(c.alphaF()) + QLatin1Char(')');
+    return QLatin1String("rgba(") + QString::number(c.red()) + QLatin1String(", ") + QString::number(c.green()) + QLatin1String(", ")
+        + QString::number(c.blue()) + QLatin1String(", ") + QString::number(c.alphaF()) + QLatin1Char(')');
 }
 
-#define COLOR_PROP(name) if (property == QLatin1String(#name)) { return object.name(); }
+#define COLOR_PROP(name)                                                                                                                                       \
+    if (property == QLatin1String(#name)) {                                                                                                                    \
+        return object.name();                                                                                                                                  \
+    }
 
 GRANTLEE_BEGIN_LOOKUP(QColor)
 COLOR_PROP(red)

@@ -7,10 +7,10 @@
 #include "grantleethemetest.h"
 #include "grantleetheme.h"
 
-#include <qtest.h>
 #include <QPalette>
 #include <QProcess>
 #include <QStandardPaths>
+#include <qtest.h>
 
 #include <KColorScheme>
 #include <KConfigGroup>
@@ -69,11 +69,12 @@ void GrantleeThemeTest::shouldLoadTheme_data()
     QTest::addColumn<bool>("isvalid");
     QTest::addColumn<QStringList>("displayExtraVariables");
 
-    QTest::newRow("valid theme") <<  QStringLiteral("valid") << QStringLiteral("filename.testdesktop") << true << QStringList();
-    QTest::newRow("not existing theme") <<  QStringLiteral("notvalid") << QStringLiteral("filename.testdesktop") << false << QStringList();
+    QTest::newRow("valid theme") << QStringLiteral("valid") << QStringLiteral("filename.testdesktop") << true << QStringList();
+    QTest::newRow("not existing theme") << QStringLiteral("notvalid") << QStringLiteral("filename.testdesktop") << false << QStringList();
     QStringList extraVariables;
     extraVariables << QStringLiteral("foo") << QStringLiteral("bla");
-    QTest::newRow("valid with extra variable") <<  QStringLiteral("valid-with-extravariables") << QStringLiteral("filename.testdesktop") << true << extraVariables;
+    QTest::newRow("valid with extra variable") << QStringLiteral("valid-with-extravariables") << QStringLiteral("filename.testdesktop") << true
+                                               << extraVariables;
 }
 
 void GrantleeThemeTest::shouldLoadTheme()
@@ -83,7 +84,7 @@ void GrantleeThemeTest::shouldLoadTheme()
     QFETCH(bool, isvalid);
     QFETCH(QStringList, displayExtraVariables);
 
-    GrantleeTheme::Theme theme(QStringLiteral(GRANTLEETHEME_DATA_DIR "/themes/")  + dirname, dirname, filename);
+    GrantleeTheme::Theme theme(QStringLiteral(GRANTLEETHEME_DATA_DIR "/themes/") + dirname, dirname, filename);
     QCOMPARE(theme.isValid(), isvalid);
     QCOMPARE(theme.displayExtraVariables(), displayExtraVariables);
     QCOMPARE(theme.dirName(), dirname);
@@ -102,14 +103,8 @@ bool GrantleeThemeTest::validateHtml(const QString &themePath, const QString &na
 
     // validate xml and pretty-print for comparisson
     // TODO add proper cmake check for xmllint and diff
-    const QStringList args = {
-        QStringLiteral("--format"),
-        QStringLiteral("--encode"),
-        QStringLiteral("UTF8"),
-        QStringLiteral("--output"),
-        htmlFileName,
-        outFileName
-    };
+    const QStringList args =
+        {QStringLiteral("--format"), QStringLiteral("--encode"), QStringLiteral("UTF8"), QStringLiteral("--output"), htmlFileName, outFileName};
 
     const int result = QProcess::execute(QStringLiteral("xmllint"), args);
     return result == 0;
@@ -137,11 +132,7 @@ bool GrantleeThemeTest::compareHtml(const QString &themePath, const QString &nam
     }
 
     // compare to reference file
-    const QStringList args = {
-        QStringLiteral("-u"),
-        referenceFileName,
-        htmlFileName
-    };
+    const QStringList args = {QStringLiteral("-u"), referenceFileName, htmlFileName};
 
     QProcess proc;
     proc.setProcessChannelMode(QProcess::ForwardedChannels);
