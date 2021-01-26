@@ -19,6 +19,9 @@ include(ECMGenerateHeaders)
 include(ECMGeneratePriFile)
 
 include(FeatureSummary)
+if(ECM_VERSION VERSION_GREATER_EQUAL 5.79)
+   include(KDEGitCommitHooks)
+endif()
 include(ECMQtDeclareLoggingCategory)
 include(ECMAddTests)
 
@@ -97,5 +100,8 @@ if (BUILD_TESTING)
    add_subdirectory(autotest)
 endif()
 
+if(ECM_VERSION VERSION_GREATER_EQUAL 5.79)
+    kde_configure_git_pre_commit_hook(CHECKS CLANG_FORMAT)
+endif()
 feature_summary(WHAT ALL FATAL_ON_MISSING_REQUIRED_PACKAGES)
 
