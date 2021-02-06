@@ -73,14 +73,14 @@ void GrantleeThemeManagerTest::destructionOrderTest()
     QCOMPARE(manager->themes().count(), 2);
     QVERIFY(!manager->actionForTheme()); // Bug? No "default" theme.
 
-    auto *actionGroup = new QActionGroup(this);
+    auto actionGroup = new QActionGroup(this);
     manager->setActionGroup(actionGroup);
 
-    auto *menu = new KActionMenu(this);
+    auto menu = new KActionMenu(this);
     manager->setThemeMenu(menu);
     QCOMPARE(menu->menu()->actions().count(), 4); // 2 themes + separator + download
 
-    auto *menu2 = new KActionMenu(this);
+    auto menu2 = new KActionMenu(this);
     manager->setThemeMenu(menu2);
     QCOMPARE(menu2->menu()->actions().count(), 4);
 

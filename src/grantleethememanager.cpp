@@ -222,7 +222,7 @@ public:
     void slotThemeSelected()
     {
         if (q->sender()) {
-            auto *act = qobject_cast<KToggleAction *>(q->sender());
+            auto act = qobject_cast<KToggleAction *>(q->sender());
             selectTheme(act);
             Q_EMIT q->grantleeThemeSelected();
         }
