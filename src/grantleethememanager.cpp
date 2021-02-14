@@ -13,7 +13,7 @@
 #include <KConfigGroup>
 #include <KDirWatch>
 #include <KLocalizedString>
-#include <KNS3/DownloadDialog>
+#include <KNewStuff3/KNS3/QtQuickDialogWrapper>
 #include <KSharedConfig>
 #include <KToggleAction>
 #include <QAction>
@@ -74,17 +74,11 @@ public:
     {
         removeActions();
         themes.clear();
-        if (downloadThemesDialog) {
-            delete downloadThemesDialog.data();
-        }
     }
 
     void slotDownloadHeaderThemes()
     {
-        if (!downloadThemesDialog) {
-            downloadThemesDialog = new KNS3::DownloadDialog(downloadConfigFileName);
-        }
-        downloadThemesDialog.data()->show();
+        KNS3::QtQuickDialogWrapper(downloadConfigFileName).exec();
     }
 
     void directoryChanged()
@@ -267,7 +261,6 @@ public:
     QAction *separatorAction = nullptr;
 
     QAction *downloadThemesAction = nullptr;
-    QPointer<KNS3::DownloadDialog> downloadThemesDialog;
     ThemeManager *const q;
 };
 
