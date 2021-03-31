@@ -5,8 +5,7 @@
  *
  */
 
-#ifndef GRANTLEEKI18NLOCALIZER_H
-#define GRANTLEEKI18NLOCALIZER_H
+#pragma once
 
 #include "grantleetheme_export.h"
 #include <grantlee/qtlocalizer.h>
@@ -50,4 +49,3 @@ private:
 };
 }
 
-#endif // GRANTLEEKI18NLOCALIZER_H

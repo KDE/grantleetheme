@@ -5,8 +5,7 @@
  *
  */
 
-#ifndef KDEGRANTLEEPLUGIN_H
-#define KDEGRANTLEEPLUGIN_H
+#pragma once
 
 #include <grantlee/taglibraryinterface.h>
 
@@ -24,4 +23,3 @@ public:
     QHash<QString, Grantlee::AbstractNodeFactory *> nodeFactories(const QString &name) override;
 };
 
-#endif // KDEGRANTLEEPLUGIN_H

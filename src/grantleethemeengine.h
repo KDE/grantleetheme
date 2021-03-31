@@ -4,8 +4,7 @@
   SPDX-License-Identifier: LGPL-2.1-or-later
 */
 
-#ifndef GRANTLEETHEMEENGINE_H
-#define GRANTLEETHEMEENGINE_H
+#pragma once
 
 #include <QSharedPointer>
 #include <grantlee/engine.h>
@@ -34,4 +33,3 @@ private:
 };
 }
 
-#endif

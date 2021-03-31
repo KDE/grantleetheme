@@ -3,8 +3,7 @@
 
   SPDX-License-Identifier: LGPL-2.1-or-later
 */
-#ifndef GRANTLEETHEME_H
-#define GRANTLEETHEME_H
+#pragma once
 
 #include "grantleetheme_export.h"
 
@@ -58,4 +57,3 @@ private:
 };
 }
 
-#endif // GRANTLEETHEME_H

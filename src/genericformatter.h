@@ -4,8 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#ifndef GRANTLEETHEME_GENERICFORMATTER_H
-#define GRANTLEETHEME_GENERICFORMATTER_H
+#pragma once
 
 #include "grantleetheme_export.h"
 
@@ -46,4 +45,3 @@ private:
 };
 }
 
-#endif // GRANTLEETHEME_GENERICFORMATTER_H

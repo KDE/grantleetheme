@@ -4,8 +4,7 @@
   SPDX-License-Identifier: LGPL-2.1-or-later
 */
 
-#ifndef GRANTLEE_THEME_P_H
-#define GRANTLEE_THEME_P_H
+#pragma once
 
 #include "grantleeki18nlocalizer.h"
 #include "grantleetheme.h"
@@ -44,4 +43,3 @@ public:
 };
 }
 
-#endif

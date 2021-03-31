@@ -4,8 +4,7 @@
   SPDX-License-Identifier: LGPL-2.1-or-later
 */
 
-#ifndef GRANTLEETHEMETEST_H
-#define GRANTLEETHEMETEST_H
+#pragma once
 
 #include <QObject>
 
@@ -29,4 +28,3 @@ private:
     bool compareHtml(const QString &path, const QString &name);
 };
 
-#endif // GRANTLEETHEMETEST_H

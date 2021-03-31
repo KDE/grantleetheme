@@ -4,8 +4,7 @@
  * SPDX-License-Identifier: LGPL-2.1-or-later
  */
 
-#ifndef GRANTLEETHEME_COLOR_H
-#define GRANTLEETHEME_COLOR_H
+#pragma once
 
 #include <grantlee/filter.h>
 #include <grantlee/node.h>
@@ -125,4 +124,3 @@ namespace Color
 void registerMetaType();
 }
 
-#endif // GRANTLEETHEME_COLOR_H

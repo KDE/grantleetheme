@@ -4,8 +4,7 @@
   SPDX-License-Identifier: LGPL-2.1-or-later
 */
 
-#ifndef GRANTLEETHEMEMANAGER_H
-#define GRANTLEETHEMEMANAGER_H
+#pragma once
 
 #include "grantleetheme.h"
 #include "grantleetheme_export.h"
@@ -64,4 +63,3 @@ private:
     Q_PRIVATE_SLOT(d, void directoryChanged())
 };
 }
-#endif // GRANTLEETHEMEMANAGER_H
