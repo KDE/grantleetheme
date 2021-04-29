@@ -143,7 +143,7 @@ ColorMixNode::~ColorMixNode() = default;
 static QColor resolveColor(const QString &name, Grantlee::Context *c)
 {
     if (name.startsWith(QLatin1Char('"')) && name.endsWith(QLatin1Char('"'))) {
-        return QColor(name.midRef(1, name.size() - 2));
+        return QColor(QStringView(name).mid(1, name.size() - 2));
     }
 
     const auto val = Grantlee::Variable(name).resolve(c);
