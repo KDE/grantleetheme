@@ -38,7 +38,7 @@ target_link_libraries(KF5GrantleeTheme
 )
 
 set_target_properties(KF5GrantleeTheme PROPERTIES
-    VERSION ${GRANTLEETHEME_VERSION_STRING}
+    VERSION ${GRANTLEETHEME_VERSION}
     SOVERSION ${GRANTLEETHEME_SOVERSION}
     EXPORT_NAME GrantleeTheme
 )
