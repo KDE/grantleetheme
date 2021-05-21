@@ -25,9 +25,6 @@ include(ECMAddTests)
 
 include(KPIMGrantleeMacros)
 
-if (POLICY CMP0053)
-    cmake_policy(SET CMP0053 NEW)
-endif()
 
 set(GRANTLEETHEME_LIB_VERSION ${PIM_VERSION})
 
