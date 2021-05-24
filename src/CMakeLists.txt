@@ -1,8 +1,12 @@
 add_definitions(-DTRANSLATION_DOMAIN=\"libgrantleetheme\")
 
+add_library(KF5GrantleeTheme)
+add_library(KF5::GrantleeTheme ALIAS KF5GrantleeTheme)
+
+
 add_subdirectory(plugin)
 
-set(libgrantleetheme_SRCS
+target_sources(KF5GrantleeTheme PRIVATE
     genericformatter.cpp
     grantleetheme.cpp
     grantleethememanager.cpp
@@ -13,18 +17,15 @@ set(libgrantleetheme_SRCS
 
 configure_file(config-grantleetheme.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config-grantleetheme.h)
 
-ecm_qt_declare_logging_category(libgrantleetheme_SRCS HEADER grantleetheme_debug.h IDENTIFIER GRANTLEETHEME_LOG CATEGORY_NAME org.kde.pim.grantleetheme
+ecm_qt_declare_logging_category(KF5GrantleeTheme HEADER grantleetheme_debug.h IDENTIFIER GRANTLEETHEME_LOG CATEGORY_NAME org.kde.pim.grantleetheme
         OLD_CATEGORY_NAMES log_grantleetheme
         DESCRIPTION "kdepim (grantleetheme)" EXPORT LIBGRANTLEETHEME)
 
-
-add_library(KF5GrantleeTheme ${libgrantleetheme_SRCS})
 if (COMPILE_WITH_UNITY_CMAKE_SUPPORT)
     set_target_properties(KF5GrantleeTheme PROPERTIES UNITY_BUILD ON)
 endif()
 generate_export_header(KF5GrantleeTheme BASE_NAME grantleetheme)
 
-add_library(KF5::GrantleeTheme ALIAS KF5GrantleeTheme)
 
 target_include_directories(KF5GrantleeTheme INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF5}/GrantleeTheme/;${KDE_INSTALL_INCLUDEDIR_KF5}/grantleetheme>")
 target_include_directories(KF5GrantleeTheme PUBLIC "$<BUILD_INTERFACE:${GrantleeTheme_SOURCE_DIR}/src;${GrantleeTheme_BINARY_DIR}/src;>")
