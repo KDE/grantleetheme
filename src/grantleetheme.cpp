@@ -56,7 +56,7 @@ void ThemePrivate::setupLoader()
     // Get the parent dir with themes, we set the theme directory separately
 
     QStringList templatePaths;
-    for (const QString &absolutePath : qAsConst(absolutePaths)) {
+    for (const QString &absolutePath : std::as_const(absolutePaths)) {
         QDir dir(absolutePath);
         dir.cdUp();
         templatePaths << dir.absolutePath();

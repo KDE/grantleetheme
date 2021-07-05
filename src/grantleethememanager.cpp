@@ -92,7 +92,7 @@ public:
     {
         if (!init) {
             if (!themesDirectories.isEmpty()) {
-                for (const QString &directory : qAsConst(themesDirectories)) {
+                for (const QString &directory : std::as_const(themesDirectories)) {
                     watch->removeDir(directory);
                 }
             } else {
@@ -103,7 +103,7 @@ public:
         // clear all previous theme information
         themes.clear();
 
-        for (const QString &directory : qAsConst(themesDirectories)) {
+        for (const QString &directory : std::as_const(themesDirectories)) {
             QDirIterator dirIt(directory, QStringList(), QDir::AllDirs | QDir::NoDotAndDotDot);
             QStringList alreadyLoadedThemeName;
             while (dirIt.hasNext()) {
@@ -142,7 +142,7 @@ public:
         if (!actionGroup || !menu) {
             return;
         }
-        for (KToggleAction *action : qAsConst(themesActionList)) {
+        for (KToggleAction *action : std::as_const(themesActionList)) {
             actionGroup->removeAction(action);
             menu->removeAction(action);
             if (actionCollection) {
@@ -231,7 +231,7 @@ public:
         if (themeName.isEmpty()) {
             return nullptr;
         }
-        for (KToggleAction *act : qAsConst(themesActionList)) {
+        for (KToggleAction *act : std::as_const(themesActionList)) {
             if (act->data().toString() == themeName) {
                 return static_cast<KToggleAction *>(act);
             }
@@ -340,7 +340,7 @@ QString ThemeManager::pathFromThemes(const QString &themesRelativePath, const QS
                 themesDirectories.append(localDirectory);
             }
         }
-        for (const QString &directory : qAsConst(themesDirectories)) {
+        for (const QString &directory : std::as_const(themesDirectories)) {
             QDirIterator dirIt(directory, QStringList(), QDir::AllDirs | QDir::NoDotAndDotDot);
             while (dirIt.hasNext()) {
                 dirIt.next();
