@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.16 FATAL_ERROR)
 
-set(KF5_MIN_VERSION "5.83.0")
+set(KF5_MIN_VERSION "5.84.0")
 set(PIM_VERSION "5.18.40")
 
 project(GrantleeTheme VERSION ${PIM_VERSION})
@@ -48,7 +48,7 @@ ecm_setup_version(PROJECT VARIABLE_PREFIX GRANTLEETHEME
 ########### Targets ###########
 
 add_definitions(-DQT_DISABLE_DEPRECATED_BEFORE=0x050e00)
-add_definitions(-DKF_DISABLE_DEPRECATED_BEFORE_AND_AT=0x055400)
+add_definitions(-DKF_DISABLE_DEPRECATED_BEFORE_AND_AT=0x055500)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
