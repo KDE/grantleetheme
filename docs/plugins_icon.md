@@ -1,6 +1,6 @@
 # Plugins: icon {#plugins_icon}
 
-This plugin introduces a new template tag `icon`. The tag allows easilly displaying
+This plugin introduces a new template tag `icon`. The tag allows easily displaying
 standard icons in the templates by using XDG icon names. The behaviour is identical
 to resolving icon path via KIconLoader::iconPath() and passing the path to the
 template as a string.

@@ -101,7 +101,7 @@ bool GrantleeThemeTest::validateHtml(const QString &themePath, const QString &na
     outFile.write(html.toUtf8());
     outFile.close();
 
-    // validate xml and pretty-print for comparisson
+    // validate xml and pretty-print for comparison
     // TODO add proper cmake check for xmllint and diff
     const QStringList args =
         {QStringLiteral("--format"), QStringLiteral("--encode"), QStringLiteral("UTF8"), QStringLiteral("--output"), htmlFileName, outFileName};
