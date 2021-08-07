@@ -96,6 +96,7 @@ bool GrantleeThemeTest::validateHtml(const QString &themePath, const QString &na
     const QString htmlFileName = themePath + QStringLiteral("/%1.out.html").arg(name);
     QFile outFile(outFileName);
     if (!outFile.open(QIODevice::WriteOnly)) {
+        qDebug() << "impossible to open " << outFile;
         return false;
     }
     outFile.write(html.toUtf8());
@@ -110,9 +111,9 @@ bool GrantleeThemeTest::validateHtml(const QString &themePath, const QString &na
     return result == 0;
 }
 
-bool GrantleeThemeTest::compareHtml(const QString &themePath, const QString &name)
+bool GrantleeThemeTest::compareHtml(const QString &generatedTheme, const QString &themePath, const QString &name)
 {
-    const QString htmlFileName = themePath + QStringLiteral("/%1.out.html").arg(name);
+    const QString htmlFileName = generatedTheme + QStringLiteral("/%1.out.html").arg(name);
     const QString referenceFileName = themePath + QStringLiteral("/%1_expected.html").arg(name);
 
     // get rid of system dependent or random paths
@@ -164,6 +165,8 @@ void GrantleeThemeTest::testRenderTemplate()
     QFETCH(QString, templateBasename);
 
     const QString themePath = QStringLiteral(GRANTLEETHEME_DATA_DIR "/themes/") + dirname;
+    const QString themeBinaryPath = QStringLiteral(GRANTLEETHEME_DATA_BUILD_DIR "/themes/") + dirname;
+    QDir().mkpath(themeBinaryPath);
 
     QVariantHash data;
     data[QStringLiteral("icon")] = QStringLiteral("kde");
@@ -186,11 +189,11 @@ void GrantleeThemeTest::testRenderTemplate()
     if (isValid) {
         const QString result = theme.render(templateBasename + QStringLiteral(".html"), data);
 
-        QVERIFY(validateHtml(themePath, templateBasename, result));
-        QVERIFY(compareHtml(themePath, templateBasename));
+        QVERIFY(validateHtml(themeBinaryPath, templateBasename, result));
+        QVERIFY(compareHtml(themeBinaryPath, themePath, templateBasename));
 
-        QFile::remove(themePath + QLatin1Char('/') + templateBasename + QStringLiteral(".out"));
-        QFile::remove(themePath + QLatin1Char('/') + templateBasename + QStringLiteral(".out.html"));
+        QFile::remove(themeBinaryPath + QLatin1Char('/') + templateBasename + QStringLiteral(".out"));
+        QFile::remove(themeBinaryPath + QLatin1Char('/') + templateBasename + QStringLiteral(".out.html"));
     }
 }
 
