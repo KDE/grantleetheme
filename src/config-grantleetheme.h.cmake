@@ -5,10 +5,6 @@
  *
  */
 
-#ifndef CONFIG_GRANTLEETHEME_H
-#define CONFIG_GRANTLEETHEME_H
-
+#pragma once
 #define GRANTLEE_PLUGIN_INSTALL_DIR "${CMAKE_INSTALL_PREFIX}/${LIB_INSTALL_DIR}"
-
-#endif
 
