@@ -32,10 +32,11 @@ target_include_directories(KF5GrantleeTheme PUBLIC "$<BUILD_INTERFACE:${Grantlee
 
 
 target_link_libraries(KF5GrantleeTheme
-  PRIVATE
-    KF5::NewStuff
-    KF5::I18n
-    Grantlee5::Templates
+    PUBLIC
+        Grantlee5::Templates
+    PRIVATE
+        KF5::NewStuff
+        KF5::I18n
 )
 
 set_target_properties(KF5GrantleeTheme PROPERTIES
