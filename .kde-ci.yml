@@ -6,3 +6,7 @@ Dependencies:
   'require':
     'frameworks/extra-cmake-modules': '@latest'
     'third-party/grantlee' : '@stable'
+    'frameworks/kguiaddons': '@latest'
+    'frameworks/ki18n': '@latest'
+    'frameworks/kiconthemes': '@latest'
+    'frameworks/knewstuff': '@latest'
