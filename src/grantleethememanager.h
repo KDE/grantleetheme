@@ -20,6 +20,8 @@ class KActionMenu;
 
 namespace GrantleeTheme
 {
+class ThemeManagerPrivate;
+
 /**
  * @brief The ThemeManager class
  * @author Laurent montel <montel@kde.org>
@@ -61,8 +63,8 @@ Q_SIGNALS:
     void updateThemes();
 
 private:
-    class Private;
-    std::unique_ptr<Private> const d;
+    friend class ThemeManagerPrivate;
+    std::unique_ptr<ThemeManagerPrivate> const d;
     Q_PRIVATE_SLOT(d, void directoryChanged())
 };
 }

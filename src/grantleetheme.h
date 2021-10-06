@@ -17,7 +17,9 @@ class GrantleeThemeTest;
 namespace GrantleeTheme
 {
 class ThemeManager;
+class ThemeManagerPrivate;
 class ThemePrivate;
+
 /**
  * @brief The Theme class
  */
@@ -51,6 +53,7 @@ public:
 private:
     friend class ::GrantleeThemeTest;
     friend class ThemeManager;
+    friend class ThemeManagerPrivate;
     Theme(const QString &themePath, const QString &dirName, const QString &defaultDesktopFileName);
 
     QSharedDataPointer<ThemePrivate> d;

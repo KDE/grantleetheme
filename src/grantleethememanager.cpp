@@ -25,11 +25,12 @@
 #include <QDirIterator>
 #include <QStandardPaths>
 
-using namespace GrantleeTheme;
-class Q_DECL_HIDDEN ThemeManager::Private
+namespace GrantleeTheme
+{
+class ThemeManagerPrivate
 {
 public:
-    Private(const QString &type, const QString &desktopFileName, KActionCollection *ac, const QString &relativePath, ThemeManager *qq)
+    ThemeManagerPrivate(const QString &type, const QString &desktopFileName, KActionCollection *ac, const QString &relativePath, ThemeManager *qq)
         : applicationType(type)
         , defaultDesktopFileName(desktopFileName)
         , actionCollection(ac)
@@ -70,7 +71,7 @@ public:
         }
     }
 
-    ~Private()
+    ~ThemeManagerPrivate()
     {
         removeActions();
         themes.clear();
@@ -263,6 +264,9 @@ public:
     QAction *downloadThemesAction = nullptr;
     ThemeManager *const q;
 };
+}
+
+using namespace GrantleeTheme;
 
 ThemeManager::ThemeManager(const QString &applicationType,
                            const QString &defaultDesktopFileName,
@@ -270,7 +274,7 @@ ThemeManager::ThemeManager(const QString &applicationType,
                            const QString &path,
                            QObject *parent)
     : QObject(parent)
-    , d(new Private(applicationType, defaultDesktopFileName, actionCollection, path, this))
+    , d(new ThemeManagerPrivate(applicationType, defaultDesktopFileName, actionCollection, path, this))
 {
 }
 
