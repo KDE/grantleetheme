@@ -36,10 +36,7 @@ Engine::Engine(QObject *parent)
     setSmartTrimEnabled(true);
 }
 
-Engine::~Engine()
-{
-    delete d;
-}
+Engine::~Engine() = default;
 
 QSharedPointer<GrantleeKi18nLocalizer> Engine::localizer() const
 {

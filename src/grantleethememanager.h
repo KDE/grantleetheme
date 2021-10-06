@@ -10,6 +10,9 @@
 #include "grantleetheme_export.h"
 #include <QMap>
 #include <QObject>
+
+#include <memory>
+
 class QActionGroup;
 class KActionCollection;
 class KToggleAction;
@@ -59,7 +62,7 @@ Q_SIGNALS:
 
 private:
     class Private;
-    Private *const d;
+    std::unique_ptr<Private> const d;
     Q_PRIVATE_SLOT(d, void directoryChanged())
 };
 }

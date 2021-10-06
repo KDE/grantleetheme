@@ -274,10 +274,7 @@ ThemeManager::ThemeManager(const QString &applicationType,
 {
 }
 
-ThemeManager::~ThemeManager()
-{
-    delete d;
-}
+ThemeManager::~ThemeManager() = default;
 
 QMap<QString, GrantleeTheme::Theme> ThemeManager::themes() const
 {

@@ -29,7 +29,7 @@ public:
     Q_REQUIRED_RESULT QSharedPointer<GrantleeKi18nLocalizer> localizer() const;
 
 private:
-    EnginePrivate *const d;
+    std::unique_ptr<EnginePrivate> const d;
 };
 }
 
