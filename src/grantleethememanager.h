@@ -35,7 +35,7 @@ public:
                           KActionCollection *actionCollection = nullptr,
                           const QString &path = QString(),
                           QObject *parent = nullptr);
-    ~ThemeManager();
+    ~ThemeManager() override;
 
     Q_REQUIRED_RESULT QMap<QString, GrantleeTheme::Theme> themes() const;
 

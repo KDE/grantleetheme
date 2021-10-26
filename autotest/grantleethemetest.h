@@ -13,7 +13,7 @@ class GrantleeThemeTest : public QObject
     Q_OBJECT
 public:
     explicit GrantleeThemeTest(QObject *parent = nullptr);
-    ~GrantleeThemeTest();
+    ~GrantleeThemeTest() override;
 private Q_SLOTS:
     void shouldHaveDefaultValue();
     void shouldInvalidWhenPathIsNotValid();
