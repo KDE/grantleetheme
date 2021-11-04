@@ -13,7 +13,14 @@ target_sources(KF5GrantleeTheme PRIVATE
     grantleethemeengine.cpp
     grantleeki18nlocalizer.cpp
     qtresourcetemplateloader.cpp
-)
+
+    genericformatter.h
+    grantleetheme.h
+    grantleethememanager.h
+    grantleethemeengine.h
+    grantleeki18nlocalizer.h
+    qtresourcetemplateloader.h
+    )
 
 configure_file(config-grantleetheme.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config-grantleetheme.h)
 

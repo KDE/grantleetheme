@@ -1,14 +1,21 @@
 kde_enable_exceptions()
 
-set(grantleeplugin_SRCS
+
+add_library(kde_grantlee_plugin MODULE)
+target_sources(kde_grantlee_plugin PRIVATE
     kdegrantleeplugin.cpp
     color.cpp
     colorscheme.cpp
     icon.cpp
     palette.cpp
-)
 
-add_library(kde_grantlee_plugin MODULE ${grantleeplugin_SRCS})
+    kdegrantleeplugin.h
+    color.h
+    colorscheme.h
+    icon.h
+    palette.h
+    )
+
 if (COMPILE_WITH_UNITY_CMAKE_SUPPORT)
     set_target_properties(kde_grantlee_plugin PROPERTIES UNITY_BUILD ON)
 endif()
