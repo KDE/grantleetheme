@@ -14,13 +14,9 @@ using namespace GrantleeTheme;
 class GrantleeTheme::EnginePrivate
 {
 public:
-    EnginePrivate()
-    {
-    }
+    EnginePrivate() = default;
 
-    ~EnginePrivate()
-    {
-    }
+    ~EnginePrivate() = default;
 
     QWeakPointer<GrantleeKi18nLocalizer> localizer;
 };

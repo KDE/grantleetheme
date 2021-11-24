@@ -25,7 +25,7 @@ Grantlee::Template QtResourceTemplateLoader::loadByName(const QString &fileName,
         QFile file;
         file.setFileName(fileName);
         if (!file.exists() || !file.open(QIODevice::ReadOnly | QIODevice::Text)) {
-            return Grantlee::Template();
+            return {};
         }
 
         QTextStream fstream(&file);

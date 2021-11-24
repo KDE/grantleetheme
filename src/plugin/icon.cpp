@@ -18,9 +18,7 @@ IconTag::IconTag(QObject *parent)
 {
 }
 
-IconTag::~IconTag()
-{
-}
+IconTag::~IconTag() = default;
 
 Grantlee::Node *IconTag::getNode(const QString &tagContent, Grantlee::Parser *p) const
 {
@@ -86,9 +84,7 @@ IconNode::IconNode(const QString &iconName, int sizeOrGroup, const QString &altT
 {
 }
 
-IconNode::~IconNode()
-{
-}
+IconNode::~IconNode() = default;
 
 void IconNode::render(Grantlee::OutputStream *stream, Grantlee::Context *c) const
 {

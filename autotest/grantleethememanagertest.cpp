@@ -43,8 +43,7 @@ void GrantleeThemeManagerTest::initTestCase()
 void GrantleeThemeManagerTest::updateActionList()
 {
     KActionCollection coll(this);
-    GrantleeTheme::ThemeManager *manager(
-        new GrantleeTheme::ThemeManager(QStringLiteral("Stuff"), QStringLiteral("filename.testdesktop"), &coll, QStringLiteral("themes")));
+    auto manager(new GrantleeTheme::ThemeManager(QStringLiteral("Stuff"), QStringLiteral("filename.testdesktop"), &coll, QStringLiteral("themes")));
     QCOMPARE(manager->themes().count(), 2);
     QVERIFY(!manager->actionForTheme()); // Bug? No "default" theme.
 
@@ -68,8 +67,7 @@ void GrantleeThemeManagerTest::updateActionList()
 void GrantleeThemeManagerTest::destructionOrderTest()
 {
     KActionCollection coll(this);
-    GrantleeTheme::ThemeManager *manager(
-        new GrantleeTheme::ThemeManager(QStringLiteral("Stuff"), QStringLiteral("filename.testdesktop"), &coll, QStringLiteral("themes")));
+    auto manager(new GrantleeTheme::ThemeManager(QStringLiteral("Stuff"), QStringLiteral("filename.testdesktop"), &coll, QStringLiteral("themes")));
     QCOMPARE(manager->themes().count(), 2);
     QVERIFY(!manager->actionForTheme()); // Bug? No "default" theme.
 

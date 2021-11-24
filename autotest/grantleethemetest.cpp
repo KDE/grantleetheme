@@ -27,9 +27,7 @@ GrantleeThemeTest::GrantleeThemeTest(QObject *parent)
     qputenv("XDG_DATA_DIRS", GRANTLEETHEME_DATA_DIR);
 }
 
-GrantleeThemeTest::~GrantleeThemeTest()
-{
-}
+GrantleeThemeTest::~GrantleeThemeTest() = default;
 
 void GrantleeThemeTest::shouldHaveDefaultValue()
 {

@@ -176,7 +176,7 @@ public:
         while (i.hasNext()) {
             i.next();
             GrantleeTheme::Theme theme = i.value();
-            KToggleAction *act = new KToggleAction(theme.name(), q);
+            auto act = new KToggleAction(theme.name(), q);
             act->setToolTip(theme.description());
             act->setData(theme.dirName());
             if (theme.dirName() == themeActivated) {
@@ -316,7 +316,7 @@ QStringList ThemeManager::displayExtraVariables(const QString &themename) const
             return i.value().displayExtraVariables();
         }
     }
-    return QStringList();
+    return {};
 }
 
 GrantleeTheme::Theme ThemeManager::theme(const QString &themeName)
@@ -355,7 +355,7 @@ QString ThemeManager::pathFromThemes(const QString &themesRelativePath, const QS
             }
         }
     }
-    return QString();
+    return {};
 }
 
 GrantleeTheme::Theme ThemeManager::loadTheme(const QString &themePath, const QString &dirName, const QString &defaultDesktopFileName)

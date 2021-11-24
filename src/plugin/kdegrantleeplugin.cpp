@@ -20,9 +20,7 @@ KDEGrantleePlugin::KDEGrantleePlugin(QObject *parent)
     Palette::registerMetaType();
 }
 
-KDEGrantleePlugin::~KDEGrantleePlugin()
-{
-}
+KDEGrantleePlugin::~KDEGrantleePlugin() = default;
 
 QHash<QString, Grantlee::AbstractNodeFactory *> KDEGrantleePlugin::nodeFactories(const QString &name)
 {

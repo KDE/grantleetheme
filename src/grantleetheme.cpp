@@ -29,22 +29,10 @@ ThemePrivate::ThemePrivate()
 }
 
 ThemePrivate::ThemePrivate(const ThemePrivate &other)
-    : QSharedData(other)
-    , displayExtraVariables(other.displayExtraVariables)
-    , themeFileName(other.themeFileName)
-    , description(other.description)
-    , name(other.name)
-    , dirName(other.dirName)
-    , absolutePaths(other.absolutePaths)
-    , author(other.author)
-    , email(other.email)
-    , loader(other.loader)
-{
-}
 
-ThemePrivate::~ThemePrivate()
-{
-}
+    = default;
+
+ThemePrivate::~ThemePrivate() = default;
 
 void ThemePrivate::setupEngine()
 {
@@ -121,13 +109,10 @@ Theme::Theme(const QString &themePath, const QString &dirName, const QString &de
 }
 
 Theme::Theme(const Theme &other)
-    : d(other.d)
-{
-}
 
-Theme::~Theme()
-{
-}
+    = default;
+
+Theme::~Theme() = default;
 
 bool Theme::operator==(const Theme &other) const
 {
@@ -206,7 +191,7 @@ QString Theme::render(const QString &templateName, const QVariantHash &data, con
     if (!d->loader->canLoadTemplate(templateName)) {
         qCWarning(GRANTLEETHEME_LOG) << "Cannot load template" << templateName
                                      << ", please check your installation. Tried in these dirs:" << d->loader->templateDirs();
-        return QString();
+        return {};
     }
 
     Grantlee::Template tpl = d->loader->loadByName(templateName, ThemePrivate::sEngine);

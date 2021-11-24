@@ -20,9 +20,7 @@ GrantleeKi18nLocalizer::GrantleeKi18nLocalizer()
 {
 }
 
-GrantleeKi18nLocalizer::~GrantleeKi18nLocalizer()
-{
-}
+GrantleeKi18nLocalizer::~GrantleeKi18nLocalizer() = default;
 
 QString GrantleeKi18nLocalizer::processArguments(const KLocalizedString &kstr, const QVariantList &arguments) const
 {
