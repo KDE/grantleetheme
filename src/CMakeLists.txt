@@ -34,7 +34,7 @@ endif()
 generate_export_header(KF5GrantleeTheme BASE_NAME grantleetheme)
 
 
-target_include_directories(KF5GrantleeTheme INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF5}/GrantleeTheme/;${KDE_INSTALL_INCLUDEDIR_KF5}/grantleetheme>")
+target_include_directories(KF5GrantleeTheme INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF}/GrantleeTheme/;${KDE_INSTALL_INCLUDEDIR_KF}/grantleetheme>")
 target_include_directories(KF5GrantleeTheme PUBLIC "$<BUILD_INTERFACE:${GrantleeTheme_SOURCE_DIR}/src;${GrantleeTheme_BINARY_DIR}/src;>")
 
 
@@ -71,13 +71,13 @@ ecm_generate_headers(GrantleeTheme_CamelCase_HEADERS
 
 ecm_generate_pri_file(BASE_NAME GrantleeTheme
     LIB_NAME KF5GrantleeTheme
-    DEPS "" FILENAME_VAR PRI_FILENAME INCLUDE_INSTALL_DIR ${KDE_INSTALL_INCLUDEDIR_KF5}/GrantleeTheme
+    DEPS "" FILENAME_VAR PRI_FILENAME INCLUDE_INSTALL_DIR ${KDE_INSTALL_INCLUDEDIR_KF}/GrantleeTheme
 )
 
 
 install(FILES
     ${GrantleeTheme_CamelCase_HEADERS}
-    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF5}/GrantleeTheme
+    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/GrantleeTheme
     COMPONENT Devel
 )
 
@@ -85,7 +85,7 @@ install(FILES
     ${GrantleeTheme_HEADERS}
     ${CMAKE_CURRENT_BINARY_DIR}/grantleetheme_export.h
     ${GrantleeTheme_CamelCase_HEADERS}
-    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF5}/grantleetheme
+    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/grantleetheme
     COMPONENT Devel
 )
 install(FILES
