@@ -37,15 +37,13 @@ generate_export_header(KF5GrantleeTheme BASE_NAME grantleetheme)
 target_include_directories(KF5GrantleeTheme INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF}/GrantleeTheme/>")
 target_include_directories(KF5GrantleeTheme PUBLIC "$<BUILD_INTERFACE:${GrantleeTheme_SOURCE_DIR}/src;${GrantleeTheme_BINARY_DIR}/src;>")
 
-
 target_link_libraries(KF5GrantleeTheme
     PUBLIC
-        Grantlee5::Templates
+    ${MAIN_LIB}
     PRIVATE
-        KF5::NewStuff
-        KF5::I18n
+    KF5::NewStuff
+    KF5::I18n
 )
-
 set_target_properties(KF5GrantleeTheme PROPERTIES
     VERSION ${GRANTLEETHEME_VERSION}
     SOVERSION ${GRANTLEETHEME_SOVERSION}

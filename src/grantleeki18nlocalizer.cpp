@@ -9,14 +9,21 @@
 #include "grantleetheme_debug.h"
 
 #include <QDebug>
-
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
 #include <grantlee/safestring.h>
+#else
+#include <KTextTemplate/safestring.h>
+#endif
 
 #include <KLocalizedString>
 using namespace GrantleeTheme;
 
 GrantleeKi18nLocalizer::GrantleeKi18nLocalizer()
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     : Grantlee::QtLocalizer()
+#else
+    : KTextTemplate::QtLocalizer()
+#endif
 {
 }
 
@@ -101,7 +108,11 @@ QString GrantleeKi18nLocalizer::localizeMonetaryValue(qreal value, const QString
 
 QString GrantleeKi18nLocalizer::currentLocale() const
 {
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     QString locale = Grantlee::QtLocalizer::currentLocale();
+#else
+    QString locale = KTextTemplate::QtLocalizer::currentLocale();
+#endif
     const int f = locale.indexOf(QLatin1Char('_'));
     if (f >= 0) {
         locale.truncate(f);

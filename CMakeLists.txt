@@ -41,8 +41,13 @@ find_package(KF5I18n ${KF5_MIN_VERSION} CONFIG REQUIRED)
 find_package(KF5IconThemes ${KF5_MIN_VERSION} CONFIG REQUIRED)
 find_package(KF5NewStuff ${KF5_MIN_VERSION} CONFIG REQUIRED)
 
-find_package(Grantlee5 ${GRANTLEE_VERSION} CONFIG REQUIRED)
-
+if (QT_MAJOR_VERSION STREQUAL "5")
+    find_package(Grantlee5 ${GRANTLEE_VERSION} CONFIG REQUIRED)
+    set(MAIN_LIB Grantlee5::Templates)
+else()
+    find_package(KF6TextTemplate ${KF5_MIN_VERSION} CONFIG REQUIRED)
+    set(MAIN_LIB KF6TextTemplate::Templates)
+endif()
 ecm_setup_version(PROJECT VARIABLE_PREFIX GRANTLEETHEME
                         VERSION_HEADER "${CMAKE_CURRENT_BINARY_DIR}/grantleetheme_version.h"
                         PACKAGE_VERSION_FILE "${CMAKE_CURRENT_BINARY_DIR}/KF5GrantleeThemeConfigVersion.cmake"

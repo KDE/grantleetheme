@@ -5,8 +5,12 @@
  */
 
 #include "palette.h"
-
+#include <QObject>
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
 #include <grantlee/metatype.h>
+#else
+#include <KTextTemplate/metatype.h>
+#endif
 
 #include <QPalette>
 
@@ -49,5 +53,9 @@ GRANTLEE_END_LOOKUP
 
 void Palette::registerMetaType()
 {
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     Grantlee::registerMetaType<QPalette>();
+#else
+    KTextTemplate::registerMetaType<QPalette>();
+#endif
 }

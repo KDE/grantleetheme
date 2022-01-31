@@ -22,8 +22,13 @@ public:
     QString mDefaultMainFile;
     std::unique_ptr<Engine> const mEngine;
     QString mErrorMessage;
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     QSharedPointer<Grantlee::FileSystemTemplateLoader> mTemplateLoader;
     Grantlee::Template mTemplate;
+#else
+    QSharedPointer<KTextTemplate::FileSystemTemplateLoader> mTemplateLoader;
+    KTextTemplate::Template mTemplate;
+#endif
 };
 
 GenericFormatter::GenericFormatter(const QString &defaultHtmlMain, const QString &themePath)
@@ -52,7 +57,11 @@ void GenericFormatter::setDefaultHtmlMainFile(const QString &name)
 void GenericFormatter::setTemplatePath(const QString &path)
 {
     if (!d->mTemplateLoader) {
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
         d->mTemplateLoader.reset(new Grantlee::FileSystemTemplateLoader);
+#else
+        d->mTemplateLoader.reset(new KTextTemplate::FileSystemTemplateLoader);
+#endif
     }
     d->mTemplateLoader->setTemplateDirs(QStringList() << path);
     d->mEngine->addTemplateLoader(d->mTemplateLoader);
@@ -72,7 +81,11 @@ QString GenericFormatter::errorMessage() const
 
 QString GenericFormatter::render(const QVariantHash &mapping) const
 {
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     Grantlee::Context context(mapping);
+#else
+    KTextTemplate::Context context(mapping);
+#endif
     context.setLocalizer(d->mEngine->localizer());
 
     const QString contentHtml = d->mTemplate->render(&context);

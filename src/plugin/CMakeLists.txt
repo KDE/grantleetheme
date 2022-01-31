@@ -21,7 +21,7 @@ if (COMPILE_WITH_UNITY_CMAKE_SUPPORT)
 endif()
 kpim_grantlee_adjust_plugin_name(kde_grantlee_plugin)
 target_link_libraries(kde_grantlee_plugin
-    Grantlee5::Templates
+    ${MAIN_LIB}
     KF5::IconThemes
     KF5::GuiAddons
     KF5::ConfigWidgets

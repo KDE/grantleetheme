@@ -22,7 +22,11 @@ public:
 };
 
 Engine::Engine(QObject *parent)
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     : Grantlee::Engine(parent)
+#else
+    : KTextTemplate::Engine(parent)
+#endif
     , d(new GrantleeTheme::EnginePrivate)
 {
     addPluginPath(QStringLiteral(GRANTLEE_PLUGIN_INSTALL_DIR));

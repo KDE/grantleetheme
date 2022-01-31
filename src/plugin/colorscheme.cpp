@@ -5,8 +5,12 @@
  */
 
 #include "colorscheme.h"
-
+#include <QObject>
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
 #include <grantlee/metatype.h>
+#else
+#include <KTextTemplate/metatype.h>
+#endif
 
 #include <KColorScheme>
 
@@ -45,5 +49,9 @@ GRANTLEE_END_LOOKUP
 
 void ColorScheme::registerMetaType()
 {
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     Grantlee::registerMetaType<KColorScheme>();
+#else
+    KTextTemplate::registerMetaType<KColorScheme>();
+#endif
 }

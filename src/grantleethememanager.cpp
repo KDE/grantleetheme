@@ -13,7 +13,7 @@
 #include <KConfigGroup>
 #include <KDirWatch>
 #include <KLocalizedString>
-#include <KNewStuff3/KNS3/QtQuickDialogWrapper>
+#include <KNS3/QtQuickDialogWrapper>
 #include <KSharedConfig>
 #include <KToggleAction>
 #include <QAction>
