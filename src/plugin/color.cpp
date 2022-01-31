@@ -45,8 +45,11 @@ static QString rgbaString(const QColor &c)
     if (property == QLatin1String(#name)) {                                                                                                                    \
         return object.name();                                                                                                                                  \
     }
-
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
 GRANTLEE_BEGIN_LOOKUP(QColor)
+#else
+KTEXTTEMPLATE_BEGIN_LOOKUP(QColor)
+#endif
 COLOR_PROP(red)
 COLOR_PROP(green)
 COLOR_PROP(blue)
@@ -58,11 +61,18 @@ if (property == QLatin1String("cssRgba")) {
     return rgbaString(object);
 }
 return {};
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
 GRANTLEE_END_LOOKUP
-
+#else
+KTEXTTEMPLATE_END_LOOKUP
+#endif
 void Color::registerMetaType()
 {
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     Grantlee::registerMetaType<QColor>();
+#else
+    KTextTemplate::registerMetaType<QColor>();
+#endif
 }
 
 QVariant ColorHexRgbFilter::doFilter(const QVariant &input, const QVariant &arg, bool autoescape) const

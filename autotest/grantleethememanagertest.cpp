@@ -14,6 +14,7 @@
 #include <KActionMenu>
 #include <KConfigGroup>
 #include <KSharedConfig>
+#include <QActionGroup>
 
 class GrantleeThemeManagerTest : public QObject
 {

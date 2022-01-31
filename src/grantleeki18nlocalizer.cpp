@@ -56,10 +56,17 @@ QString GrantleeKi18nLocalizer::processArguments(const KLocalizedString &kstr, c
             str = str.subs(iter->toDouble());
             break;
         case QVariant::UserType:
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
             if (iter->canConvert<Grantlee::SafeString>()) {
                 str = str.subs(iter->value<Grantlee::SafeString>().get());
                 break;
             }
+#else
+            if (iter->canConvert<KTextTemplate::SafeString>()) {
+                str = str.subs(iter->value<KTextTemplate::SafeString>().get());
+                break;
+            }
+#endif
         // fall-through
         default:
             qCWarning(GRANTLEETHEME_LOG) << "Unknown type" << iter->typeName() << "(" << iter->type() << ")";

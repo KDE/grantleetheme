@@ -7,8 +7,10 @@
 #include "grantleethemetest.h"
 #include "grantleetheme.h"
 
+#include <QFile>
 #include <QPalette>
 #include <QProcess>
+#include <QRegularExpression>
 #include <QStandardPaths>
 #include <qtest.h>
 
@@ -94,7 +96,7 @@ bool GrantleeThemeTest::validateHtml(const QString &themePath, const QString &na
     const QString htmlFileName = themePath + QStringLiteral("/%1.out.html").arg(name);
     QFile outFile(outFileName);
     if (!outFile.open(QIODevice::WriteOnly)) {
-        qDebug() << "impossible to open " << outFile;
+        qDebug() << "impossible to open " << outFile.fileName();
         return false;
     }
     outFile.write(html.toUtf8());
@@ -122,7 +124,7 @@ bool GrantleeThemeTest::compareHtml(const QString &generatedTheme, const QString
         }
         QString content = QString::fromUtf8(f.readAll());
         f.close();
-        content.replace(QRegExp(QLatin1String("\"file:[^\"]*[/(?:%2F)]([^\"/(?:%2F)]*)\"")), QStringLiteral("\"file:\\1\""));
+        content.replace(QRegularExpression(QLatin1String("\"file:[^\"]*[/(?:%2F)]([^\"/(?:%2F)]*)\"")), QStringLiteral("\"file:\\1\""));
         if (!f.open(QIODevice::WriteOnly | QIODevice::Truncate)) {
             return false;
         }
