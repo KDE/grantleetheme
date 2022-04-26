@@ -10,3 +10,5 @@ Dependencies:
     'frameworks/ki18n': '@latest'
     'frameworks/kiconthemes': '@latest'
     'frameworks/knewstuff': '@latest'
+Options:
+  require-passing-tests-on: [ 'Linux', 'FreeBSD', 'Windows' ]      
