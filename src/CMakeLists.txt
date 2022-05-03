@@ -43,6 +43,7 @@ target_link_libraries(KF5GrantleeTheme
     PRIVATE
     KF5::NewStuff
     KF5::I18n
+    KF5::NewStuffWidgets
 )
 set_target_properties(KF5GrantleeTheme PROPERTIES
     VERSION ${GRANTLEETHEME_VERSION}
