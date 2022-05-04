@@ -5,7 +5,6 @@
  */
 
 #include "color.h"
-#include <QObject>
 #if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
 #include <grantlee/exception.h>
 #include <grantlee/metatype.h>
