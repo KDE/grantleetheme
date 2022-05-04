@@ -55,7 +55,9 @@ public:
             }
 #else
             downloadThemesAction = new KNSWidgets::Action(i18n("Download new Templates..."), QString(), q);
-            menu->addAction(downloadThemesAction);
+            if (actionCollection) {
+                actionCollection->addAction(QStringLiteral("download_header_themes"), downloadThemesAction);
+            }
 #endif
             separatorAction = new QAction(q);
             separatorAction->setSeparator(true);
