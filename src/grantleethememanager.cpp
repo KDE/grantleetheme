@@ -13,12 +13,7 @@
 #include <KConfigGroup>
 #include <KDirWatch>
 #include <KLocalizedString>
-#include <knewstuffcore_version.h>
-#if KNEWSTUFFCORE_VERSION < QT_VERSION_CHECK(5, 94, 0)
-#include <KNS3/QtQuickDialogWrapper>
-#else
 #include <KNSWidgets/Action>
-#endif
 #include <KSharedConfig>
 #include <KToggleAction>
 #include <QAction>
@@ -44,21 +39,10 @@ public:
         watch = new KDirWatch(q);
         initThemesDirectories(relativePath);
         if (KAuthorized::authorize(QStringLiteral("ghns"))) {
-#if KNEWSTUFFCORE_VERSION < QT_VERSION_CHECK(5, 94, 0)
-            downloadThemesAction = new QAction(i18n("Download New Themes..."), q);
-            downloadThemesAction->setIcon(QIcon::fromTheme(QStringLiteral("get-hot-new-stuff")));
-            q->connect(downloadThemesAction, &QAction::triggered, q, [this]() {
-                slotDownloadHeaderThemes();
-            });
-            if (actionCollection) {
-                actionCollection->addAction(QStringLiteral("download_header_themes"), downloadThemesAction);
-            }
-#else
             downloadThemesAction = new KNSWidgets::Action(i18n("Download new Templates..."), QString(), q);
             if (actionCollection) {
                 actionCollection->addAction(QStringLiteral("download_header_themes"), downloadThemesAction);
             }
-#endif
             separatorAction = new QAction(q);
             separatorAction->setSeparator(true);
         }
@@ -87,13 +71,6 @@ public:
     {
         removeActions();
         themes.clear();
-    }
-
-    void slotDownloadHeaderThemes()
-    {
-#if KNEWSTUFFCORE_VERSION < QT_VERSION_CHECK(5, 94, 0)
-        KNS3::QtQuickDialogWrapper(downloadConfigFileName).exec();
-#endif
     }
 
     void directoryChanged()
@@ -265,9 +242,6 @@ public:
 
     QString applicationType;
     QString defaultDesktopFileName;
-#if KNEWSTUFFCORE_VERSION < QT_VERSION_CHECK(5, 94, 0)
-    QString downloadConfigFileName;
-#endif
     QStringList themesDirectories;
     QMap<QString, GrantleeTheme::Theme> themes;
     QVector<KToggleAction *> themesActionList;
@@ -276,11 +250,7 @@ public:
     KActionMenu *menu = nullptr;
     KActionCollection *const actionCollection;
     QAction *separatorAction = nullptr;
-#if KNEWSTUFFCORE_VERSION < QT_VERSION_CHECK(5, 94, 0)
-    QAction *downloadThemesAction = nullptr;
-#else
     KNSWidgets::Action *downloadThemesAction = nullptr;
-#endif
     ThemeManager *const q;
 };
 }
@@ -345,11 +315,7 @@ GrantleeTheme::Theme ThemeManager::theme(const QString &themeName)
 
 void ThemeManager::setDownloadNewStuffConfigFile(const QString &configFileName)
 {
-#if KNEWSTUFFCORE_VERSION < QT_VERSION_CHECK(5, 94, 0)
-    d->downloadConfigFileName = configFileName;
-#else
     d->downloadThemesAction->setConfigFile(configFileName);
-#endif
 }
 
 QString ThemeManager::pathFromThemes(const QString &themesRelativePath, const QString &themeName, const QString &defaultDesktopFileName)
