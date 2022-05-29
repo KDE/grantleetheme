@@ -27,6 +27,12 @@ target_link_libraries(kde_grantlee_plugin
     KF5::ConfigWidgets
 )
 
+if (QT_MAJOR_VERSION STREQUAL "5")
 install(TARGETS kde_grantlee_plugin
         LIBRARY DESTINATION ${LIB_INSTALL_DIR}/grantlee/${Grantlee5_VERSION_MAJOR}.${Grantlee5_VERSION_MINOR}/
 )
+else()
+    install(TARGETS kde_grantlee_plugin
+            LIBRARY DESTINATION lib/KTextTemplate/${KF5_MIN_VERSION}/
+    )
+endif()
