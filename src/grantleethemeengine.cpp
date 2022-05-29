@@ -30,7 +30,11 @@ Engine::Engine(QObject *parent)
     , d(new GrantleeTheme::EnginePrivate)
 {
     addPluginPath(QStringLiteral(GRANTLEE_PLUGIN_INSTALL_DIR));
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     addDefaultLibrary(QStringLiteral("grantlee_i18ntags"));
+#else
+    addDefaultLibrary(QStringLiteral("ktexttemplate_i18ntags"));
+#endif
     addDefaultLibrary(QStringLiteral("kde_grantlee_plugin"));
     addDefaultLibrary(QStringLiteral("grantlee_scriptabletags"));
     setSmartTrimEnabled(true);
