@@ -1,7 +1,8 @@
 @PACKAGE_INIT@
 
 include(CMakeFindDependencyMacro)
-if (QT_MAJOR_VERSION STREQUAL "5")
+
+if ("@QT_MAJOR_VERSION@" STREQUAL "5")
     find_dependency(Grantlee5 @GRANTLEE_VERSION@)
 else()
     find_dependency(KF6TextTemplate @KF5_MIN_VERSION@)
