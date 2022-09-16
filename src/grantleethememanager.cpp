@@ -319,7 +319,9 @@ GrantleeTheme::Theme ThemeManager::theme(const QString &themeName)
 
 void ThemeManager::setDownloadNewStuffConfigFile(const QString &configFileName)
 {
-    d->downloadThemesAction->setConfigFile(configFileName);
+    if (d->downloadThemesAction) {
+        d->downloadThemesAction->setConfigFile(configFileName);
+    }
 }
 
 QString ThemeManager::pathFromThemes(const QString &themesRelativePath, const QString &themeName, const QString &defaultDesktopFileName)
