@@ -143,7 +143,9 @@ public:
         }
         if (separatorAction) {
             menu->removeAction(separatorAction);
-            menu->removeAction(downloadThemesAction);
+            if (downloadThemesAction) {
+                menu->removeAction(downloadThemesAction);
+            }
         }
         themesActionList.clear();
     }
@@ -191,7 +193,9 @@ public:
         }
         if (separatorAction) {
             menu->addAction(separatorAction);
-            menu->addAction(downloadThemesAction);
+            if (downloadThemesAction) {
+                menu->addAction(downloadThemesAction);
+            }
         }
     }
 
