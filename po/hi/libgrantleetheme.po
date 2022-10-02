@@ -1,0 +1,53 @@
+# Copyright (C) YEAR This file is copyright:
+# This file is distributed under the same license as the grantleetheme package.
+#
+# Sameer Singh <lumarzeli30@gmail.com>, 2021.
+# Raghavendra Kamath <raghu@raghukamath.com>, 2021.
+msgid ""
+msgstr ""
+"Project-Id-Version: grantleetheme\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-05-17 00:45+0000\n"
+"PO-Revision-Date: 2021-06-15 13:24+0530\n"
+"Last-Translator: Raghavendra Kamath <raghu@raghukamath.com>\n"
+"Language-Team: kde-hindi\n"
+"Language: hi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+"X-Generator: Lokalize 21.04.2\n"
+
+#: grantleetheme.cpp:93 grantleetheme.cpp:101
+#, kde-format
+msgid "Template"
+msgstr "साँचा"
+
+#: grantleetheme.cpp:93 grantleetheme.cpp:101
+#, kde-format
+msgid "Error message"
+msgstr "त्रुटि संदेश"
+
+#: grantleetheme.cpp:108
+#, kde-format
+msgid "(null template)"
+msgstr "(शून्य साँचा)"
+
+#: grantleetheme.cpp:225
+#, kde-format
+msgid "Template parsing error"
+msgstr "साँचा पारसिंग त्रुटि"
+
+#: grantleetheme.cpp:234
+#, kde-format
+msgid "Template rendering error"
+msgstr "साँचा रेंडरिंग त्रुटि"
+
+#: grantleethememanager.cpp:42
+#, fuzzy, kde-format
+#| msgid "Download New Themes..."
+msgid "Download new Templates..."
+msgstr "नए प्रसंग डाउनलोड करें..."
+
+#~ msgid "Download New Themes..."
+#~ msgstr "नए प्रसंग डाउनलोड करें..."

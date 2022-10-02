@@ -1,0 +1,52 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Javier Viñal <fjvinal@gmail.com>, 2013, 2015, 2017.
+# Eloy Cuadra <ecuadra@eloihr.net>, 2022.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-05-17 00:45+0000\n"
+"PO-Revision-Date: 2022-05-05 00:16+0200\n"
+"Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
+"Language-Team: Spanish <kde-l10n-es@kde.org>\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 22.04.0\n"
+
+#: grantleetheme.cpp:93 grantleetheme.cpp:101
+#, kde-format
+msgid "Template"
+msgstr "Plantilla"
+
+#: grantleetheme.cpp:93 grantleetheme.cpp:101
+#, kde-format
+msgid "Error message"
+msgstr "Mensaje de error"
+
+#: grantleetheme.cpp:108
+#, kde-format
+msgid "(null template)"
+msgstr "(plantilla nula)"
+
+#: grantleetheme.cpp:225
+#, kde-format
+msgid "Template parsing error"
+msgstr "Error de análisis de la plantilla"
+
+#: grantleetheme.cpp:234
+#, kde-format
+msgid "Template rendering error"
+msgstr "Error de representación de la plantilla"
+
+#: grantleethememanager.cpp:42
+#, kde-format
+msgid "Download new Templates..."
+msgstr "Descargar nuevas plantillas..."
+
+#~ msgid "Download New Themes..."
+#~ msgstr "Descargar nuevos temas..."

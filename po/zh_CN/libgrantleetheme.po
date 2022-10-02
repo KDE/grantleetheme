@@ -1,0 +1,48 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: kdeorg\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-05-17 00:45+0000\n"
+"PO-Revision-Date: 2022-09-20 01:55\n"
+"Last-Translator: \n"
+"Language-Team: Chinese Simplified\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Crowdin-Project: kdeorg\n"
+"X-Crowdin-Project-ID: 269464\n"
+"X-Crowdin-Language: zh-CN\n"
+"X-Crowdin-File: /kf5-trunk/messages/grantleetheme/libgrantleetheme.pot\n"
+"X-Crowdin-File-ID: 3885\n"
+
+#: grantleetheme.cpp:93 grantleetheme.cpp:101
+#, kde-format
+msgid "Template"
+msgstr "模板"
+
+#: grantleetheme.cpp:93 grantleetheme.cpp:101
+#, kde-format
+msgid "Error message"
+msgstr "错误消息"
+
+#: grantleetheme.cpp:108
+#, kde-format
+msgid "(null template)"
+msgstr "(空模板)"
+
+#: grantleetheme.cpp:225
+#, kde-format
+msgid "Template parsing error"
+msgstr "模板解析错误"
+
+#: grantleetheme.cpp:234
+#, kde-format
+msgid "Template rendering error"
+msgstr "模板渲染错误"
+
+#: grantleethememanager.cpp:42
+#, kde-format
+msgid "Download new Templates..."
+msgstr "下载新模板..."

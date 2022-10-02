@@ -1,0 +1,50 @@
+# Translation of libgrantleetheme to Norwegian Nynorsk
+#
+# Karl Ove Hufthammer <karl@huftis.org>, 2020, 2022.
+msgid ""
+msgstr ""
+"Project-Id-Version: grantleetheme\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-05-17 00:45+0000\n"
+"PO-Revision-Date: 2022-06-19 14:03+0200\n"
+"Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
+"Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
+"Language: nn\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 22.04.2\n"
+"X-Environment: kde\n"
+"X-Accelerator-Marker: &\n"
+"X-Text-Markup: kde4\n"
+
+#: grantleetheme.cpp:93 grantleetheme.cpp:101
+#, kde-format
+msgid "Template"
+msgstr "Mal"
+
+#: grantleetheme.cpp:93 grantleetheme.cpp:101
+#, kde-format
+msgid "Error message"
+msgstr "Feilmelding"
+
+#: grantleetheme.cpp:108
+#, kde-format
+msgid "(null template)"
+msgstr "(nullmal)"
+
+#: grantleetheme.cpp:225
+#, kde-format
+msgid "Template parsing error"
+msgstr "Feil ved tolking av mal"
+
+#: grantleetheme.cpp:234
+#, kde-format
+msgid "Template rendering error"
+msgstr "Feil ved vising av mal"
+
+#: grantleethememanager.cpp:42
+#, kde-format
+msgid "Download new Templates..."
+msgstr "Last ned nye malar …"
