@@ -3,13 +3,13 @@
 #
 # Alexander Lakhin <exclusion@gmail.com>, 2013.
 # Alexander Potashev <aspotashev@gmail.com>, 2016.
-# Alexander Yavorsky <kekcuha@gmail.com>, 2018.
+# Alexander Yavorsky <kekcuha@gmail.com>, 2018, 2022.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-05-17 00:45+0000\n"
-"PO-Revision-Date: 2018-10-02 20:54+0300\n"
+"PO-Revision-Date: 2022-10-02 14:48+0300\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
 "Language: ru\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n"
 "%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Lokalize 2.0\n"
+"X-Generator: Lokalize 21.08.3\n"
 "X-Environment: kde\n"
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
@@ -49,10 +49,9 @@ msgid "Template rendering error"
 msgstr "Не удалось создать документ по шаблону"
 
 #: grantleethememanager.cpp:42
-#, fuzzy, kde-format
-#| msgid "Download New Themes..."
+#, kde-format
 msgid "Download new Templates..."
-msgstr "Загрузить новые оформления..."
+msgstr "Получить новые шаблоны…"
 
 #~ msgid "Download New Themes..."
 #~ msgstr "Загрузить новые оформления..."
