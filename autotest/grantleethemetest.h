@@ -27,4 +27,3 @@ private:
     bool validateHtml(const QString &path, const QString &name, const QString &html);
     bool compareHtml(const QString &generatedTheme, const QString &path, const QString &name);
 };
-

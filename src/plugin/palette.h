@@ -10,4 +10,3 @@ namespace Palette
 {
 void registerMetaType();
 }
-

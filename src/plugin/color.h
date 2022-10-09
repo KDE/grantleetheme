@@ -164,4 +164,3 @@ namespace Color
 {
 void registerMetaType();
 }
-
