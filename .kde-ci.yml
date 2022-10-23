@@ -5,8 +5,11 @@ Dependencies:
 - 'on': ['@all']
   'require':
     'frameworks/extra-cmake-modules': '@latest'
-    'third-party/grantlee' : '@stable'
     'frameworks/kguiaddons': '@latest'
     'frameworks/ki18n': '@latest'
     'frameworks/kiconthemes': '@latest'
     'frameworks/knewstuff': '@latest'
+
+- 'on': ['Linux/Qt6', 'FreeBSD/Qt6', 'Windows/Qt6']
+  'require':
+    'libraries/ktexttemplate': '@stable'

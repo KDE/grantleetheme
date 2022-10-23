@@ -49,7 +49,7 @@ if (QT_MAJOR_VERSION STREQUAL "5")
     find_package(Grantlee5 ${GRANTLEE_VERSION} CONFIG REQUIRED)
     set(MAIN_LIB Grantlee5::Templates)
 else()
-    find_package(KF6TextTemplate ${KF5_MIN_VERSION} CONFIG REQUIRED)
+    find_package(KF6TextTemplate CONFIG REQUIRED)
     set(MAIN_LIB KF6TextTemplate::Templates)
 endif()
 ecm_setup_version(PROJECT VARIABLE_PREFIX GRANTLEETHEME
