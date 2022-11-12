@@ -11,10 +11,10 @@
 #include <grantlee/parser.h>
 #include <grantlee/variable.h>
 #else
-#include <KTextTemplate/exception.h>
-#include <KTextTemplate/metatype.h>
-#include <KTextTemplate/parser.h>
-#include <KTextTemplate/variable.h>
+#include <KTextTemplate/Exception>
+#include <KTextTemplate/MetaType>
+#include <KTextTemplate/Parser>
+#include <KTextTemplate/Variable>
 #endif
 
 #include <KColorUtils>

@@ -10,8 +10,8 @@
 #include <grantlee/filter.h>
 #include <grantlee/node.h>
 #else
-#include <KTextTemplate/filter.h>
-#include <KTextTemplate/node.h>
+#include <KTextTemplate/Filter>
+#include <KTextTemplate/Node>
 #endif
 
 /**
