@@ -37,7 +37,7 @@ set(QT_REQUIRED_VERSION "5.15.2")
 if (QT_MAJOR_VERSION STREQUAL "6")
     set(QT_REQUIRED_VERSION "6.4.0")
 endif()
-set(GRANTLEE_VERSION "5.2")
+set(GRANTLEE_VERSION "5.3")
 
 find_package(Qt${QT_MAJOR_VERSION} ${QT_REQUIRED_VERSION} CONFIG REQUIRED Widgets Network)
 find_package(KF5GuiAddons ${KF5_MIN_VERSION} CONFIG REQUIRED)
@@ -60,7 +60,7 @@ ecm_setup_version(PROJECT VARIABLE_PREFIX GRANTLEETHEME
 
 ########### Targets ###########
 
-ecm_set_disabled_deprecation_versions(QT 5.14.0  KF 5.100.0)
+ecm_set_disabled_deprecation_versions(QT 5.15.0  KF 5.100.0)
 
 
 
