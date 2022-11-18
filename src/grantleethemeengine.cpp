@@ -36,7 +36,11 @@ Engine::Engine(QObject *parent)
     addDefaultLibrary(QStringLiteral("ktexttemplate_i18ntags"));
 #endif
     addDefaultLibrary(QStringLiteral("kde_grantlee_plugin"));
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     addDefaultLibrary(QStringLiteral("grantlee_scriptabletags"));
+#else
+    addDefaultLibrary(QStringLiteral("ktexttemplate_scriptabletags"));
+#endif
     setSmartTrimEnabled(true);
 }
 
