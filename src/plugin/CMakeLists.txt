@@ -33,6 +33,6 @@ install(TARGETS kde_grantlee_plugin
 )
 else()
     install(TARGETS kde_grantlee_plugin
-            LIBRARY DESTINATION ${KDE_INSTALL_LIBDIR}/KTextTemplate/${KF5_MIN_VERSION}/
+            LIBRARY DESTINATION ${KDE_INSTALL_PLUGINDIR}/kf6/ktexttemplate/
     )
 endif()
