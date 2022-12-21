@@ -133,7 +133,7 @@ void IconNode::render(KTextTemplate::OutputStream *stream, KTextTemplate::Contex
 #if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
         if (val.type() == QVariant::String) {
 #else
-        if (val.metaType() == QMetaType::QString) {
+        if (val.metaType().id() == QMetaType::QString) {
 #endif
             iconName = val.toString();
         } else {
