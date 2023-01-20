@@ -1,12 +1,12 @@
 cmake_minimum_required(VERSION 3.16 FATAL_ERROR)
 
-set(KF5_MIN_VERSION "5.102.0")
+set(KF_MIN_VERSION "5.102.0")
 set(PIM_VERSION "5.22.40")
 
 project(GrantleeTheme VERSION ${PIM_VERSION})
 
 
-find_package(ECM ${KF5_MIN_VERSION} CONFIG REQUIRED)
+find_package(ECM ${KF_MIN_VERSION} CONFIG REQUIRED)
 set(CMAKE_MODULE_PATH ${GrantleeTheme_SOURCE_DIR}/cmake ${ECM_MODULE_PATH})
 
 include(KDEInstallDirs)
@@ -40,10 +40,10 @@ endif()
 set(GRANTLEE_VERSION "5.3")
 
 find_package(Qt${QT_MAJOR_VERSION} ${QT_REQUIRED_VERSION} CONFIG REQUIRED Widgets Network)
-find_package(KF5GuiAddons ${KF5_MIN_VERSION} CONFIG REQUIRED)
-find_package(KF5I18n ${KF5_MIN_VERSION} CONFIG REQUIRED)
-find_package(KF5IconThemes ${KF5_MIN_VERSION} CONFIG REQUIRED)
-find_package(KF5NewStuff ${KF5_MIN_VERSION} CONFIG REQUIRED)
+find_package(KF5GuiAddons ${KF_MIN_VERSION} CONFIG REQUIRED)
+find_package(KF5I18n ${KF_MIN_VERSION} CONFIG REQUIRED)
+find_package(KF5IconThemes ${KF_MIN_VERSION} CONFIG REQUIRED)
+find_package(KF5NewStuff ${KF_MIN_VERSION} CONFIG REQUIRED)
 
 if (QT_MAJOR_VERSION STREQUAL "5")
     find_package(Grantlee5 ${GRANTLEE_VERSION} CONFIG REQUIRED)
