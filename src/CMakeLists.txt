@@ -44,6 +44,8 @@ target_link_libraries(KF5GrantleeTheme
     KF${KF_MAJOR_VERSION}::NewStuff
     KF${KF_MAJOR_VERSION}::I18n
     KF${KF_MAJOR_VERSION}::NewStuffWidgets
+    KF${KF_MAJOR_VERSION}::ConfigCore
+    KF${KF_MAJOR_VERSION}::XmlGui
 )
 set_target_properties(KF5GrantleeTheme PROPERTIES
     VERSION ${GRANTLEETHEME_VERSION}
