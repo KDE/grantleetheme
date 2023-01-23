@@ -22,9 +22,9 @@ endif()
 kpim_grantlee_adjust_plugin_name(kde_grantlee_plugin)
 target_link_libraries(kde_grantlee_plugin
     ${MAIN_LIB}
-    KF5::IconThemes
-    KF5::GuiAddons
-    KF5::ConfigWidgets
+    KF${KF_MAJOR_VERSION}::IconThemes
+    KF${KF_MAJOR_VERSION}::GuiAddons
+    KF${KF_MAJOR_VERSION}::ConfigWidgets
 )
 
 if (QT_MAJOR_VERSION STREQUAL "5")

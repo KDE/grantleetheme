@@ -41,9 +41,9 @@ target_link_libraries(KF5GrantleeTheme
     PUBLIC
     ${MAIN_LIB}
     PRIVATE
-    KF5::NewStuff
-    KF5::I18n
-    KF5::NewStuffWidgets
+    KF${KF_MAJOR_VERSION}::NewStuff
+    KF${KF_MAJOR_VERSION}::I18n
+    KF${KF_MAJOR_VERSION}::NewStuffWidgets
 )
 set_target_properties(KF5GrantleeTheme PROPERTIES
     VERSION ${GRANTLEETHEME_VERSION}
