@@ -33,6 +33,7 @@ QString GrantleeKi18nLocalizer::processArguments(const KLocalizedString &kstr, c
 {
     KLocalizedString str = kstr;
     for (auto iter = arguments.cbegin(), end = arguments.cend(); iter != end; ++iter) {
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
         switch (iter->type()) {
         case QVariant::String:
             str = str.subs(iter->toString());
@@ -56,22 +57,50 @@ QString GrantleeKi18nLocalizer::processArguments(const KLocalizedString &kstr, c
             str = str.subs(iter->toDouble());
             break;
         case QVariant::UserType:
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
             if (iter->canConvert<Grantlee::SafeString>()) {
                 str = str.subs(iter->value<Grantlee::SafeString>().get());
                 break;
             }
-#else
-            if (iter->canConvert<KTextTemplate::SafeString>()) {
-                str = str.subs(iter->value<KTextTemplate::SafeString>().get());
-                break;
-            }
-#endif
         // fall-through
         default:
             qCWarning(GRANTLEETHEME_LOG) << "Unknown type" << iter->typeName() << "(" << iter->type() << ")";
             break;
         }
+#else
+        switch (iter->userType()) {
+        case QMetaType::QString:
+            str = str.subs(iter->toString());
+            break;
+        case QMetaType::Int:
+            str = str.subs(iter->toInt());
+            break;
+        case QMetaType::UInt:
+            str = str.subs(iter->toUInt());
+            break;
+        case QMetaType::LongLong:
+            str = str.subs(iter->toLongLong());
+            break;
+        case QMetaType::ULongLong:
+            str = str.subs(iter->toULongLong());
+            break;
+        case QMetaType::Char:
+            str = str.subs(iter->toChar());
+            break;
+        case QMetaType::Double:
+            str = str.subs(iter->toDouble());
+            break;
+        case QMetaType::User:
+            if (iter->canConvert<KTextTemplate::SafeString>()) {
+                str = str.subs(iter->value<KTextTemplate::SafeString>().get());
+                break;
+            }
+        // fall-through
+        default:
+            qCWarning(GRANTLEETHEME_LOG) << "Unknown type" << iter->typeName() << "(" << iter->userType() << ")";
+            break;
+        }
+
+#endif
     }
 
     // Return localized in the currenctly active locale
