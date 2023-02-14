@@ -67,7 +67,7 @@ ecm_setup_version(PROJECT VARIABLE_PREFIX GRANTLEETHEME
 
 ########### Targets ###########
 
-ecm_set_disabled_deprecation_versions(QT 6.4  KF 5.102.0)
+ecm_set_disabled_deprecation_versions(QT 6.4  KF 5.103.0)
 
 
 
