@@ -93,7 +93,7 @@ install(FILES
   COMPONENT Devel
 )
 
-install(EXPORT KPim${KF_MAJOR_VERSION}GrantleeThemeTargets DESTINATION "${CMAKECONFIG_INSTALL_DIR}" FILE KPim${KF_MAJOR_VERSION}GrantleeThemeTargets.cmake NAMESPACE KF5::)
+install(EXPORT KPim${KF_MAJOR_VERSION}GrantleeThemeTargets DESTINATION "${CMAKECONFIG_INSTALL_DIR}" FILE KPim${KF_MAJOR_VERSION}GrantleeThemeTargets.cmake NAMESPACE KPim${KF_MAJOR_VERSION}::)
 
 install(FILES
    ${CMAKE_CURRENT_BINARY_DIR}/grantleetheme_version.h

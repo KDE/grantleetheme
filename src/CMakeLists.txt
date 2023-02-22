@@ -72,7 +72,7 @@ ecm_generate_headers(GrantleeTheme_CamelCase_HEADERS
 )
 
 ecm_generate_pri_file(BASE_NAME GrantleeTheme
-    LIB_NAME KF5GrantleeTheme
+    LIB_NAME KPim${KF_MAJOR_VERSION}GrantleeTheme
     DEPS "" FILENAME_VAR PRI_FILENAME INCLUDE_INSTALL_DIR ${KDE_INSTALL_INCLUDEDIR}/KPim${KF_MAJOR_VERSION}/GrantleeTheme
 )
 
