@@ -100,6 +100,7 @@ install(FILES
   DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KPim${KF_MAJOR_VERSION}/GrantleeTheme COMPONENT Devel
 )
 
+if (QT_MAJOR_VERSION STREQUAL "5")
 ##
 # TODO: Backwards compatiblity. Remove in next major version
 ##
@@ -127,7 +128,7 @@ install(EXPORT KPim${KF_MAJOR_VERSION}GrantleeThemeTargets
     FILE KPim${KF_MAJOR_VERSION}GrantleeThemeTargets.cmake
     NAMESPACE KF5::
 )
-
+endif()
 add_subdirectory(src)
 if (BUILD_TESTING)
     find_package(Qt${QT_MAJOR_VERSION} ${QT_REQUIRED_VERSION} CONFIG REQUIRED Test)
