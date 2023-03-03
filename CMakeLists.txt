@@ -72,6 +72,7 @@ ecm_set_disabled_deprecation_versions(QT 6.4  KF 5.103.0)
 
 
 option(USE_UNITY_CMAKE_SUPPORT "Use UNITY cmake support (speedup compile time)" OFF)
+option(BUILD_WITH_COMPAT_LIBS "Generate compat cmake file (Set at false will allow to co-install lib)" ON)
 
 set(COMPILE_WITH_UNITY_CMAKE_SUPPORT OFF)
 if (USE_UNITY_CMAKE_SUPPORT)
@@ -100,6 +101,7 @@ install(FILES
   DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KPim${KF_MAJOR_VERSION}/GrantleeTheme COMPONENT Devel
 )
 
+if (BUILD_WITH_COMPAT_LIBS)
 if (QT_MAJOR_VERSION STREQUAL "5")
 ##
 # TODO: Backwards compatiblity. Remove in next major version
@@ -128,6 +130,7 @@ install(EXPORT KPim${KF_MAJOR_VERSION}GrantleeThemeTargets
     FILE KPim${KF_MAJOR_VERSION}GrantleeThemeTargets.cmake
     NAMESPACE KF5::
 )
+endif()
 endif()
 add_subdirectory(src)
 if (BUILD_TESTING)
