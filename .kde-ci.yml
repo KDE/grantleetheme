@@ -9,6 +9,7 @@ Dependencies:
     'frameworks/ki18n': '@latest'
     'frameworks/kiconthemes': '@latest'
     'frameworks/knewstuff': '@latest'
+    'frameworks/kxmlgui': '@latest'
 
 - 'on': ['Linux/Qt6', 'FreeBSD/Qt6', 'Windows/Qt6']
   'require':
@@ -17,6 +18,7 @@ Dependencies:
     'frameworks/ki18n': '@latest-kf6'
     'frameworks/kiconthemes': '@latest-kf6'
     'frameworks/knewstuff': '@latest-kf6'
+    'frameworks/kxmlgui': '@latest-kf6'
 
 - 'on': ['Linux/Qt6', 'FreeBSD/Qt6', 'Windows/Qt6']
   'require':
