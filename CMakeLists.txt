@@ -69,10 +69,7 @@ ecm_setup_version(PROJECT VARIABLE_PREFIX GRANTLEETHEME
 
 ecm_set_disabled_deprecation_versions(QT 6.4  KF 5.104.0)
 
-
-
 option(USE_UNITY_CMAKE_SUPPORT "Use UNITY cmake support (speedup compile time)" OFF)
-option(BUILD_WITH_COMPAT_LIBS "Generate compat cmake file (Set at false will allow to co-install lib)" ON)
 
 set(COMPILE_WITH_UNITY_CMAKE_SUPPORT OFF)
 if (USE_UNITY_CMAKE_SUPPORT)
@@ -101,37 +98,6 @@ install(FILES
   DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KPim${KF_MAJOR_VERSION}/GrantleeTheme COMPONENT Devel
 )
 
-if (BUILD_WITH_COMPAT_LIBS)
-if (QT_MAJOR_VERSION STREQUAL "5")
-##
-# TODO: Backwards compatiblity. Remove in next major version
-##
-set(CMAKECONFIG_INSTALL_DIR_KF5 "${KDE_INSTALL_CMAKEPACKAGEDIR}/KF5GrantleeTheme")
-set(GRANTLEETHEME_KF5_COMPAT TRUE)
-configure_package_config_file(
-    "${CMAKE_CURRENT_SOURCE_DIR}/KPimGrantleeThemeConfig.cmake.in"
-    "${CMAKE_CURRENT_BINARY_DIR}/KF5GrantleeThemeConfig.cmake"
-    INSTALL_DESTINATION ${CMAKECONFIG_INSTALL_DIR_KF5}
-)
-
-install(FILES
-    "${CMAKE_CURRENT_BINARY_DIR}/KF5GrantleeThemeConfig.cmake"
-    DESTINATION "${CMAKECONFIG_INSTALL_DIR_KF5}"
-    COMPONENT Devel
-)
-install(FILES
-    "${CMAKE_CURRENT_BINARY_DIR}/KPim${KF_MAJOR_VERSION}GrantleeThemeConfigVersion.cmake"
-    RENAME "KF5GrantleeThemeConfigVersion.cmake"
-    DESTINATION "${CMAKECONFIG_INSTALL_DIR_KF5}"
-    COMPONENT Devel
-)
-install(EXPORT KPim${KF_MAJOR_VERSION}GrantleeThemeTargets
-    DESTINATION "${CMAKECONFIG_INSTALL_DIR_KF5}"
-    FILE KPim${KF_MAJOR_VERSION}GrantleeThemeTargets.cmake
-    NAMESPACE KF5::
-)
-endif()
-endif()
 add_subdirectory(src)
 if (BUILD_TESTING)
     find_package(Qt${QT_MAJOR_VERSION} ${QT_REQUIRED_VERSION} CONFIG REQUIRED Test)
