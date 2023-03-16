@@ -2,7 +2,6 @@ add_definitions(-DTRANSLATION_DOMAIN=\"libgrantleetheme\")
 
 add_library(KPim${KF_MAJOR_VERSION}GrantleeTheme)
 add_library(KPim${KF_MAJOR_VERSION}::GrantleeTheme ALIAS KPim${KF_MAJOR_VERSION}GrantleeTheme)
-add_library(KF5::GrantleeTheme ALIAS KPim${KF_MAJOR_VERSION}GrantleeTheme)
 
 
 add_subdirectory(plugin)
