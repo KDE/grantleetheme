@@ -27,9 +27,10 @@ kde_clang_format(${ALL_CLANG_FORMAT_SOURCE_FILES})
 include(ECMQtDeclareLoggingCategory)
 include(ECMDeprecationSettings)
 include(ECMAddTests)
-
+include(ECMAddQch)
 include(KPIMGrantleeMacros)
-
+option(BUILD_QCH "Build API documentation in QCH format (for e.g. Qt Assistant, Qt Creator & KDevelop)" OFF)
+add_feature_info(QCH ${BUILD_QCH} "API documentation in QCH format (for e.g. Qt Assistant, Qt Creator & KDevelop)")
 
 set(GRANTLEETHEME_LIB_VERSION ${PIM_VERSION})
 
@@ -77,11 +78,7 @@ if (USE_UNITY_CMAKE_SUPPORT)
 endif()
 ########### CMake Config Files ###########
 set(CMAKECONFIG_INSTALL_DIR "${KDE_INSTALL_CMAKEPACKAGEDIR}/KPim${KF_MAJOR_VERSION}GrantleeTheme")
-configure_package_config_file(
-  "${CMAKE_CURRENT_SOURCE_DIR}/KPimGrantleeThemeConfig.cmake.in"
-  "${CMAKE_CURRENT_BINARY_DIR}/KPim${KF_MAJOR_VERSION}GrantleeThemeConfig.cmake"
-  INSTALL_DESTINATION  ${CMAKECONFIG_INSTALL_DIR}
-)
+
 
 install(FILES
   "${CMAKE_CURRENT_BINARY_DIR}/KPim${KF_MAJOR_VERSION}GrantleeThemeConfig.cmake"
@@ -102,6 +99,23 @@ if (BUILD_TESTING)
     find_package(Qt${QT_MAJOR_VERSION} ${QT_REQUIRED_VERSION} CONFIG REQUIRED Test)
    add_subdirectory(autotest)
 endif()
+
+
+if (BUILD_QCH)
+    ecm_install_qch_export(
+        TARGETS KPim${KF_MAJOR_VERSION}GrantleeTheme_QCH
+        FILE KPim${KF_MAJOR_VERSION}GrantleeThemeQchTargets.cmake
+        DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
+        COMPONENT Devel
+    )
+    set(PACKAGE_INCLUDE_QCHTARGETS "include(\"\${CMAKE_CURRENT_LIST_DIR}/KPim${KF_MAJOR_VERSION}GrantleeThemeQchTargets.cmake\")")
+endif()
+
+configure_package_config_file(
+  "${CMAKE_CURRENT_SOURCE_DIR}/KPimGrantleeThemeConfig.cmake.in"
+  "${CMAKE_CURRENT_BINARY_DIR}/KPim${KF_MAJOR_VERSION}GrantleeThemeConfig.cmake"
+  INSTALL_DESTINATION  ${CMAKECONFIG_INSTALL_DIR}
+)
 
 kde_configure_git_pre_commit_hook(CHECKS CLANG_FORMAT)
 ki18n_install(po)

@@ -94,4 +94,27 @@ install(FILES
     DESTINATION ${ECM_MKSPECS_INSTALL_DIR})
 
 
+if (BUILD_QCH)
+    ecm_add_qch(
+        KPim${KF_MAJOR_VERSION}GrantleeTheme_QCH
+        NAME GrantleeTheme
+        BASE_NAME KPim${KF_MAJOR_VERSION}GrantleeTheme
+        VERSION ${PIM_VERSION}
+        ORG_DOMAIN org.kde
+        SOURCES # using only public headers, to cover only public API
+            ${GrantleeTheme_HEADERS}
+        MD_MAINPAGE "${CMAKE_SOURCE_DIR}/README.md"
+        #IMAGE_DIRS "${CMAKE_SOURCE_DIR}/docs/pics"
+        LINK_QCHS
+            Qt${QT_MAJOR_VERSION}Core_QCH
+        INCLUDE_DIRS
+            ${CMAKE_CURRENT_BINARY_DIR}
+        BLANK_MACROS
+            GRANTLEETHEME_EXPORT
+        TAGFILE_INSTALL_DESTINATION ${KDE_INSTALL_QTQCHDIR}
+        QCH_INSTALL_DESTINATION ${KDE_INSTALL_QTQCHDIR}
+        COMPONENT Devel
+    )
+endif()
+
 ecm_qt_install_logging_categories(EXPORT LIBGRANTLEETHEME FILE grantleetheme.categories DESTINATION ${KDE_INSTALL_LOGGINGCATEGORIESDIR})
