@@ -90,14 +90,14 @@ QString GrantleeKi18nLocalizer::processArguments(const KLocalizedString &kstr, c
             str = str.subs(iter->toDouble());
             break;
         case QMetaType::User:
+        default:
             if (iter->canConvert<KTextTemplate::SafeString>()) {
                 str = str.subs(iter->value<KTextTemplate::SafeString>().get());
                 break;
+            } else {
+                qCWarning(GRANTLEETHEME_LOG) << "Unknown type" << iter->typeName() << "(" << iter->userType() << ")";
+                break;
             }
-        // fall-through
-        default:
-            qCWarning(GRANTLEETHEME_LOG) << "Unknown type" << iter->typeName() << "(" << iter->userType() << ")";
-            break;
         }
 
 #endif
