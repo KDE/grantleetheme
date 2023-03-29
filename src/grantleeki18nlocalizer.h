@@ -52,7 +52,7 @@ public:
     void setApplicationDomain(const QByteArray &domain);
 
 private:
-    Q_REQUIRED_RESULT QString processArguments(const KLocalizedString &str, const QVariantList &arguments) const;
+    Q_REQUIRED_RESULT GRANTLEETHEME_NO_EXPORT QString processArguments(const KLocalizedString &str, const QVariantList &arguments) const;
     QByteArray mApplicationDomain;
 };
 }
