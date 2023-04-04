@@ -1,8 +1,8 @@
 cmake_minimum_required(VERSION 3.16 FATAL_ERROR)
 
-set(KF_MIN_VERSION "5.105.0")
+set(KF_MIN_VERSION "5.240.0")
 set(PIM_VERSION "5.23.40")
-
+set(QT_REQUIRED_VERSION "6.4.0")
 project(GrantleeTheme VERSION ${PIM_VERSION})
 
 
@@ -34,36 +34,20 @@ add_feature_info(QCH ${BUILD_QCH} "API documentation in QCH format (for e.g. Qt 
 
 set(GRANTLEETHEME_LIB_VERSION ${PIM_VERSION})
 
-set(QT_REQUIRED_VERSION "5.15.2")
-if (QT_MAJOR_VERSION STREQUAL "6")
-    set(QT_MIN_VERSION "6.4.0")
-    set(KF_MIN_VERSION "5.240.0")
-    set(KF_MAJOR_VERSION "6")
-else()
-    set(KF_MAJOR_VERSION "5")
-endif()
+find_package(Qt6 ${QT_REQUIRED_VERSION} CONFIG REQUIRED Widgets Network)
+find_package(KF6GuiAddons ${KF_MIN_VERSION} CONFIG REQUIRED)
+find_package(KF6I18n ${KF_MIN_VERSION} CONFIG REQUIRED)
+find_package(KF6IconThemes ${KF_MIN_VERSION} CONFIG REQUIRED)
+find_package(KF6NewStuff ${KF_MIN_VERSION} CONFIG REQUIRED)
+find_package(KF6XmlGui ${KF_MIN_VERSION} CONFIG REQUIRED)
+find_package(KF6ConfigWidgets ${KF_MIN_VERSION} CONFIG REQUIRED)
 
-set(GRANTLEE_VERSION "5.3")
-
-find_package(Qt${QT_MAJOR_VERSION} ${QT_REQUIRED_VERSION} CONFIG REQUIRED Widgets Network)
-find_package(KF${KF_MAJOR_VERSION}GuiAddons ${KF_MIN_VERSION} CONFIG REQUIRED)
-find_package(KF${KF_MAJOR_VERSION}I18n ${KF_MIN_VERSION} CONFIG REQUIRED)
-find_package(KF${KF_MAJOR_VERSION}IconThemes ${KF_MIN_VERSION} CONFIG REQUIRED)
-find_package(KF${KF_MAJOR_VERSION}NewStuff ${KF_MIN_VERSION} CONFIG REQUIRED)
-find_package(KF${KF_MAJOR_VERSION}XmlGui ${KF_MIN_VERSION} CONFIG REQUIRED)
-find_package(KF${KF_MAJOR_VERSION}ConfigWidgets ${KF_MIN_VERSION} CONFIG REQUIRED)
-
-if (QT_MAJOR_VERSION STREQUAL "5")
-    find_package(Grantlee5 ${GRANTLEE_VERSION} CONFIG REQUIRED)
-    set(MAIN_LIB Grantlee5::Templates)
-else()
-    find_package(KF6TextTemplate CONFIG REQUIRED)
-    set(MAIN_LIB KF6::TextTemplate)
-endif()
+find_package(KF6TextTemplate CONFIG REQUIRED)
+set(MAIN_LIB KF6::TextTemplate)
 ecm_setup_version(PROJECT VARIABLE_PREFIX GRANTLEETHEME
                         VERSION_HEADER "${CMAKE_CURRENT_BINARY_DIR}/grantleetheme_version.h"
-                        PACKAGE_VERSION_FILE "${CMAKE_CURRENT_BINARY_DIR}/KPim${KF_MAJOR_VERSION}GrantleeThemeConfigVersion.cmake"
-                        SOVERSION 5
+                        PACKAGE_VERSION_FILE "${CMAKE_CURRENT_BINARY_DIR}/KPim6GrantleeThemeConfigVersion.cmake"
+                        SOVERSION 6
 )
 
 ########### Targets ###########
@@ -77,43 +61,43 @@ if (USE_UNITY_CMAKE_SUPPORT)
     set(COMPILE_WITH_UNITY_CMAKE_SUPPORT ON)
 endif()
 ########### CMake Config Files ###########
-set(CMAKECONFIG_INSTALL_DIR "${KDE_INSTALL_CMAKEPACKAGEDIR}/KPim${KF_MAJOR_VERSION}GrantleeTheme")
+set(CMAKECONFIG_INSTALL_DIR "${KDE_INSTALL_CMAKEPACKAGEDIR}/KPim6GrantleeTheme")
 
 
 install(FILES
-  "${CMAKE_CURRENT_BINARY_DIR}/KPim${KF_MAJOR_VERSION}GrantleeThemeConfig.cmake"
-  "${CMAKE_CURRENT_BINARY_DIR}/KPim${KF_MAJOR_VERSION}GrantleeThemeConfigVersion.cmake"
+  "${CMAKE_CURRENT_BINARY_DIR}/KPim6GrantleeThemeConfig.cmake"
+  "${CMAKE_CURRENT_BINARY_DIR}/KPim6GrantleeThemeConfigVersion.cmake"
   DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
   COMPONENT Devel
 )
 
-install(EXPORT KPim${KF_MAJOR_VERSION}GrantleeThemeTargets DESTINATION "${CMAKECONFIG_INSTALL_DIR}" FILE KPim${KF_MAJOR_VERSION}GrantleeThemeTargets.cmake NAMESPACE KPim${KF_MAJOR_VERSION}::)
+install(EXPORT KPim6GrantleeThemeTargets DESTINATION "${CMAKECONFIG_INSTALL_DIR}" FILE KPim6GrantleeThemeTargets.cmake NAMESPACE KPim6::)
 
 install(FILES
    ${CMAKE_CURRENT_BINARY_DIR}/grantleetheme_version.h
-  DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KPim${KF_MAJOR_VERSION}/GrantleeTheme COMPONENT Devel
+  DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KPim6/GrantleeTheme COMPONENT Devel
 )
 
 add_subdirectory(src)
 if (BUILD_TESTING)
-    find_package(Qt${QT_MAJOR_VERSION} ${QT_REQUIRED_VERSION} CONFIG REQUIRED Test)
+    find_package(Qt6 ${QT_REQUIRED_VERSION} CONFIG REQUIRED Test)
    add_subdirectory(autotest)
 endif()
 
 
 if (BUILD_QCH)
     ecm_install_qch_export(
-        TARGETS KPim${KF_MAJOR_VERSION}GrantleeTheme_QCH
-        FILE KPim${KF_MAJOR_VERSION}GrantleeThemeQchTargets.cmake
+        TARGETS KPim6GrantleeTheme_QCH
+        FILE KPim6GrantleeThemeQchTargets.cmake
         DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
         COMPONENT Devel
     )
-    set(PACKAGE_INCLUDE_QCHTARGETS "include(\"\${CMAKE_CURRENT_LIST_DIR}/KPim${KF_MAJOR_VERSION}GrantleeThemeQchTargets.cmake\")")
+    set(PACKAGE_INCLUDE_QCHTARGETS "include(\"\${CMAKE_CURRENT_LIST_DIR}/KPim6GrantleeThemeQchTargets.cmake\")")
 endif()
 
 configure_package_config_file(
   "${CMAKE_CURRENT_SOURCE_DIR}/KPimGrantleeThemeConfig.cmake.in"
-  "${CMAKE_CURRENT_BINARY_DIR}/KPim${KF_MAJOR_VERSION}GrantleeThemeConfig.cmake"
+  "${CMAKE_CURRENT_BINARY_DIR}/KPim6GrantleeThemeConfig.cmake"
   INSTALL_DESTINATION  ${CMAKECONFIG_INSTALL_DIR}
 )
 

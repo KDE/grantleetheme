@@ -2,11 +2,7 @@
 
 include(CMakeFindDependencyMacro)
 
-if ("@QT_MAJOR_VERSION@" STREQUAL "5")
-    find_dependency(Grantlee5 @GRANTLEE_VERSION@)
-else()
-    find_dependency(KF6TextTemplate)
-endif()
+find_dependency(KF6TextTemplate)
 
-include("${CMAKE_CURRENT_LIST_DIR}/KPim@KF_MAJOR_VERSION@GrantleeThemeTargets.cmake")
+include("${CMAKE_CURRENT_LIST_DIR}/KPim6GrantleeThemeTargets.cmake")
 @PACKAGE_INCLUDE_QCHTARGETS@

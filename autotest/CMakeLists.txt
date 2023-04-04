@@ -2,9 +2,9 @@ add_definitions( -DGRANTLEETHEME_DATA_DIR="${CMAKE_CURRENT_SOURCE_DIR}/data" )
 add_definitions( -DGRANTLEETHEME_DATA_BUILD_DIR="${CMAKE_CURRENT_BINARY_DIR}/data" )
 ecm_add_test(grantleethemetest.cpp
     NAME_PREFIX "grantleetheme-"
-    LINK_LIBRARIES Qt::Test KPim${KF_MAJOR_VERSION}::GrantleeTheme KF${KF_MAJOR_VERSION}::ConfigCore Qt::Gui KF${KF_MAJOR_VERSION}::ConfigWidgets
+    LINK_LIBRARIES Qt::Test KPim6::GrantleeTheme KF6::ConfigCore Qt::Gui KF6::ConfigWidgets
 )
 ecm_add_test(grantleethememanagertest.cpp
     NAME_PREFIX "grantleetheme-"
-    LINK_LIBRARIES Qt::Test KPim${KF_MAJOR_VERSION}::GrantleeTheme KF${KF_MAJOR_VERSION}::ConfigCore KF${KF_MAJOR_VERSION}::XmlGui
+    LINK_LIBRARIES Qt::Test KPim6::GrantleeTheme KF6::ConfigCore KF6::XmlGui
 )

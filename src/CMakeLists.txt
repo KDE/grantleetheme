@@ -1,12 +1,12 @@
 add_definitions(-DTRANSLATION_DOMAIN=\"libgrantleetheme\")
 
-add_library(KPim${KF_MAJOR_VERSION}GrantleeTheme)
-add_library(KPim${KF_MAJOR_VERSION}::GrantleeTheme ALIAS KPim${KF_MAJOR_VERSION}GrantleeTheme)
+add_library(KPim6GrantleeTheme)
+add_library(KPim6::GrantleeTheme ALIAS KPim6GrantleeTheme)
 
 
 add_subdirectory(plugin)
 
-target_sources(KPim${KF_MAJOR_VERSION}GrantleeTheme PRIVATE
+target_sources(KPim6GrantleeTheme PRIVATE
     genericformatter.cpp
     grantleetheme.cpp
     grantleethememanager.cpp
@@ -24,38 +24,38 @@ target_sources(KPim${KF_MAJOR_VERSION}GrantleeTheme PRIVATE
 
 configure_file(config-grantleetheme.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config-grantleetheme.h)
 
-ecm_qt_declare_logging_category(KPim${KF_MAJOR_VERSION}GrantleeTheme HEADER grantleetheme_debug.h IDENTIFIER GRANTLEETHEME_LOG CATEGORY_NAME org.kde.pim.grantleetheme
+ecm_qt_declare_logging_category(KPim6GrantleeTheme HEADER grantleetheme_debug.h IDENTIFIER GRANTLEETHEME_LOG CATEGORY_NAME org.kde.pim.grantleetheme
         OLD_CATEGORY_NAMES log_grantleetheme
         DESCRIPTION "kdepim (grantleetheme)" EXPORT LIBGRANTLEETHEME)
 
 if (COMPILE_WITH_UNITY_CMAKE_SUPPORT)
-    set_target_properties(KPim${KF_MAJOR_VERSION}GrantleeTheme PROPERTIES UNITY_BUILD ON)
+    set_target_properties(KPim6GrantleeTheme PROPERTIES UNITY_BUILD ON)
 endif()
-generate_export_header(KPim${KF_MAJOR_VERSION}GrantleeTheme BASE_NAME grantleetheme)
+generate_export_header(KPim6GrantleeTheme BASE_NAME grantleetheme)
 
 
-target_include_directories(KPim${KF_MAJOR_VERSION}GrantleeTheme INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR}/KPim${KF_MAJOR_VERSION}/GrantleeTheme/>")
-target_include_directories(KPim${KF_MAJOR_VERSION}GrantleeTheme PUBLIC "$<BUILD_INTERFACE:${GrantleeTheme_SOURCE_DIR}/src;${GrantleeTheme_BINARY_DIR}/src;>")
+target_include_directories(KPim6GrantleeTheme INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR}/KPim6/GrantleeTheme/>")
+target_include_directories(KPim6GrantleeTheme PUBLIC "$<BUILD_INTERFACE:${GrantleeTheme_SOURCE_DIR}/src;${GrantleeTheme_BINARY_DIR}/src;>")
 
-target_link_libraries(KPim${KF_MAJOR_VERSION}GrantleeTheme
+target_link_libraries(KPim6GrantleeTheme
     PUBLIC
     ${MAIN_LIB}
     PRIVATE
-    KF${KF_MAJOR_VERSION}::NewStuffCore
-    KF${KF_MAJOR_VERSION}::I18n
-    KF${KF_MAJOR_VERSION}::NewStuffWidgets
-    KF${KF_MAJOR_VERSION}::ConfigCore
-    KF${KF_MAJOR_VERSION}::XmlGui
+    KF6::NewStuffCore
+    KF6::I18n
+    KF6::NewStuffWidgets
+    KF6::ConfigCore
+    KF6::XmlGui
 )
-set_target_properties(KPim${KF_MAJOR_VERSION}GrantleeTheme PROPERTIES
+set_target_properties(KPim6GrantleeTheme PROPERTIES
     VERSION ${GRANTLEETHEME_VERSION}
     SOVERSION ${GRANTLEETHEME_SOVERSION}
     EXPORT_NAME GrantleeTheme
 )
 
 install(TARGETS
-    KPim${KF_MAJOR_VERSION}GrantleeTheme
-    EXPORT KPim${KF_MAJOR_VERSION}GrantleeThemeTargets ${KDE_INSTALL_TARGETS_DEFAULT_ARGS}
+    KPim6GrantleeTheme
+    EXPORT KPim6GrantleeThemeTargets ${KDE_INSTALL_TARGETS_DEFAULT_ARGS}
 )
 
 ecm_generate_headers(GrantleeTheme_CamelCase_HEADERS
@@ -71,14 +71,14 @@ ecm_generate_headers(GrantleeTheme_CamelCase_HEADERS
 )
 
 ecm_generate_pri_file(BASE_NAME GrantleeTheme
-    LIB_NAME KPim${KF_MAJOR_VERSION}GrantleeTheme
-    DEPS "" FILENAME_VAR PRI_FILENAME INCLUDE_INSTALL_DIR ${KDE_INSTALL_INCLUDEDIR}/KPim${KF_MAJOR_VERSION}/GrantleeTheme
+    LIB_NAME KPim6GrantleeTheme
+    DEPS "" FILENAME_VAR PRI_FILENAME INCLUDE_INSTALL_DIR ${KDE_INSTALL_INCLUDEDIR}/KPim6/GrantleeTheme
 )
 
 
 install(FILES
     ${GrantleeTheme_CamelCase_HEADERS}
-    DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KPim${KF_MAJOR_VERSION}/GrantleeTheme/GrantleeTheme
+    DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KPim6/GrantleeTheme/GrantleeTheme
     COMPONENT Devel
 )
 
@@ -86,7 +86,7 @@ install(FILES
     ${GrantleeTheme_HEADERS}
     ${CMAKE_CURRENT_BINARY_DIR}/grantleetheme_export.h
     ${GrantleeTheme_CamelCase_HEADERS}
-    DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KPim${KF_MAJOR_VERSION}/GrantleeTheme/grantleetheme
+    DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KPim6/GrantleeTheme/grantleetheme
     COMPONENT Devel
 )
 install(FILES
@@ -96,9 +96,9 @@ install(FILES
 
 if (BUILD_QCH)
     ecm_add_qch(
-        KPim${KF_MAJOR_VERSION}GrantleeTheme_QCH
+        KPim6GrantleeTheme_QCH
         NAME GrantleeTheme
-        BASE_NAME KPim${KF_MAJOR_VERSION}GrantleeTheme
+        BASE_NAME KPim6GrantleeTheme
         VERSION ${PIM_VERSION}
         ORG_DOMAIN org.kde
         SOURCES # using only public headers, to cover only public API
@@ -106,7 +106,7 @@ if (BUILD_QCH)
         MD_MAINPAGE "${CMAKE_SOURCE_DIR}/README.md"
         #IMAGE_DIRS "${CMAKE_SOURCE_DIR}/docs/pics"
         LINK_QCHS
-            Qt${QT_MAJOR_VERSION}Core_QCH
+            Qt6Core_QCH
         INCLUDE_DIRS
             ${CMAKE_CURRENT_BINARY_DIR}
         BLANK_MACROS

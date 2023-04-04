@@ -9,8 +9,8 @@ deprecated: false
 release: false
 libraries:
  - qmake: GrantleeTheme
-   cmake: "KF5::GrantleeTheme"
-cmakename: KF5GrantleeTheme
+   cmake: "KPim6::GrantleeTheme"
+cmakename: KPim6GrantleeTheme
 
 public_lib: true
 group: kdepim
