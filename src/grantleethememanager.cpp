@@ -248,7 +248,7 @@ public:
     QString defaultDesktopFileName;
     QStringList themesDirectories;
     QMap<QString, GrantleeTheme::Theme> themes;
-    QVector<KToggleAction *> themesActionList;
+    QList<KToggleAction *> themesActionList;
     KDirWatch *watch = nullptr;
     QActionGroup *actionGroup = nullptr;
     KActionMenu *menu = nullptr;
