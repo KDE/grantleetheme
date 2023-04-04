@@ -7,12 +7,8 @@
 
 #pragma once
 #include "grantleetheme_export.h"
-#include <QObject>
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-#include <grantlee/qtlocalizer.h>
-#else
 #include <KTextTemplate/QtLocalizer>
-#endif
+#include <QObject>
 
 #include <QLocale>
 #include <QVariantHash>
@@ -23,11 +19,7 @@ namespace GrantleeTheme
 /**
  * @brief The GrantleeKi18nLocalizer class
  */
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-class GRANTLEETHEME_EXPORT GrantleeKi18nLocalizer : public Grantlee::QtLocalizer
-#else
 class GRANTLEETHEME_EXPORT GrantleeKi18nLocalizer : public KTextTemplate::QtLocalizer
-#endif
 {
 public:
     explicit GrantleeKi18nLocalizer();

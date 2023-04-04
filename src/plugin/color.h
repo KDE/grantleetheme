@@ -5,14 +5,9 @@
  */
 
 #pragma once
-#include <QObject>
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-#include <grantlee/filter.h>
-#include <grantlee/node.h>
-#else
 #include <KTextTemplate/Filter>
 #include <KTextTemplate/Node>
-#endif
+#include <QObject>
 
 /**
  * @name colorHexRgb filter
@@ -23,11 +18,7 @@
  * {{ myColor|colorHexRgb }}
  * @endcode
  */
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-class ColorHexRgbFilter : public Grantlee::Filter
-#else
 class ColorHexRgbFilter : public KTextTemplate::Filter
-#endif
 {
 public:
     QVariant doFilter(const QVariant &input, const QVariant &arg, bool autoescape) const override;
@@ -42,11 +33,7 @@ public:
  * {{ myColor|colorCssRgba }}
  * @endcode
  */
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-class ColorCssRgbaFilter : public Grantlee::Filter
-#else
 class ColorCssRgbaFilter : public KTextTemplate::Filter
-#endif
 {
 public:
     QVariant doFilter(const QVariant &input, const QVariant &arg, bool autoescape) const override;
@@ -61,11 +48,7 @@ public:
  * {{ myColor|colorLighter:<factor> }}
  * @endcode
  */
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-class ColorLighterFilter : public Grantlee::Filter
-#else
 class ColorLighterFilter : public KTextTemplate::Filter
-#endif
 {
 public:
     QVariant doFilter(const QVariant &input, const QVariant &arg, bool autoescape) const override;
@@ -80,11 +63,7 @@ public:
  * {{ myColor|colorDarker:<factor> }}
  * @endcode
  */
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-class ColorDarkerFilter : public Grantlee::Filter
-#else
 class ColorDarkerFilter : public KTextTemplate::Filter
-#endif
 {
 public:
     QVariant doFilter(const QVariant &input, const QVariant &arg, bool autoescape) const override;
@@ -99,11 +78,7 @@ public:
  * {{ myColor|colorSetAlpha:<alpha-value-from-0-to-255> }}
  * @endcode
  */
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-class ColorSetAlphaFilter : public Grantlee::Filter
-#else
 class ColorSetAlphaFilter : public KTextTemplate::Filter
-#endif
 {
 public:
     QVariant doFilter(const QVariant &input, const QVariant &arg, bool autoescape) const override;
@@ -120,38 +95,22 @@ public:
  *
  * The tag generates a rgba() CSS color definition.
  */
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-class ColorMixTag : public Grantlee::AbstractNodeFactory
-#else
 class ColorMixTag : public KTextTemplate::AbstractNodeFactory
-#endif
 {
     Q_OBJECT
 public:
     explicit ColorMixTag(QObject *parent = nullptr);
     ~ColorMixTag() override;
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-    Grantlee::Node *getNode(const QString &tagContent, Grantlee::Parser *p) const override;
-#else
     KTextTemplate::Node *getNode(const QString &tagContent, KTextTemplate::Parser *p) const override;
-#endif
 };
 
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-class ColorMixNode : public Grantlee::Node
-#else
 class ColorMixNode : public KTextTemplate::Node
-#endif
 {
     Q_OBJECT
 public:
     explicit ColorMixNode(const QString &color1Name, const QString &color2Name, double ratio, const QString &varName, QObject *parent = nullptr);
     ~ColorMixNode() override;
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-    void render(Grantlee::OutputStream *stream, Grantlee::Context *c) const override;
-#else
     void render(KTextTemplate::OutputStream *stream, KTextTemplate::Context *c) const override;
-#endif
 
 private:
     QString m_color1Name;

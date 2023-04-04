@@ -5,32 +5,19 @@
  */
 
 #include "color.h"
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-#include <grantlee/exception.h>
-#include <grantlee/metatype.h>
-#include <grantlee/parser.h>
-#include <grantlee/variable.h>
-#else
 #include <KTextTemplate/Exception>
 #include <KTextTemplate/MetaType>
 #include <KTextTemplate/Parser>
 #include <KTextTemplate/Variable>
-#endif
 
 #include <KColorUtils>
 #include <QColor>
 
 static QColor inputToColor(const QVariant &v)
 {
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-    if (v.canConvert<Grantlee::SafeString>()) {
-        return QColor(v.value<Grantlee::SafeString>().get());
-    }
-#else
     if (v.canConvert<KTextTemplate::SafeString>()) {
         return QColor(v.value<KTextTemplate::SafeString>().get());
     }
-#endif
     return v.value<QColor>();
 }
 
@@ -44,11 +31,7 @@ static QString rgbaString(const QColor &c)
     if (property == QLatin1String(#name)) {                                                                                                                    \
         return object.name();                                                                                                                                  \
     }
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-GRANTLEE_BEGIN_LOOKUP(QColor)
-#else
 KTEXTTEMPLATE_BEGIN_LOOKUP(QColor)
-#endif
 COLOR_PROP(red)
 COLOR_PROP(green)
 COLOR_PROP(blue)
@@ -60,18 +43,10 @@ if (property == QLatin1String("cssRgba")) {
     return rgbaString(object);
 }
 return {};
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-GRANTLEE_END_LOOKUP
-#else
 KTEXTTEMPLATE_END_LOOKUP
-#endif
 void Color::registerMetaType()
 {
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-    Grantlee::registerMetaType<QColor>();
-#else
     KTextTemplate::registerMetaType<QColor>();
-#endif
 }
 
 QVariant ColorHexRgbFilter::doFilter(const QVariant &input, const QVariant &arg, bool autoescape) const
@@ -120,49 +95,29 @@ QVariant ColorSetAlphaFilter::doFilter(const QVariant &input, const QVariant &ar
 }
 
 ColorMixTag::ColorMixTag(QObject *parent)
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-    : Grantlee::AbstractNodeFactory(parent)
-#else
     : KTextTemplate::AbstractNodeFactory(parent)
-#endif
 {
 }
 
 ColorMixTag::~ColorMixTag() = default;
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-Grantlee::Node *ColorMixTag::getNode(const QString &tagContent, Grantlee::Parser *p) const
-#else
 KTextTemplate::Node *ColorMixTag::getNode(const QString &tagContent, KTextTemplate::Parser *p) const
-#endif
 {
     Q_UNUSED(p)
     const auto parts = smartSplit(tagContent);
     if (parts.size() != 4 && parts.size() != 6) {
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-        throw Grantlee::Exception(Grantlee::TagSyntaxError, QStringLiteral("colormix tag needs 3 or 5 arguments"));
-#else
         throw KTextTemplate::Exception(KTextTemplate::TagSyntaxError, QStringLiteral("colormix tag needs 3 or 5 arguments"));
-#endif
     }
 
     bool ok = false;
     const auto ratio = parts.at(3).toDouble(&ok);
     if (!ok) {
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-        throw Grantlee::Exception(Grantlee::TagSyntaxError, QStringLiteral("colormix: invalid ratio"));
-#else
         throw KTextTemplate::Exception(KTextTemplate::TagSyntaxError, QStringLiteral("colormix: invalid ratio"));
-#endif
     }
 
     QString varName;
     if (parts.size() == 6) {
         if (parts.at(4) != QLatin1String("as")) {
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-            throw Grantlee::Exception(Grantlee::TagSyntaxError, QStringLiteral("colormix: syntax error"));
-#else
             throw KTextTemplate::Exception(KTextTemplate::TagSyntaxError, QStringLiteral("colormix: syntax error"));
-#endif
         }
         varName = parts.at(5);
     }
@@ -171,11 +126,7 @@ KTextTemplate::Node *ColorMixTag::getNode(const QString &tagContent, KTextTempla
 }
 
 ColorMixNode::ColorMixNode(const QString &color1Name, const QString &color2Name, double ratio, const QString &varName, QObject *parent)
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-    : Grantlee::Node(parent)
-#else
     : KTextTemplate::Node(parent)
-#endif
     , m_color1Name(color1Name)
     , m_color2Name(color2Name)
     , m_varName(varName)
@@ -184,27 +135,15 @@ ColorMixNode::ColorMixNode(const QString &color1Name, const QString &color2Name,
 }
 
 ColorMixNode::~ColorMixNode() = default;
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-static QColor resolveColor(const QString &name, Grantlee::Context *c)
-#else
 static QColor resolveColor(const QString &name, KTextTemplate::Context *c)
-#endif
 {
     if (name.startsWith(QLatin1Char('"')) && name.endsWith(QLatin1Char('"'))) {
         return QColor(QStringView(name).mid(1, name.size() - 2));
     }
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-    const auto val = Grantlee::Variable(name).resolve(c);
-#else
     const auto val = KTextTemplate::Variable(name).resolve(c);
-#endif
     return val.value<QColor>();
 }
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-void ColorMixNode::render(Grantlee::OutputStream *stream, Grantlee::Context *c) const
-#else
 void ColorMixNode::render(KTextTemplate::OutputStream *stream, KTextTemplate::Context *c) const
-#endif
 {
     const auto col1 = resolveColor(m_color1Name, c);
     const auto col2 = resolveColor(m_color2Name, c);

@@ -8,22 +8,14 @@
 #include "grantleeki18nlocalizer.h"
 #include "grantleetheme_debug.h"
 
-#include <QDebug>
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-#include <grantlee/safestring.h>
-#else
 #include <KTextTemplate/SafeString>
-#endif
+#include <QDebug>
 
 #include <KLocalizedString>
 using namespace GrantleeTheme;
 
 GrantleeKi18nLocalizer::GrantleeKi18nLocalizer()
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-    : Grantlee::QtLocalizer()
-#else
     : KTextTemplate::QtLocalizer()
-#endif
 {
 }
 
@@ -33,40 +25,6 @@ QString GrantleeKi18nLocalizer::processArguments(const KLocalizedString &kstr, c
 {
     KLocalizedString str = kstr;
     for (auto iter = arguments.cbegin(), end = arguments.cend(); iter != end; ++iter) {
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-        switch (iter->type()) {
-        case QVariant::String:
-            str = str.subs(iter->toString());
-            break;
-        case QVariant::Int:
-            str = str.subs(iter->toInt());
-            break;
-        case QVariant::UInt:
-            str = str.subs(iter->toUInt());
-            break;
-        case QVariant::LongLong:
-            str = str.subs(iter->toLongLong());
-            break;
-        case QVariant::ULongLong:
-            str = str.subs(iter->toULongLong());
-            break;
-        case QVariant::Char:
-            str = str.subs(iter->toChar());
-            break;
-        case QVariant::Double:
-            str = str.subs(iter->toDouble());
-            break;
-        case QVariant::UserType:
-            if (iter->canConvert<Grantlee::SafeString>()) {
-                str = str.subs(iter->value<Grantlee::SafeString>().get());
-                break;
-            }
-        // fall-through
-        default:
-            qCWarning(GRANTLEETHEME_LOG) << "Unknown type" << iter->typeName() << "(" << iter->type() << ")";
-            break;
-        }
-#else
         switch (iter->userType()) {
         case QMetaType::QString:
             str = str.subs(iter->toString());
@@ -99,8 +57,6 @@ QString GrantleeKi18nLocalizer::processArguments(const KLocalizedString &kstr, c
                 break;
             }
         }
-
-#endif
     }
 
     // Return localized in the currenctly active locale
@@ -144,11 +100,7 @@ QString GrantleeKi18nLocalizer::localizeMonetaryValue(qreal value, const QString
 
 QString GrantleeKi18nLocalizer::currentLocale() const
 {
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-    QString locale = Grantlee::QtLocalizer::currentLocale();
-#else
     QString locale = KTextTemplate::QtLocalizer::currentLocale();
-#endif
     const int f = locale.indexOf(QLatin1Char('_'));
     if (f >= 0) {
         locale.truncate(f);

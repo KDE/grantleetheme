@@ -5,12 +5,8 @@
  */
 
 #include "colorscheme.h"
-#include <QObject>
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-#include <grantlee/metatype.h>
-#else
 #include <KTextTemplate/MetaType>
-#endif
+#include <QObject>
 
 #include <KColorScheme>
 
@@ -21,11 +17,7 @@
 #define BACKGROUND_PROP(PROP) PROP_IMPL(PROP, background)
 #define FOREGROUND_PROP(PROP) PROP_IMPL(PROP, foreground)
 #define DECORATION_PROP(PROP) PROP_IMPL(PROP, decoration)
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-GRANTLEE_BEGIN_LOOKUP(KColorScheme)
-#else
 KTEXTTEMPLATE_BEGIN_LOOKUP(KColorScheme)
-#endif
 BACKGROUND_PROP(NormalBackground)
 BACKGROUND_PROP(AlternateBackground)
 BACKGROUND_PROP(ActiveBackground)
@@ -48,17 +40,9 @@ DECORATION_PROP(FocusColor)
 DECORATION_PROP(HoverColor)
 
 return {};
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-GRANTLEE_END_LOOKUP
-#else
 KTEXTTEMPLATE_END_LOOKUP
-#endif
 
 void ColorScheme::registerMetaType()
 {
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-    Grantlee::registerMetaType<KColorScheme>();
-#else
     KTextTemplate::registerMetaType<KColorScheme>();
-#endif
 }
