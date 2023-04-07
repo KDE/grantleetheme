@@ -31,8 +31,12 @@ ecm_qt_declare_logging_category(KPim6GrantleeTheme HEADER grantleetheme_debug.h 
 if (COMPILE_WITH_UNITY_CMAKE_SUPPORT)
     set_target_properties(KPim6GrantleeTheme PROPERTIES UNITY_BUILD ON)
 endif()
-generate_export_header(KPim6GrantleeTheme BASE_NAME grantleetheme)
-
+ecm_generate_export_header(KPim6GrantleeTheme
+    BASE_NAME grantleetheme
+    VERSION ${GRANTLEETHEME_VERSION}
+    DEPRECATED_BASE_VERSION 0
+    USE_VERSION_HEADER
+)
 
 target_include_directories(KPim6GrantleeTheme INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR}/KPim6/GrantleeTheme/>")
 target_include_directories(KPim6GrantleeTheme PUBLIC "$<BUILD_INTERFACE:${GrantleeTheme_SOURCE_DIR}/src;${GrantleeTheme_BINARY_DIR}/src;>")
