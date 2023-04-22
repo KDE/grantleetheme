@@ -56,7 +56,7 @@ set_target_properties(KPim${KF_MAJOR_VERSION}GrantleeTheme PROPERTIES
 
 install(TARGETS
     KPim${KF_MAJOR_VERSION}GrantleeTheme
-    EXPORT KPim${KF_MAJOR_VERSION}GrantleeThemeTargets ${KF_INSTALL_TARGETS_DEFAULT_ARGS}
+    EXPORT KPim${KF_MAJOR_VERSION}GrantleeThemeTargets ${KDE_INSTALL_TARGETS_DEFAULT_ARGS}
 )
 
 ecm_generate_headers(GrantleeTheme_CamelCase_HEADERS
