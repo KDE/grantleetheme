@@ -34,6 +34,7 @@ public:
                           const QString &defaultDesktopFileName,
                           KActionCollection *actionCollection = nullptr,
                           const QString &path = QString(),
+                          const QString &configFileName = QString(),
                           QObject *parent = nullptr);
     ~ThemeManager() override;
 
@@ -48,8 +49,6 @@ public:
     Q_REQUIRED_RESULT QStringList displayExtraVariables(const QString &themename) const;
 
     Q_REQUIRED_RESULT GrantleeTheme::Theme theme(const QString &themeName);
-
-    void setDownloadNewStuffConfigFile(const QString &configFileName);
 
     Q_REQUIRED_RESULT QString configuredThemeName() const;
     Q_REQUIRED_RESULT static QString configuredThemeName(const QString &themeType);

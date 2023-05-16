@@ -30,7 +30,12 @@ namespace GrantleeTheme
 class ThemeManagerPrivate
 {
 public:
-    ThemeManagerPrivate(const QString &type, const QString &desktopFileName, KActionCollection *ac, const QString &relativePath, ThemeManager *qq)
+    ThemeManagerPrivate(const QString &type,
+                        const QString &desktopFileName,
+                        KActionCollection *ac,
+                        const QString &relativePath,
+                        const QString &configFileName,
+                        ThemeManager *qq)
         : applicationType(type)
         , defaultDesktopFileName(desktopFileName)
         , actionCollection(ac)
@@ -39,7 +44,7 @@ public:
         watch = new KDirWatch(q);
         initThemesDirectories(relativePath);
         if (KAuthorized::authorize(QStringLiteral("ghns"))) {
-            downloadThemesAction = new KNSWidgets::Action(i18n("Download new Templates..."), QString(), q);
+            downloadThemesAction = new KNSWidgets::Action(i18n("Download new Templates..."), configFileName, q);
             if (actionCollection) {
                 actionCollection->addAction(QStringLiteral("download_header_themes"), downloadThemesAction);
             }
@@ -265,9 +270,10 @@ ThemeManager::ThemeManager(const QString &applicationType,
                            const QString &defaultDesktopFileName,
                            KActionCollection *actionCollection,
                            const QString &path,
+                           const QString &configFileName,
                            QObject *parent)
     : QObject(parent)
-    , d(new ThemeManagerPrivate(applicationType, defaultDesktopFileName, actionCollection, path, this))
+    , d(new ThemeManagerPrivate(applicationType, defaultDesktopFileName, actionCollection, path, configFileName, this))
 {
 }
 
@@ -315,13 +321,6 @@ QStringList ThemeManager::displayExtraVariables(const QString &themename) const
 GrantleeTheme::Theme ThemeManager::theme(const QString &themeName)
 {
     return d->themes.value(themeName);
-}
-
-void ThemeManager::setDownloadNewStuffConfigFile(const QString &configFileName)
-{
-    if (d->downloadThemesAction) {
-        d->downloadThemesAction->setConfigFile(configFileName);
-    }
 }
 
 QString ThemeManager::pathFromThemes(const QString &themesRelativePath, const QString &themeName, const QString &defaultDesktopFileName)
