@@ -40,7 +40,7 @@ find_package(KF6I18n ${KF_MIN_VERSION} CONFIG REQUIRED)
 find_package(KF6IconThemes ${KF_MIN_VERSION} CONFIG REQUIRED)
 find_package(KF6NewStuff ${KF_MIN_VERSION} CONFIG REQUIRED)
 find_package(KF6XmlGui ${KF_MIN_VERSION} CONFIG REQUIRED)
-find_package(KF6ConfigWidgets ${KF_MIN_VERSION} CONFIG REQUIRED)
+find_package(KF6ColorScheme ${KF_MIN_VERSION} CONFIG REQUIRED)
 
 find_package(KF6TextTemplate CONFIG REQUIRED)
 set(MAIN_LIB KF6::TextTemplate)

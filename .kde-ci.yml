@@ -10,6 +10,7 @@ Dependencies:
     'frameworks/kiconthemes': '@latest-kf6'
     'frameworks/knewstuff': '@latest-kf6'
     'frameworks/kxmlgui': '@latest-kf6'
+    'frameworks/kcolorscheme': '@latest-kf6'
 
 - 'on': ['Linux', 'FreeBSD', 'Windows']
   'require':

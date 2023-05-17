@@ -24,7 +24,7 @@ target_link_libraries(kde_grantlee_plugin
     ${MAIN_LIB}
     KF6::IconThemes
     KF6::GuiAddons
-    KF6::ConfigWidgets
+    KF6::ColorScheme
 )
 
 install(TARGETS kde_grantlee_plugin
