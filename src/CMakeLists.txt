@@ -43,7 +43,7 @@ target_include_directories(KPim6GrantleeTheme PUBLIC "$<BUILD_INTERFACE:${Grantl
 
 target_link_libraries(KPim6GrantleeTheme
     PUBLIC
-    ${MAIN_LIB}
+    KF6::TextTemplate
     PRIVATE
     KF6::NewStuffCore
     KF6::I18n

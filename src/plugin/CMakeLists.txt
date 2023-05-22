@@ -21,7 +21,7 @@ if (COMPILE_WITH_UNITY_CMAKE_SUPPORT)
 endif()
 kpim_grantlee_adjust_plugin_name(kde_grantlee_plugin)
 target_link_libraries(kde_grantlee_plugin
-    ${MAIN_LIB}
+    KF6::TextTemplate
     KF6::IconThemes
     KF6::GuiAddons
     KF6::ColorScheme
