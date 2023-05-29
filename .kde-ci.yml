@@ -11,7 +11,4 @@ Dependencies:
     'frameworks/knewstuff': '@latest-kf6'
     'frameworks/kxmlgui': '@latest-kf6'
     'frameworks/kcolorscheme': '@latest-kf6'
-
-- 'on': ['Linux', 'FreeBSD', 'Windows']
-  'require':
-    'libraries/ktexttemplate': '@stable'
+    'frameworks/ktexttemplate': '@latest-kf6'
