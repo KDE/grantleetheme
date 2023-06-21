@@ -41,3 +41,5 @@ QHash<QString, KTextTemplate::Filter *> KDEGrantleePlugin::filters(const QString
     filters.insert(QStringLiteral("colorSetAlpha"), new ColorSetAlphaFilter());
     return filters;
 }
+
+#include "moc_kdegrantleeplugin.cpp"

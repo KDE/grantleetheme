@@ -154,3 +154,5 @@ void ColorMixNode::render(KTextTemplate::OutputStream *stream, KTextTemplate::Co
         (*stream) << rgbaString(result);
     }
 }
+
+#include "moc_color.cpp"

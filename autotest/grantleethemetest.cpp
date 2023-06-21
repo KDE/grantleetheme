@@ -198,3 +198,5 @@ void GrantleeThemeTest::testRenderTemplate()
 }
 
 QTEST_GUILESS_MAIN(GrantleeThemeTest)
+
+#include "moc_grantleethemetest.cpp"

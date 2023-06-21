@@ -43,3 +43,5 @@ QSharedPointer<GrantleeKi18nLocalizer> Engine::localizer() const
     }
     return loc;
 }
+
+#include "moc_grantleethemeengine.cpp"
