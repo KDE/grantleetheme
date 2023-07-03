@@ -1,0 +1,48 @@
+# translation of libgrantleetheme.pot to esperanto
+# Copyright (C) 2022 Free Software Foundation, Inc.
+# This file is distributed under the same license as the grantleetheme package.
+# Oliver Kellogg <okellogg@users.sourceforge.net, 2023.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: grantleetheme\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-05-17 00:45+0000\n"
+"PO-Revision-Date: 2023-07-02 22:07+0100\n"
+"Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
+"Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
+"Language: eo\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#: grantleetheme.cpp:93 grantleetheme.cpp:101
+#, kde-format
+msgid "Template"
+msgstr "Ŝablono"
+
+#: grantleetheme.cpp:93 grantleetheme.cpp:101
+#, kde-format
+msgid "Error message"
+msgstr "Erarmesaĝo"
+
+#: grantleetheme.cpp:108
+#, kde-format
+msgid "(null template)"
+msgstr "(nula ŝablono)"
+
+#: grantleetheme.cpp:225
+#, kde-format
+msgid "Template parsing error"
+msgstr "Ŝablonanaliza eraro"
+
+#: grantleetheme.cpp:234
+#, kde-format
+msgid "Template rendering error"
+msgstr "Ŝablonbildiga eraro"
+
+#: grantleethememanager.cpp:42
+#, kde-format
+msgid "Download new Templates..."
+msgstr "Elŝuti novajn Ŝablonojn..."
