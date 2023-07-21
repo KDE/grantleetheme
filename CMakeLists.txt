@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.16 FATAL_ERROR)
 
 set(KF_MIN_VERSION "5.240.0")
 set(PIM_VERSION "5.240.41")
-set(QT_REQUIRED_VERSION "6.4.0")
+set(QT_REQUIRED_VERSION "6.5.0")
 project(GrantleeTheme VERSION ${PIM_VERSION})
 
 
