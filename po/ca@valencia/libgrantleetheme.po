@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: grantleetheme\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-05-17 00:45+0000\n"
+"POT-Creation-Date: 2023-09-21 00:45+0000\n"
 "PO-Revision-Date: 2022-05-04 17:39+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -21,32 +21,32 @@ msgstr ""
 "X-Accelerator-Marker: &\n"
 "X-Generator: Lokalize 20.12.0\n"
 
-#: grantleetheme.cpp:93 grantleetheme.cpp:101
+#: grantleetheme.cpp:76
 #, kde-format
 msgid "Template"
 msgstr "Plantilla"
 
-#: grantleetheme.cpp:93 grantleetheme.cpp:101
+#: grantleetheme.cpp:76
 #, kde-format
 msgid "Error message"
 msgstr "Missatge d'error"
 
-#: grantleetheme.cpp:108
+#: grantleetheme.cpp:82
 #, kde-format
 msgid "(null template)"
 msgstr "(plantilla nul·la)"
 
-#: grantleetheme.cpp:225
+#: grantleetheme.cpp:195
 #, kde-format
 msgid "Template parsing error"
 msgstr "S'ha produït un error en analitzar la plantilla"
 
-#: grantleetheme.cpp:234
+#: grantleetheme.cpp:200
 #, kde-format
 msgid "Template rendering error"
 msgstr "S'ha produït un error en renderitzar la plantilla"
 
-#: grantleethememanager.cpp:42
+#: grantleethememanager.cpp:47
 #, kde-format
 msgid "Download new Templates..."
 msgstr "Baixa plantilles noves..."

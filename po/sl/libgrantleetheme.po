@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-05-17 00:45+0000\n"
+"POT-Creation-Date: 2023-09-21 00:45+0000\n"
 "PO-Revision-Date: 2022-05-05 07:37+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -19,32 +19,32 @@ msgstr ""
 "%100==4 ? 3 : 0);\n"
 "X-Generator: Lokalize 21.12.2\n"
 
-#: grantleetheme.cpp:93 grantleetheme.cpp:101
+#: grantleetheme.cpp:76
 #, kde-format
 msgid "Template"
 msgstr "Predloga"
 
-#: grantleetheme.cpp:93 grantleetheme.cpp:101
+#: grantleetheme.cpp:76
 #, kde-format
 msgid "Error message"
 msgstr "Sporočilo napake"
 
-#: grantleetheme.cpp:108
+#: grantleetheme.cpp:82
 #, kde-format
 msgid "(null template)"
 msgstr "(ničelna predloga)"
 
-#: grantleetheme.cpp:225
+#: grantleetheme.cpp:195
 #, kde-format
 msgid "Template parsing error"
 msgstr "Napaka razčlenjevanja predloge"
 
-#: grantleetheme.cpp:234
+#: grantleetheme.cpp:200
 #, kde-format
 msgid "Template rendering error"
 msgstr "Napaka izrisovanja predloge"
 
-#: grantleethememanager.cpp:42
+#: grantleethememanager.cpp:47
 #, kde-format
 msgid "Download new Templates..."
 msgstr "Prejmi nove predloge..."

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-05-17 00:45+0000\n"
+"POT-Creation-Date: 2023-09-21 00:45+0000\n"
 "PO-Revision-Date: 2022-05-28 22:46+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: Arabic <kde-l10n-ar@kde.org>\n"
@@ -19,32 +19,32 @@ msgstr ""
 "&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
 "X-Generator: Lokalize 21.07.70\n"
 
-#: grantleetheme.cpp:93 grantleetheme.cpp:101
+#: grantleetheme.cpp:76
 #, kde-format
 msgid "Template"
 msgstr "القالب"
 
-#: grantleetheme.cpp:93 grantleetheme.cpp:101
+#: grantleetheme.cpp:76
 #, kde-format
 msgid "Error message"
 msgstr "رسالة الخطأ"
 
-#: grantleetheme.cpp:108
+#: grantleetheme.cpp:82
 #, kde-format
 msgid "(null template)"
 msgstr "(قالب فارغ)"
 
-#: grantleetheme.cpp:225
+#: grantleetheme.cpp:195
 #, kde-format
 msgid "Template parsing error"
 msgstr "خطأ في تحليل القالب"
 
-#: grantleetheme.cpp:234
+#: grantleetheme.cpp:200
 #, kde-format
 msgid "Template rendering error"
 msgstr "خطأ في تصيير القالب"
 
-#: grantleethememanager.cpp:42
+#: grantleethememanager.cpp:47
 #, kde-format
 msgid "Download new Templates..."
 msgstr "نزّل قوالب جديدة..."
