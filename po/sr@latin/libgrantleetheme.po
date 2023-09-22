@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libgrantleetheme\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2020-06-08 02:13+0200\n"
+"POT-Creation-Date: 2023-09-21 00:45+0000\n"
 "PO-Revision-Date: 2017-05-07 21:01+0200\n"
 "Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
@@ -18,32 +18,33 @@ msgstr ""
 "X-Text-Markup: kde4\n"
 "X-Environment: kde\n"
 
-#: grantleetheme.cpp:104
+#: grantleetheme.cpp:76
 #, kde-format
 msgid "Template"
 msgstr "Šablon"
 
-#: grantleetheme.cpp:104
+#: grantleetheme.cpp:76
 #, kde-format
 msgid "Error message"
 msgstr "Poruka greške"
 
-#: grantleetheme.cpp:112
+#: grantleetheme.cpp:82
 #, kde-format
 msgid "(null template)"
 msgstr "(nulti šablon)"
 
-#: grantleetheme.cpp:225
+#: grantleetheme.cpp:195
 #, kde-format
 msgid "Template parsing error"
 msgstr "Greška raščlanjivanja šablona"
 
-#: grantleetheme.cpp:231
+#: grantleetheme.cpp:200
 #, kde-format
 msgid "Template rendering error"
 msgstr "Greška renderovanja šablona"
 
-#: grantleethememanager.cpp:55
-#, kde-format
-msgid "Download New Themes..."
+#: grantleethememanager.cpp:47
+#, fuzzy, kde-format
+#| msgid "Download New Themes..."
+msgid "Download new Templates..."
 msgstr "Preuzmi nove teme..."
