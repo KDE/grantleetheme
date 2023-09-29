@@ -74,11 +74,6 @@ ecm_generate_headers(GrantleeTheme_CamelCase_HEADERS
   PREFIX GrantleeTheme
 )
 
-ecm_generate_pri_file(BASE_NAME GrantleeTheme
-    LIB_NAME KPim6GrantleeTheme
-    DEPS "" FILENAME_VAR PRI_FILENAME INCLUDE_INSTALL_DIR ${KDE_INSTALL_INCLUDEDIR}/KPim6/GrantleeTheme
-)
-
 
 install(FILES
     ${GrantleeTheme_CamelCase_HEADERS}
@@ -93,10 +88,6 @@ install(FILES
     DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KPim6/GrantleeTheme/grantleetheme
     COMPONENT Devel
 )
-install(FILES
-    ${PRI_FILENAME}
-    DESTINATION ${ECM_MKSPECS_INSTALL_DIR})
-
 
 if (BUILD_QCH)
     ecm_add_qch(
