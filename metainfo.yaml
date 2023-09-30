@@ -8,8 +8,7 @@ portingAid: false
 deprecated: false
 release: false
 libraries:
- - qmake: GrantleeTheme
-   cmake: "KPim6::GrantleeTheme"
+ - cmake: "KPim6::GrantleeTheme"
 cmakename: KPim6GrantleeTheme
 
 public_lib: true
