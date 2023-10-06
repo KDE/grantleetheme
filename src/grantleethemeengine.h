@@ -26,7 +26,7 @@ public:
     explicit Engine(QObject *parent = nullptr);
     ~Engine() override;
 
-    Q_REQUIRED_RESULT QSharedPointer<GrantleeKi18nLocalizer> localizer() const;
+    [[nodiscard]] QSharedPointer<GrantleeKi18nLocalizer> localizer() const;
 
 private:
     std::unique_ptr<EnginePrivate> const d;

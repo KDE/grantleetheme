@@ -38,23 +38,23 @@ public:
                           QObject *parent = nullptr);
     ~ThemeManager() override;
 
-    Q_REQUIRED_RESULT QMap<QString, GrantleeTheme::Theme> themes() const;
+    [[nodiscard]] QMap<QString, GrantleeTheme::Theme> themes() const;
 
     void setActionGroup(QActionGroup *actionGroup);
 
-    Q_REQUIRED_RESULT KToggleAction *actionForTheme();
+    [[nodiscard]] KToggleAction *actionForTheme();
 
     void setThemeMenu(KActionMenu *menu);
 
-    Q_REQUIRED_RESULT QStringList displayExtraVariables(const QString &themename) const;
+    [[nodiscard]] QStringList displayExtraVariables(const QString &themename) const;
 
-    Q_REQUIRED_RESULT GrantleeTheme::Theme theme(const QString &themeName);
+    [[nodiscard]] GrantleeTheme::Theme theme(const QString &themeName);
 
-    Q_REQUIRED_RESULT QString configuredThemeName() const;
-    Q_REQUIRED_RESULT static QString configuredThemeName(const QString &themeType);
+    [[nodiscard]] QString configuredThemeName() const;
+    [[nodiscard]] static QString configuredThemeName(const QString &themeType);
 
-    Q_REQUIRED_RESULT static QString pathFromThemes(const QString &path, const QString &themeName, const QString &defaultDesktopFilename);
-    Q_REQUIRED_RESULT static GrantleeTheme::Theme loadTheme(const QString &themePath, const QString &dirName, const QString &defaultDesktopFilename);
+    [[nodiscard]] static QString pathFromThemes(const QString &path, const QString &themeName, const QString &defaultDesktopFilename);
+    [[nodiscard]] static GrantleeTheme::Theme loadTheme(const QString &themePath, const QString &dirName, const QString &defaultDesktopFilename);
 
 Q_SIGNALS:
     void themesChanged();

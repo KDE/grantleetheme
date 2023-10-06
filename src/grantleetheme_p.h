@@ -23,8 +23,8 @@ public:
 
     static void setupEngine();
     void setupLoader();
-    Q_REQUIRED_RESULT KTextTemplate::Context createContext(const QVariantHash &data = QVariantHash(), const QByteArray &applicationDomain = QByteArray());
-    Q_REQUIRED_RESULT QString errorTemplate(const QString &reason, const QString &templateName, const KTextTemplate::Template &errorTemplate);
+    [[nodiscard]] KTextTemplate::Context createContext(const QVariantHash &data = QVariantHash(), const QByteArray &applicationDomain = QByteArray());
+    [[nodiscard]] QString errorTemplate(const QString &reason, const QString &templateName, const KTextTemplate::Template &errorTemplate);
 
     QStringList displayExtraVariables;
     QString themeFileName;

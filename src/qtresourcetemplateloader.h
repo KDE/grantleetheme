@@ -20,8 +20,8 @@ class GRANTLEETHEME_EXPORT QtResourceTemplateLoader : public KTextTemplate::File
 {
 public:
     QtResourceTemplateLoader(const QSharedPointer<KTextTemplate::AbstractLocalizer> localizer = QSharedPointer<KTextTemplate::AbstractLocalizer>());
-    Q_REQUIRED_RESULT KTextTemplate::Template loadByName(const QString &fileName, const KTextTemplate::Engine *engine) const override;
+    [[nodiscard]] KTextTemplate::Template loadByName(const QString &fileName, const KTextTemplate::Engine *engine) const override;
 
-    Q_REQUIRED_RESULT bool canLoadTemplate(const QString &name) const override;
+    [[nodiscard]] bool canLoadTemplate(const QString &name) const override;
 };
 }

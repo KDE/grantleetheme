@@ -30,23 +30,23 @@ public:
     Theme(const Theme &other);
     ~Theme();
 
-    Q_REQUIRED_RESULT bool operator==(const Theme &other) const;
+    [[nodiscard]] bool operator==(const Theme &other) const;
     Theme &operator=(const Theme &other);
 
-    Q_REQUIRED_RESULT bool isValid() const;
+    [[nodiscard]] bool isValid() const;
 
-    Q_REQUIRED_RESULT QString description() const;
-    Q_REQUIRED_RESULT QString themeFilename() const;
-    Q_REQUIRED_RESULT QString name() const;
-    Q_REQUIRED_RESULT QStringList displayExtraVariables() const;
-    Q_REQUIRED_RESULT QString dirName() const;
-    Q_REQUIRED_RESULT QString absolutePath() const;
-    Q_REQUIRED_RESULT QString author() const;
-    Q_REQUIRED_RESULT QString authorEmail() const;
+    [[nodiscard]] QString description() const;
+    [[nodiscard]] QString themeFilename() const;
+    [[nodiscard]] QString name() const;
+    [[nodiscard]] QStringList displayExtraVariables() const;
+    [[nodiscard]] QString dirName() const;
+    [[nodiscard]] QString absolutePath() const;
+    [[nodiscard]] QString author() const;
+    [[nodiscard]] QString authorEmail() const;
 
     void addThemePath(const QString &path);
 
-    Q_REQUIRED_RESULT QString render(const QString &templateName, const QVariantHash &data, const QByteArray &applicationDomain = QByteArray());
+    [[nodiscard]] QString render(const QString &templateName, const QVariantHash &data, const QByteArray &applicationDomain = QByteArray());
 
     static void addPluginPath(const QString &path);
 
