@@ -22,7 +22,7 @@ target_sources(KPim6GrantleeTheme PRIVATE
     qtresourcetemplateloader.h
     )
 
-configure_file(config-grantleetheme.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config-grantleetheme.h)
+configure_file(config-grantleetheme.h.in ${CMAKE_CURRENT_BINARY_DIR}/config-grantleetheme.h)
 
 ecm_qt_declare_logging_category(KPim6GrantleeTheme HEADER grantleetheme_debug.h IDENTIFIER GRANTLEETHEME_LOG CATEGORY_NAME org.kde.pim.grantleetheme
         OLD_CATEGORY_NAMES log_grantleetheme
