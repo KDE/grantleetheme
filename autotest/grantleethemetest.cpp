@@ -24,7 +24,7 @@ GrantleeThemeTest::GrantleeThemeTest(QObject *parent)
     QStandardPaths::setTestModeEnabled(true);
 
     // Point the test to our dummy icon theme
-    KConfigGroup cg(KSharedConfig::openConfig(), "Icons");
+    KConfigGroup cg(KSharedConfig::openConfig(), QStringLiteral("Icons"));
     cg.writeEntry("Theme", "dummyTheme");
     qputenv("XDG_DATA_DIRS", GRANTLEETHEME_DATA_DIR);
 }
