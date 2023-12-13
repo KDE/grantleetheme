@@ -3,20 +3,21 @@
 #
 # Franklin Weng <franklin at goodhorse dot idv dot tw>, 2013.
 # pan93412 <pan93412@gmail.com>, 2019.
+# SPDX-FileCopyrightText: 2023 Kisaragi Hiu <mail@kisaragi-hiu.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-09-21 00:45+0000\n"
-"PO-Revision-Date: 2019-03-22 00:42+0800\n"
-"Last-Translator: pan93412 <pan93412@gmail.com>\n"
-"Language-Team: Chinese <zh-l10n@lists.linux.org.tw>\n"
+"PO-Revision-Date: 2023-12-13 04:57+0900\n"
+"Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
+"Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 18.12.3\n"
+"X-Generator: Lokalize 23.08.4\n"
 
 #: grantleetheme.cpp:76
 #, kde-format
@@ -44,10 +45,9 @@ msgid "Template rendering error"
 msgstr "繪製模板時發生錯誤"
 
 #: grantleethememanager.cpp:47
-#, fuzzy, kde-format
-#| msgid "Download New Themes..."
+#, kde-format
 msgid "Download new Templates..."
-msgstr "下載新主題…"
+msgstr "下載新模板..."
 
 #~ msgid "Download New Themes..."
 #~ msgstr "下載新主題…"
