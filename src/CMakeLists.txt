@@ -1,4 +1,4 @@
-add_definitions(-DTRANSLATION_DOMAIN=\"libgrantleetheme\")
+add_definitions(-DTRANSLATION_DOMAIN=\"libgrantleetheme6\")
 
 add_library(KPim6GrantleeTheme)
 add_library(KPim6::GrantleeTheme ALIAS KPim6GrantleeTheme)
