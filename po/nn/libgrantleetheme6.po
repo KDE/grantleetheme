@@ -1,4 +1,4 @@
-# Translation of libgrantleetheme to Norwegian Nynorsk
+# Translation of libgrantleetheme6 to Norwegian Nynorsk
 #
 # Karl Ove Hufthammer <karl@huftis.org>, 2020, 2022.
 msgid ""
