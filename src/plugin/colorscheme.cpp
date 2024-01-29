@@ -11,7 +11,7 @@
 #include <KColorScheme>
 
 #define PROP_IMPL(PROP, METHOD)                                                                                                                                \
-    if (QString::compare(property, QLatin1String(#PROP), Qt::CaseInsensitive) == 0) {                                                                          \
+    if (QString::compare(property, QLatin1StringView(#PROP), Qt::CaseInsensitive) == 0) {                                                                      \
         return object.METHOD(KColorScheme::PROP).color();                                                                                                      \
     }
 #define BACKGROUND_PROP(PROP) PROP_IMPL(PROP, background)

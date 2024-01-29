@@ -27,19 +27,19 @@ KTEXTTEMPLATE_BEGIN_LOOKUP(QPalette)
 auto group = QPalette::Inactive;
 auto roleName = property;
 
-if (property.startsWith(QLatin1String("active"))) {
+if (property.startsWith(QLatin1StringView("active"))) {
     roleName = property.mid(6);
     group = QPalette::Active;
-} else if (property.startsWith(QLatin1String("disabled"))) {
+} else if (property.startsWith(QLatin1StringView("disabled"))) {
     roleName = property.mid(8);
     group = QPalette::Disabled;
-} else if (property.startsWith(QLatin1String("inactive"))) {
+} else if (property.startsWith(QLatin1StringView("inactive"))) {
     roleName = property.mid(8);
     group = QPalette::Inactive;
 }
 
 for (const auto &role : color_roles) {
-    if (roleName.compare(QLatin1String(role.name), Qt::CaseInsensitive) == 0) {
+    if (roleName.compare(QLatin1StringView(role.name), Qt::CaseInsensitive) == 0) {
         return object.color(group, role.role);
     }
 }

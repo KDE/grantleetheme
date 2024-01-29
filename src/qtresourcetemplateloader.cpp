@@ -19,7 +19,7 @@ QtResourceTemplateLoader::QtResourceTemplateLoader(const QSharedPointer<KTextTem
 KTextTemplate::Template QtResourceTemplateLoader::loadByName(const QString &fileName, const KTextTemplate::Engine *engine) const
 {
     // Qt resource file
-    if (fileName.startsWith(QLatin1String(":/"))) {
+    if (fileName.startsWith(QLatin1StringView(":/"))) {
         QFile file;
         file.setFileName(fileName);
         if (!file.exists() || !file.open(QIODevice::ReadOnly | QIODevice::Text)) {
@@ -38,7 +38,7 @@ KTextTemplate::Template QtResourceTemplateLoader::loadByName(const QString &file
 bool QtResourceTemplateLoader::canLoadTemplate(const QString &name) const
 {
     // Qt resource file
-    if (name.startsWith(QLatin1String(":/"))) {
+    if (name.startsWith(QLatin1StringView(":/"))) {
         QFile file;
         file.setFileName(name);
 

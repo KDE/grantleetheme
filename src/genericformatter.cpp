@@ -83,7 +83,7 @@ void GenericFormatter::setTemplateContent(const QString &content)
 {
     d->mTemplate = d->mEngine->newTemplate(content, QStringLiteral("content"));
     if (d->mTemplate->error()) {
-        d->mErrorMessage = d->mTemplate->errorString() + QLatin1String("<br>");
+        d->mErrorMessage = d->mTemplate->errorString() + QLatin1StringView("<br>");
     }
 }
 
@@ -91,6 +91,6 @@ void GenericFormatter::reloadTemplate()
 {
     d->mTemplate = d->mEngine->loadByName(d->mDefaultMainFile);
     if (d->mTemplate->error()) {
-        d->mErrorMessage += d->mTemplate->errorString() + QLatin1String("<br>");
+        d->mErrorMessage += d->mTemplate->errorString() + QLatin1StringView("<br>");
     }
 }

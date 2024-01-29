@@ -23,12 +23,12 @@ static QColor inputToColor(const QVariant &v)
 
 static QString rgbaString(const QColor &c)
 {
-    return QLatin1String("rgba(") + QString::number(c.red()) + QLatin1String(", ") + QString::number(c.green()) + QLatin1String(", ")
-        + QString::number(c.blue()) + QLatin1String(", ") + QString::number(c.alphaF()) + QLatin1Char(')');
+    return QLatin1StringView("rgba(") + QString::number(c.red()) + QLatin1String(", ") + QString::number(c.green()) + QLatin1String(", ")
+        + QString::number(c.blue()) + QLatin1StringView(", ") + QString::number(c.alphaF()) + QLatin1Char(')');
 }
 
 #define COLOR_PROP(name)                                                                                                                                       \
-    if (property == QLatin1String(#name)) {                                                                                                                    \
+    if (property == QLatin1StringView(#name)) {                                                                                                                \
         return object.name();                                                                                                                                  \
     }
 KTEXTTEMPLATE_BEGIN_LOOKUP(QColor)
@@ -36,10 +36,10 @@ COLOR_PROP(red)
 COLOR_PROP(green)
 COLOR_PROP(blue)
 COLOR_PROP(alpha)
-if (property == QLatin1String("hexRgb")) {
+if (property == QLatin1StringView("hexRgb")) {
     return object.name();
 }
-if (property == QLatin1String("cssRgba")) {
+if (property == QLatin1StringView("cssRgba")) {
     return rgbaString(object);
 }
 return {};
@@ -116,7 +116,7 @@ KTextTemplate::Node *ColorMixTag::getNode(const QString &tagContent, KTextTempla
 
     QString varName;
     if (parts.size() == 6) {
-        if (parts.at(4) != QLatin1String("as")) {
+        if (parts.at(4) != QLatin1StringView("as")) {
             throw KTextTemplate::Exception(KTextTemplate::TagSyntaxError, QStringLiteral("colormix: syntax error"));
         }
         varName = parts.at(5);
