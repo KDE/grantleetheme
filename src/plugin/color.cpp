@@ -23,7 +23,7 @@ static QColor inputToColor(const QVariant &v)
 
 static QString rgbaString(const QColor &c)
 {
-    return QLatin1StringView("rgba(") + QString::number(c.red()) + QLatin1String(", ") + QString::number(c.green()) + QLatin1String(", ")
+    return QLatin1StringView("rgba(") + QString::number(c.red()) + QLatin1StringView(", ") + QString::number(c.green()) + QLatin1StringView(", ")
         + QString::number(c.blue()) + QLatin1StringView(", ") + QString::number(c.alphaF()) + QLatin1Char(')');
 }
 
