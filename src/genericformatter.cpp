@@ -5,6 +5,8 @@
 */
 
 #include "genericformatter.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "grantleeki18nlocalizer.h"
 #include "grantleethemeengine.h"
 
@@ -83,7 +85,7 @@ void GenericFormatter::setTemplateContent(const QString &content)
 {
     d->mTemplate = d->mEngine->newTemplate(content, QStringLiteral("content"));
     if (d->mTemplate->error()) {
-        d->mErrorMessage = d->mTemplate->errorString() + QLatin1StringView("<br>");
+        d->mErrorMessage = d->mTemplate->errorString() + "<br>"_L1;
     }
 }
 
@@ -91,6 +93,6 @@ void GenericFormatter::reloadTemplate()
 {
     d->mTemplate = d->mEngine->loadByName(d->mDefaultMainFile);
     if (d->mTemplate->error()) {
-        d->mErrorMessage += d->mTemplate->errorString() + QLatin1StringView("<br>");
+        d->mErrorMessage += d->mTemplate->errorString() + "<br>"_L1;
     }
 }

@@ -6,6 +6,7 @@
  */
 
 #include "qtresourcetemplateloader.h"
+using namespace Qt::Literals::StringLiterals;
 
 #include <KTextTemplate/Engine>
 #include <QFile>
@@ -19,7 +20,7 @@ QtResourceTemplateLoader::QtResourceTemplateLoader(const QSharedPointer<KTextTem
 KTextTemplate::Template QtResourceTemplateLoader::loadByName(const QString &fileName, const KTextTemplate::Engine *engine) const
 {
     // Qt resource file
-    if (fileName.startsWith(QLatin1StringView(":/"))) {
+    if (fileName.startsWith(":/"_L1)) {
         QFile file;
         file.setFileName(fileName);
         if (!file.exists() || !file.open(QIODevice::ReadOnly | QIODevice::Text)) {
@@ -38,7 +39,7 @@ KTextTemplate::Template QtResourceTemplateLoader::loadByName(const QString &file
 bool QtResourceTemplateLoader::canLoadTemplate(const QString &name) const
 {
     // Qt resource file
-    if (name.startsWith(QLatin1StringView(":/"))) {
+    if (name.startsWith(":/"_L1)) {
         QFile file;
         file.setFileName(name);
 

@@ -5,10 +5,12 @@
  */
 
 #include "palette.h"
+
 #include <KTextTemplate/MetaType>
 #include <QObject>
 
 #include <QPalette>
+using namespace Qt::Literals::StringLiterals;
 
 #define ROLE(R)                                                                                                                                                \
     {                                                                                                                                                          \
@@ -27,13 +29,13 @@ KTEXTTEMPLATE_BEGIN_LOOKUP(QPalette)
 auto group = QPalette::Inactive;
 auto roleName = property;
 
-if (property.startsWith(QLatin1StringView("active"))) {
+if (property.startsWith("active"_L1)) {
     roleName = property.mid(6);
     group = QPalette::Active;
-} else if (property.startsWith(QLatin1StringView("disabled"))) {
+} else if (property.startsWith("disabled"_L1)) {
     roleName = property.mid(8);
     group = QPalette::Disabled;
-} else if (property.startsWith(QLatin1StringView("inactive"))) {
+} else if (property.startsWith("inactive"_L1)) {
     roleName = property.mid(8);
     group = QPalette::Inactive;
 }
