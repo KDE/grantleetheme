@@ -49,4 +49,4 @@ msgstr "S'ha produït un error en renderitzar la plantilla"
 #: grantleethememanager.cpp:47
 #, kde-format
 msgid "Download new Templates..."
-msgstr "Baixa plantilles noves..."
+msgstr "Baixa plantilles noves…"
