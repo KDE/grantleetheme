@@ -44,7 +44,7 @@ public:
         watch = new KDirWatch(q);
         initThemesDirectories(relativePath);
         if (KAuthorized::authorize(QStringLiteral("ghns"))) {
-            downloadThemesAction = new KNSWidgets::Action(i18n("Download new Templates..."), configFileName, q);
+            downloadThemesAction = new KNSWidgets::Action(i18n("Download new Templates…"), configFileName, q);
             if (actionCollection) {
                 actionCollection->addAction(QStringLiteral("download_header_themes"), downloadThemesAction);
             }
