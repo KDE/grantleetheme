@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: grantleetheme\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-21 00:45+0000\n"
+"POT-Creation-Date: 2024-05-12 00:39+0000\n"
 "PO-Revision-Date: 2022-06-19 14:03+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
@@ -45,6 +45,7 @@ msgid "Template rendering error"
 msgstr "Feil ved vising av mal"
 
 #: grantleethememanager.cpp:47
-#, kde-format
-msgid "Download new Templates..."
+#, fuzzy, kde-format
+#| msgid "Download new Templates..."
+msgid "Download new Templates…"
 msgstr "Last ned nye malar …"

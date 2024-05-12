@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-21 00:45+0000\n"
+"POT-Creation-Date: 2024-05-12 00:39+0000\n"
 "PO-Revision-Date: 2022-05-28 22:46+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: Arabic <kde-l10n-ar@kde.org>\n"
@@ -45,8 +45,9 @@ msgid "Template rendering error"
 msgstr "خطأ في تصيير القالب"
 
 #: grantleethememanager.cpp:47
-#, kde-format
-msgid "Download new Templates..."
+#, fuzzy, kde-format
+#| msgid "Download new Templates..."
+msgid "Download new Templates…"
 msgstr "نزّل قوالب جديدة..."
 
 #~ msgid "Download New Themes..."

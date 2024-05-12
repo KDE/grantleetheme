@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: grantleetheme\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-21 00:45+0000\n"
+"POT-Creation-Date: 2024-05-12 00:39+0000\n"
 "PO-Revision-Date: 2022-05-04 17:39+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -47,6 +47,7 @@ msgid "Template rendering error"
 msgstr "S'ha produït un error en renderitzar la plantilla"
 
 #: grantleethememanager.cpp:47
-#, kde-format
-msgid "Download new Templates..."
-msgstr "Baixa plantilles noves..."
+#, fuzzy, kde-format
+#| msgid "Download new Templates..."
+msgid "Download new Templates…"
+msgstr "Baixa plantilles noves…"
