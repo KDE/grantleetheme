@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: grantleetheme\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-12 00:39+0000\n"
-"PO-Revision-Date: 2024-05-05 14:22+0530\n"
+"PO-Revision-Date: 2024-05-12 13:58+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
 "Language: ta\n"
@@ -25,25 +25,24 @@ msgstr "வார்ப்புரு"
 #: grantleetheme.cpp:76
 #, kde-format
 msgid "Error message"
-msgstr ""
+msgstr "சிக்கல் குறித்த செய்தி"
 
 #: grantleetheme.cpp:82
 #, kde-format
 msgid "(null template)"
-msgstr ""
+msgstr "(காலியான வார்ப்புரு)"
 
 #: grantleetheme.cpp:195
 #, kde-format
 msgid "Template parsing error"
-msgstr ""
+msgstr "வார்ப்புருவை புரிந்துகொள்வதில் சிக்கல்"
 
 #: grantleetheme.cpp:200
 #, kde-format
 msgid "Template rendering error"
-msgstr ""
+msgstr "வார்ப்புருவை காட்டுவதில் சிக்கல்"
 
 #: grantleethememanager.cpp:47
-#, fuzzy, kde-format
-#| msgid "Download new Templates..."
+#, kde-format
 msgid "Download new Templates…"
-msgstr "புதிய வார்ப்புருக்களை பதிவிறக்கு..."
+msgstr "புதிய வார்ப்புருக்களை பதிவிறக்கு…"

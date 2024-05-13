@@ -2,13 +2,13 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Javier Viñal <fjvinal@gmail.com>, 2013, 2015, 2017.
-# Eloy Cuadra <ecuadra@eloihr.net>, 2022.
+# SPDX-FileCopyrightText: 2022, 2024 Eloy Cuadra <ecuadra@eloihr.net>
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-12 00:39+0000\n"
-"PO-Revision-Date: 2022-05-05 00:16+0200\n"
+"PO-Revision-Date: 2024-05-12 12:03+0200\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 22.04.0\n"
+"X-Generator: Lokalize 24.02.2\n"
 
 #: grantleetheme.cpp:76
 #, kde-format
@@ -44,8 +44,7 @@ msgid "Template rendering error"
 msgstr "Error de representación de la plantilla"
 
 #: grantleethememanager.cpp:47
-#, fuzzy, kde-format
-#| msgid "Download new Templates..."
+#, kde-format
 msgid "Download new Templates…"
 msgstr "Descargar nuevas plantillas..."
 

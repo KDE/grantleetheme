@@ -1,16 +1,16 @@
 # Translation of libgrantleetheme6.po to Catalan (Valencian)
-# Copyright (C) 2013-2022 This_file_is_part_of_KDE
+# Copyright (C) 2013-2024 This_file_is_part_of_KDE
 # This file is distributed under the license LGPL version 2.1 or
 # version 3 or later versions approved by the membership of KDE e.V.
 #
 # Antoni Bella Pérez <antonibella5@yahoo.com>, 2013, 2015, 2017.
-# Josep M. Ferrer <txemaq@gmail.com>, 2022.
+# Josep M. Ferrer <txemaq@gmail.com>, 2022, 2024.
 msgid ""
 msgstr ""
 "Project-Id-Version: grantleetheme\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-12 00:39+0000\n"
-"PO-Revision-Date: 2022-05-04 17:39+0200\n"
+"PO-Revision-Date: 2024-05-12 09:48+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Accelerator-Marker: &\n"
-"X-Generator: Lokalize 20.12.0\n"
+"X-Generator: Lokalize 22.12.3\n"
 
 #: grantleetheme.cpp:76
 #, kde-format
@@ -47,7 +47,6 @@ msgid "Template rendering error"
 msgstr "S'ha produït un error en renderitzar la plantilla"
 
 #: grantleethememanager.cpp:47
-#, fuzzy, kde-format
-#| msgid "Download new Templates..."
+#, kde-format
 msgid "Download new Templates…"
 msgstr "Baixa plantilles noves…"
