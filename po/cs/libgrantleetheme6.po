@@ -43,7 +43,6 @@ msgid "Template rendering error"
 msgstr ""
 
 #: grantleethememanager.cpp:47
-#, fuzzy, kde-format
-#| msgid "Download new Templates..."
+#, kde-format
 msgid "Download new Templates…"
-msgstr "Stáhnout nové šablony..."
+msgstr ""
