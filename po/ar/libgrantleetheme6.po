@@ -2,22 +2,22 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Safa Alfulaij <safa1996alfulaij@gmail.com>, 2016.
-# Zayed Al-Saidi <zayed.alsaidi@gmail.com>, 2021, 2022.
+# SPDX-FileCopyrightText: 2021, 2022, 2024 Zayed Al-Saidi <zayed.alsaidi@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-12 00:39+0000\n"
-"PO-Revision-Date: 2022-05-28 22:46+0400\n"
+"PO-Revision-Date: 2024-05-16 13:45+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
-"Language-Team: Arabic <kde-l10n-ar@kde.org>\n"
+"Language-Team: ar\n"
 "Language: ar\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
 "&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
-"X-Generator: Lokalize 21.07.70\n"
+"X-Generator: Lokalize 23.08.1\n"
 
 #: grantleetheme.cpp:76
 #, kde-format
@@ -45,10 +45,9 @@ msgid "Template rendering error"
 msgstr "خطأ في تصيير القالب"
 
 #: grantleethememanager.cpp:47
-#, fuzzy, kde-format
-#| msgid "Download new Templates..."
+#, kde-format
 msgid "Download new Templates…"
-msgstr "نزّل قوالب جديدة..."
+msgstr "نزّل قوالب جديدة…"
 
 #~ msgid "Download New Themes..."
 #~ msgstr "نزّل سمات جديدة..."
