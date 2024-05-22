@@ -3,13 +3,13 @@
 #
 # Alexander Lakhin <exclusion@gmail.com>, 2013.
 # Alexander Potashev <aspotashev@gmail.com>, 2016.
-# Alexander Yavorsky <kekcuha@gmail.com>, 2018, 2022.
+# Alexander Yavorsky <kekcuha@gmail.com>, 2018, 2022, 2024.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-12 00:39+0000\n"
-"PO-Revision-Date: 2022-10-02 14:48+0300\n"
+"PO-Revision-Date: 2024-05-21 22:33+0300\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
 "Language: ru\n"
@@ -49,8 +49,7 @@ msgid "Template rendering error"
 msgstr "Не удалось создать документ по шаблону"
 
 #: grantleethememanager.cpp:47
-#, fuzzy, kde-format
-#| msgid "Download new Templates..."
+#, kde-format
 msgid "Download new Templates…"
 msgstr "Получить новые шаблоны…"
 
