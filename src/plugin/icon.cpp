@@ -114,7 +114,7 @@ void IconNode::render(KTextTemplate::OutputStream *stream, KTextTemplate::Contex
     }
 
     const QString html =
-        QStringLiteral("<img src=\"file://%1\" align=\"top\" height=\"%2\" width=\"%2\" alt=\"%3\" title=\"%4\" />")
+        QStringLiteral("<img src=\"qrc:%1\" align=\"top\" height=\"%2\" width=\"%2\" alt=\"%3\" title=\"%4\" />")
             .arg(KIconLoader::global()->iconPath(iconName, mSizeOrGroup < KIconLoader::LastGroup ? mSizeOrGroup : -mSizeOrGroup))
             .arg(mSizeOrGroup < KIconLoader::LastGroup ? KIconLoader::global()->currentSize(static_cast<KIconLoader::Group>(mSizeOrGroup)) : mSizeOrGroup)
             .arg(altText.isEmpty() ? iconName : altText, altText); // title is intentionally blank if no alt is provided
