@@ -28,9 +28,7 @@ ThemePrivate::ThemePrivate()
 {
 }
 
-ThemePrivate::ThemePrivate(const ThemePrivate &other)
-
-    = default;
+ThemePrivate::ThemePrivate(const ThemePrivate &other) = default;
 
 ThemePrivate::~ThemePrivate() = default;
 
