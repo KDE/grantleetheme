@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-12 00:39+0000\n"
+"POT-Creation-Date: 2024-06-18 00:39+0000\n"
 "PO-Revision-Date: 2024-06-16 22:50+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@bredband.net>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -17,27 +17,27 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 23.08.5\n"
 
-#: grantleetheme.cpp:76
+#: grantleetheme.cpp:74
 #, kde-format
 msgid "Template"
 msgstr "Mall"
 
-#: grantleetheme.cpp:76
+#: grantleetheme.cpp:74
 #, kde-format
 msgid "Error message"
 msgstr "Felmeddelande"
 
-#: grantleetheme.cpp:82
+#: grantleetheme.cpp:80
 #, kde-format
 msgid "(null template)"
 msgstr "(tom mall)"
 
-#: grantleetheme.cpp:195
+#: grantleetheme.cpp:193
 #, kde-format
 msgid "Template parsing error"
 msgstr "Tolkningsfel av mall"
 
-#: grantleetheme.cpp:200
+#: grantleetheme.cpp:198
 #, kde-format
 msgid "Template rendering error"
 msgstr "Återgivningsfel för mall"

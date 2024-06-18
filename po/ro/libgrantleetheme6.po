@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: grantleetheme\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-12 00:39+0000\n"
+"POT-Creation-Date: 2024-06-18 00:39+0000\n"
 "PO-Revision-Date: 2024-06-09 11:19+0100\n"
 "Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
 "Language-Team: Romanian <kde-i18n-ro@kde.org>\n"
@@ -18,27 +18,27 @@ msgstr ""
 "20)) ? 1 : 2;\n"
 "X-Generator: Lokalize 21.12.3\n"
 
-#: grantleetheme.cpp:76
+#: grantleetheme.cpp:74
 #, kde-format
 msgid "Template"
 msgstr "Șablon"
 
-#: grantleetheme.cpp:76
+#: grantleetheme.cpp:74
 #, kde-format
 msgid "Error message"
 msgstr "Mesaj de eroare"
 
-#: grantleetheme.cpp:82
+#: grantleetheme.cpp:80
 #, kde-format
 msgid "(null template)"
 msgstr "(șablon nul)"
 
-#: grantleetheme.cpp:195
+#: grantleetheme.cpp:193
 #, kde-format
 msgid "Template parsing error"
 msgstr "Eroare de parcurgere a șablonului"
 
-#: grantleetheme.cpp:200
+#: grantleetheme.cpp:198
 #, kde-format
 msgid "Template rendering error"
 msgstr "Eroare de randare a șablonului"

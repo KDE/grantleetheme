@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: grantleetheme\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-12 00:39+0000\n"
+"POT-Creation-Date: 2024-06-18 00:39+0000\n"
 "PO-Revision-Date: 2024-05-12 13:58+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
@@ -17,27 +17,27 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 24.02.2\n"
 
-#: grantleetheme.cpp:76
+#: grantleetheme.cpp:74
 #, kde-format
 msgid "Template"
 msgstr "வார்ப்புரு"
 
-#: grantleetheme.cpp:76
+#: grantleetheme.cpp:74
 #, kde-format
 msgid "Error message"
 msgstr "சிக்கல் குறித்த செய்தி"
 
-#: grantleetheme.cpp:82
+#: grantleetheme.cpp:80
 #, kde-format
 msgid "(null template)"
 msgstr "(காலியான வார்ப்புரு)"
 
-#: grantleetheme.cpp:195
+#: grantleetheme.cpp:193
 #, kde-format
 msgid "Template parsing error"
 msgstr "வார்ப்புருவை புரிந்துகொள்வதில் சிக்கல்"
 
-#: grantleetheme.cpp:200
+#: grantleetheme.cpp:198
 #, kde-format
 msgid "Template rendering error"
 msgstr "வார்ப்புருவை காட்டுவதில் சிக்கல்"
