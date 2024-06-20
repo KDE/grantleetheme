@@ -20,7 +20,7 @@ target_sources(KPim6GrantleeTheme PRIVATE
     grantleethemeengine.h
     grantleeki18nlocalizer.h
     qtresourcetemplateloader.h
-    )
+)
 
 configure_file(config-grantleetheme.h.in ${CMAKE_CURRENT_BINARY_DIR}/config-grantleetheme.h)
 
@@ -28,7 +28,7 @@ ecm_qt_declare_logging_category(KPim6GrantleeTheme HEADER grantleetheme_debug.h 
         OLD_CATEGORY_NAMES log_grantleetheme
         DESCRIPTION "kdepim (grantleetheme)" EXPORT LIBGRANTLEETHEME)
 
-if (COMPILE_WITH_UNITY_CMAKE_SUPPORT)
+if(COMPILE_WITH_UNITY_CMAKE_SUPPORT)
     set_target_properties(KPim6GrantleeTheme PROPERTIES UNITY_BUILD ON)
 endif()
 ecm_generate_export_header(KPim6GrantleeTheme
@@ -89,7 +89,7 @@ install(FILES
     COMPONENT Devel
 )
 
-if (BUILD_QCH)
+if(BUILD_QCH)
     ecm_add_qch(
         KPim6GrantleeTheme_QCH
         NAME GrantleeTheme
@@ -109,7 +109,7 @@ if (BUILD_QCH)
         TAGFILE_INSTALL_DESTINATION ${KDE_INSTALL_QTQCHDIR}
         QCH_INSTALL_DESTINATION ${KDE_INSTALL_QTQCHDIR}
         COMPONENT Devel
-    )
+)
 endif()
 
 ecm_qt_install_logging_categories(EXPORT LIBGRANTLEETHEME FILE grantleetheme.categories DESTINATION ${KDE_INSTALL_LOGGINGCATEGORIESDIR})
