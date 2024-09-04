@@ -12,10 +12,7 @@
 #include <QPalette>
 using namespace Qt::Literals::StringLiterals;
 
-#define ROLE(R)                                                                                                                                                \
-    {                                                                                                                                                          \
-#R, QPalette::R                                                                                                                                        \
-    }
+#define ROLE(R) {#R, QPalette::R}
 
 static const struct {
     const char *name;
