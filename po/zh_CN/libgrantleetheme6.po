@@ -45,4 +45,4 @@ msgstr "模板渲染错误"
 #: grantleethememanager.cpp:47
 #, kde-format
 msgid "Download new Templates…"
-msgstr ""
+msgstr "下载新模板..."
