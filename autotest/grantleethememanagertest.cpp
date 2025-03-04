@@ -30,9 +30,17 @@ private Q_SLOTS:
     void updateActionList();
     void destructionOrderTest();
 };
+// taken from tst_qstandardpaths
+#if defined(Q_OS_UNIX) && !defined(Q_OS_MAC) && !defined(Q_OS_BLACKBERRY) && !defined(Q_OS_ANDROID)
+#define Q_XDG_PLATFORM
+#endif
 
 void GrantleeThemeManagerTest::initTestCase()
 {
+#ifndef Q_XDG_PLATFORM
+    // We need to make changes to a global dir without messing up the system
+    QSKIP("This test requires XDG_DATA_DIRS");
+#endif
     QStandardPaths::setTestModeEnabled(true);
 
     // Point the test to our dummy icon theme

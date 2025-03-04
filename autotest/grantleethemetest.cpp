@@ -18,6 +18,11 @@
 #include <KConfigGroup>
 #include <KSharedConfig>
 
+// taken from tst_qstandardpaths
+#if defined(Q_OS_UNIX) && !defined(Q_OS_MAC) && !defined(Q_OS_BLACKBERRY) && !defined(Q_OS_ANDROID)
+#define Q_XDG_PLATFORM
+#endif
+
 GrantleeThemeTest::GrantleeThemeTest(QObject *parent)
     : QObject(parent)
 {
@@ -30,6 +35,14 @@ GrantleeThemeTest::GrantleeThemeTest(QObject *parent)
 }
 
 GrantleeThemeTest::~GrantleeThemeTest() = default;
+
+void GrantleeThemeTest::initTestCase()
+{
+#ifndef Q_XDG_PLATFORM
+    // We need to make changes to a global dir without messing up the system
+    QSKIP("This test requires XDG_DATA_DIRS");
+#endif
+}
 
 void GrantleeThemeTest::shouldHaveDefaultValue()
 {

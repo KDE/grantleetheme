@@ -23,6 +23,8 @@ private Q_SLOTS:
     void testRenderTemplate_data();
     void testRenderTemplate();
 
+    void initTestCase();
+
 private:
     bool validateHtml(const QString &path, const QString &name, const QString &html);
     bool compareHtml(const QString &generatedTheme, const QString &path, const QString &name);
