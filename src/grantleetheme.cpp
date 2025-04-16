@@ -24,7 +24,7 @@ QSharedPointer<GrantleeKi18nLocalizer> GrantleeTheme::ThemePrivate::sLocalizer;
 KTextTemplate::Engine *GrantleeTheme::ThemePrivate::sEngine = nullptr;
 
 ThemePrivate::ThemePrivate()
-    : QSharedData()
+
 {
 }
 

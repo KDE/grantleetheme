@@ -15,7 +15,7 @@
 using namespace GrantleeTheme;
 
 GrantleeKi18nLocalizer::GrantleeKi18nLocalizer()
-    : KTextTemplate::QtLocalizer()
+
 {
 }
 
