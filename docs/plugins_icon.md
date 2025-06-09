@@ -17,10 +17,11 @@ The `icon` tag supports up to three arguments:
   `sizemedium`, `sizelarge`, `sizehuge` or `sizeenormous`. Those strings map to values
   in KIconLoader::Group and KIconLoader::StdSizes enumerators. This argument is optional,
   the default value is `small`.
-* *ALT_TEXT* A string to be used as an alt text for the image in the generated HTML code.
-   The string must be wrapped in localizer function (`_("Some string")`) or can be
-   a name of a context variable holding the string. This argument is optional.
-   
+* *ALT_TEXT* A string to be used as an alt text for the image
+   in the generated HTML code. The string must be wrapped in
+   localizer function (`_("Some string")`) or can be a name of a context
+   variable holding the string. This argument is optional.
+
 ## Examples
 
 Show an icon called "kontact", size medium, no alt text:
@@ -35,8 +36,7 @@ Show an icon called "edit-redo", size medium, alt text "Redo" (localized):
 
     {% icon edit-redo medium _("Redo") }
 
-Show an icon as specified in `button.icon` context variable, size small, alt test specified in
-`button.label` context variable:
+Show an icon as specified in `button.icon` context variable, size small,
+alt test specified in `button.label` context variable:
 
     {% icon button.icon small button.label }
-
