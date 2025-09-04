@@ -7,7 +7,7 @@ project(GrantleeTheme VERSION ${PIM_VERSION})
 
 find_package(ECM ${KF_MIN_VERSION} CONFIG REQUIRED)
 set(CMAKE_MODULE_PATH ${GrantleeTheme_SOURCE_DIR}/cmake ${ECM_MODULE_PATH})
-
+set(CMAKE_CXX_SCAN_FOR_MODULES OFF)
 include(KDEInstallDirs)
 include(KDECMakeSettings)
 include(KDECompilerSettings NO_POLICY_SCOPE)
