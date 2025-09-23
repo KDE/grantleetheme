@@ -46,7 +46,7 @@ msgstr "Error de representación de la plantilla"
 #: grantleethememanager.cpp:47
 #, kde-format
 msgid "Download new Templates…"
-msgstr "Descargar nuevas plantillas..."
+msgstr "Descargar nuevas plantillas…"
 
 #~ msgid "Download New Themes..."
 #~ msgstr "Descargar nuevos temas..."
