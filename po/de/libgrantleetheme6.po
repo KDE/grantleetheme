@@ -1,6 +1,6 @@
 # SPDX-FileCopyrightText: 2024 Frank Steinmetzger <dev-kde@felsenfleischer.de>
-# Burkhard Lück <lueck@hube-lueck.de>, 2013, 2015, 2017.
-# Frederik Schwarzer <schwarzer@kde.org>, 2016, 2022.
+# SPDX-FileCopyrightText: 2013, 2015, 2017 Burkhard Lück <lueck@hube-lueck.de>
+# SPDX-FileCopyrightText: 2016, 2022 Frederik Schwarzer <schwarzer@kde.org>
 msgid ""
 msgstr ""
 "Project-Id-Version: libgrantleetheme6\n"
