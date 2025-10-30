@@ -170,10 +170,8 @@ public:
         removeActions();
 
         bool themeActivatedFound = false;
-        QMapIterator<QString, GrantleeTheme::Theme> i(themes);
-        while (i.hasNext()) {
-            i.next();
-            GrantleeTheme::Theme theme = i.value();
+        for (const auto &[key, value] : themes.asKeyValueRange()) {
+            GrantleeTheme::Theme theme = value;
             auto act = new KToggleAction(theme.name(), q);
             act->setToolTip(theme.description());
             act->setData(theme.dirName());
@@ -308,11 +306,9 @@ void ThemeManager::setThemeMenu(KActionMenu *menu)
 
 QStringList ThemeManager::displayExtraVariables(const QString &themename) const
 {
-    QMapIterator<QString, GrantleeTheme::Theme> i(d->themes);
-    while (i.hasNext()) {
-        i.next();
-        if (i.value().dirName() == themename) {
-            return i.value().displayExtraVariables();
+    for (const auto &[key, value] : d->themes.asKeyValueRange()) {
+        if (value.dirName() == themename) {
+            return value.displayExtraVariables();
         }
     }
     return {};
