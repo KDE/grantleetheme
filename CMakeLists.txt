@@ -67,18 +67,8 @@ include(ECMQtDeclareLoggingCategory)
 include(ECMDeprecationSettings)
 include(ECMFeatureSummary)
 include(ECMAddTests)
-include(ECMAddQch)
+include(ECMGenerateQDoc)
 include(KPIMGrantleeMacros)
-option(
-    BUILD_QCH
-    "Build API documentation in QCH format (for e.g. Qt Assistant, Qt Creator & KDevelop)"
-    OFF
-)
-add_feature_info(
-    QCH
-    ${BUILD_QCH}
-    "API documentation in QCH format (for e.g. Qt Assistant, Qt Creator & KDevelop)"
-)
 
 include(ECMCheckOutboundLicense)
 file(
@@ -150,18 +140,6 @@ add_subdirectory(src)
 if(BUILD_TESTING)
     find_package(Qt6 ${QT_REQUIRED_VERSION} CONFIG REQUIRED Test)
     add_subdirectory(autotest)
-endif()
-
-if(BUILD_QCH)
-    ecm_install_qch_export(
-        TARGETS KPim6GrantleeTheme_QCH
-        FILE KPim6GrantleeThemeQchTargets.cmake
-        DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
-        COMPONENT Devel
-    )
-    set(PACKAGE_INCLUDE_QCHTARGETS
-        "include(\"\${CMAKE_CURRENT_LIST_DIR}/KPim6GrantleeThemeQchTargets.cmake\")"
-    )
 endif()
 
 configure_package_config_file(

@@ -1,0 +1,33 @@
+include($KDE_DOCS/global/qt-module-defaults.qdocconf)
+
+project = GrantleeTheme
+description = KDE PIM Grantlee theme support library.
+
+
+documentationinheaders = true
+
+headerdirs += .
+sourcedirs += .
+
+outputformats = HTML
+
+depends += \
+    qtcore
+
+navigation.landingpage = "GrantleeTheme"
+
+qhp.projects            = GrantleeTheme
+
+qhp.GrantleeTheme.file                = grantleetheme.qhp
+qhp.GrantleeTheme.namespace           = org.kde.grantleetheme.$QT_VERSION_TAG
+qhp.GrantleeTheme.virtualFolder       = kmbox
+qhp.GrantleeTheme.indexTitle          = KMbox
+qhp.GrantleeTheme.indexRoot           =
+
+qhp.GrantleeTheme.subprojects         = classes
+qhp.GrantleeTheme.subprojects.classes.title = C++ Classes
+qhp.GrantleeTheme.subprojects.classes.indexTitle = GrantleeTheme C++ Classes
+qhp.GrantleeTheme.subprojects.classes.selectors = class fake:headerfile
+qhp.GrantleeTheme.subprojects.classes.sortPages = true
+
+tagfile = grantleetheme.tags

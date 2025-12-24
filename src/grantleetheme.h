@@ -20,8 +20,8 @@ class ThemeManager;
 class ThemeManagerPrivate;
 class ThemePrivate;
 
-/**
- * @brief The Theme class
+/*!
+ * \brief The Theme class
  */
 class GRANTLEETHEME_EXPORT Theme
 {

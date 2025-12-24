@@ -12,8 +12,8 @@
 #include "grantleetheme_export.h"
 namespace GrantleeTheme
 {
-/**
- * @brief The QtResourceTemplateLoader class
+/*!
+ * \brief The QtResourceTemplateLoader class
  * @author Laurent montel <montel@kde.org>
  */
 class GRANTLEETHEME_EXPORT QtResourceTemplateLoader : public KTextTemplate::FileSystemTemplateLoader

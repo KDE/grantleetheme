@@ -22,8 +22,8 @@ namespace GrantleeTheme
 {
 class ThemeManagerPrivate;
 
-/**
- * @brief The ThemeManager class
+/*!
+ * \brief The ThemeManager class
  * @author Laurent montel <montel@kde.org>
  */
 class GRANTLEETHEME_EXPORT ThemeManager : public QObject

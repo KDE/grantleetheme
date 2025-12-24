@@ -18,7 +18,7 @@ namespace GrantleeTheme
 {
 class GenericFormatterPrivate;
 
-/** Convenience class for using a Grantlee theme. */
+/*! Convenience class for using a Grantlee theme. */
 class GRANTLEETHEME_EXPORT GenericFormatter
 {
 public:
@@ -29,13 +29,13 @@ public:
     void setDefaultHtmlMainFile(const QString &name);
     void setTemplatePath(const QString &path);
 
-    /** Translation domain for the Grantlee localizer. */
+    /*! Translation domain for the Grantlee localizer. */
     void setApplicationDomain(const QByteArray &domain);
 
     QString render(const QVariantHash &mapping) const;
     QString errorMessage() const;
 
-    /** Set template content from a string rather than a file. */
+    /*! Set template content from a string rather than a file. */
     void setTemplateContent(const QString &content);
 
     void reloadTemplate();

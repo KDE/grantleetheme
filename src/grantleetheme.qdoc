@@ -1,0 +1,9 @@
+/*!
+    \module GrantleeTheme
+    \title GrantleeTheme C++ Classes
+    \ingroup modules
+    \cmakepackage KPim6
+    \cmakecomponent GrantleeTheme
+
+    \brief KDE PIM Grantlee theme support library.
+*/

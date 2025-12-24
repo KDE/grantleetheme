@@ -15,8 +15,8 @@ namespace GrantleeTheme
 {
 class GrantleeKi18nLocalizer;
 class EnginePrivate;
-/**
- * @brief The Engine class
+/*!
+ * \brief The Engine class
  */
 class GRANTLEETHEME_EXPORT Engine : public KTextTemplate::Engine
 {
