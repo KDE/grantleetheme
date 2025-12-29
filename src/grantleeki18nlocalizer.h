@@ -18,7 +18,7 @@ namespace GrantleeTheme
 {
 /*!
  * \class GrantleeTheme::GrantleeKi18nLocalizer
- * \inmodule GrantleeKi18nLocalizer
+ * \inmodule GrantleeTheme
  * \inheaderfile GrantleeTheme/GrantleeKi18nLocalizer
  *
  * \brief The GrantleeKi18nLocalizer class.

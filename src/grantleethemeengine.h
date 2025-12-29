@@ -17,7 +17,7 @@ class GrantleeKi18nLocalizer;
 class EnginePrivate;
 /*!
  * \class GrantleeTheme::Engine
- * \inmodule Engine
+ * \inmodule GrantleeTheme
  * \inheaderfile GrantleeTheme/Engine
  *
  * \brief The Engine class.

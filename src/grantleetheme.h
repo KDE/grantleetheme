@@ -18,7 +18,7 @@ namespace GrantleeTheme
 {
 /*!
  * \class GrantleeTheme::Theme
- * \inmodule Theme
+ * \inmodule GrantleeTheme
  * \inheaderfile GrantleeTheme/Theme
  *
  * \brief The Theme class.

@@ -19,7 +19,7 @@ namespace GrantleeTheme
 class GenericFormatterPrivate;
 /*!
  * \class GrantleeTheme::GenericFormatter
- * \inmodule GenericFormatter
+ * \inmodule GrantleeTheme
  * \inheaderfile GrantleeTheme/GenericFormatter
  *
  * \brief Convenience class for using a Grantlee theme.

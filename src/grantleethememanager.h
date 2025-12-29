@@ -24,7 +24,7 @@ class ThemeManagerPrivate;
 
 /*!
  * \class GrantleeTheme::ThemeManager
- * \inmodule ThemeManager
+ * \inmodule GrantleeTheme
  * \inheaderfile GrantleeTheme/ThemeManager
  *
  * \brief The ThemeManager class.
