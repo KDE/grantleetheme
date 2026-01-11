@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.16)
+cmake_minimum_required(VERSION 3.27)
 
 set(KF_MIN_VERSION "6.20.0")
 set(PIM_VERSION "6.6.40")
