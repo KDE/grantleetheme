@@ -39,7 +39,7 @@ msgstr "(plantilla nul·la)"
 #: grantleetheme.cpp:193
 #, kde-format
 msgid "Template parsing error"
-msgstr "S'ha produït un error durant l'anàlisi la plantilla"
+msgstr "S'ha produït un error durant l'anàlisi de la plantilla"
 
 #: grantleetheme.cpp:198
 #, kde-format
