@@ -13,10 +13,10 @@ The `icon` tag supports up to three arguments:
   to get the icon. The name can be a string or a name of a context variable holding
   the string. This argument is mandatory.
 * *SIZE_OR_GROUP* can either be requested icon size in pixels, or one of the keywords
-  `desktop`, `toolbar`, `maintoolbar`, `small`, `panel`, `dialog`, `sizesmall`, `sizesmallmedium`,
-  `sizemedium`, `sizelarge`, `sizehuge` or `sizeenormous`. Those strings map to values
-  in KIconLoader::Group and KIconLoader::StdSizes enumerators. This argument is optional,
-  the default value is `small`.
+  `desktop`, `toolbar`, `maintoolbar`, `small`, `panel`, `dialog`, `sizesmall`,
+  `sizesmallmedium`, `sizemedium`, `sizelarge`, `sizehuge` or `sizeenormous`.
+  Those strings map to values in KIconLoader::Group and KIconLoader::StdSizes
+  enumerators. This argument is optional, the default value is `small`.
 * *ALT_TEXT* A string to be used as an alt text for the image
    in the generated HTML code. The string must be wrapped in
    localizer function (`_("Some string")`) or can be a name of a context
