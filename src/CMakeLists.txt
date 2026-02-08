@@ -22,10 +22,7 @@ target_sources(
         qtresourcetemplateloader.h
 )
 
-configure_file(
-    config-grantleetheme.h.in
-    ${CMAKE_CURRENT_BINARY_DIR}/config-grantleetheme.h
-)
+configure_file(config-grantleetheme.h.in ${CMAKE_CURRENT_BINARY_DIR}/config-grantleetheme.h)
 
 ecm_qt_declare_logging_category(KPim6GrantleeTheme HEADER grantleetheme_debug.h IDENTIFIER GRANTLEETHEME_LOG CATEGORY_NAME org.kde.pim.grantleetheme
         OLD_CATEGORY_NAMES log_grantleetheme
@@ -33,7 +30,12 @@ ecm_qt_declare_logging_category(KPim6GrantleeTheme HEADER grantleetheme_debug.h 
 )
 
 if(COMPILE_WITH_UNITY_CMAKE_SUPPORT)
-    set_target_properties(KPim6GrantleeTheme PROPERTIES UNITY_BUILD ON)
+    set_target_properties(
+        KPim6GrantleeTheme
+        PROPERTIES
+            UNITY_BUILD
+                ON
+    )
 endif()
 ecm_generate_export_header(KPim6GrantleeTheme
     BASE_NAME grantleetheme
@@ -55,7 +57,8 @@ target_include_directories(
 
 target_link_libraries(
     KPim6GrantleeTheme
-    PUBLIC KF6::TextTemplate
+    PUBLIC
+        KF6::TextTemplate
     PRIVATE
         KF6::NewStuffCore
         KF6::I18n
@@ -66,16 +69,15 @@ target_link_libraries(
 set_target_properties(
     KPim6GrantleeTheme
     PROPERTIES
-        VERSION ${GRANTLEETHEME_VERSION}
-        SOVERSION ${GRANTLEETHEME_SOVERSION}
-        EXPORT_NAME GrantleeTheme
+        VERSION
+            ${GRANTLEETHEME_VERSION}
+        SOVERSION
+            ${GRANTLEETHEME_SOVERSION}
+        EXPORT_NAME
+            GrantleeTheme
 )
 
-install(
-    TARGETS KPim6GrantleeTheme
-    EXPORT KPim6GrantleeThemeTargets
-    ${KDE_INSTALL_TARGETS_DEFAULT_ARGS}
-)
+install(TARGETS KPim6GrantleeTheme EXPORT KPim6GrantleeThemeTargets ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 
 ecm_generate_headers(GrantleeTheme_CamelCase_HEADERS
   HEADER_NAMES
@@ -90,7 +92,8 @@ ecm_generate_headers(GrantleeTheme_CamelCase_HEADERS
 )
 
 install(
-    FILES ${GrantleeTheme_CamelCase_HEADERS}
+    FILES
+        ${GrantleeTheme_CamelCase_HEADERS}
     DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KPim6/GrantleeTheme/GrantleeTheme
     COMPONENT Devel
 )
