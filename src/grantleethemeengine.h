@@ -28,13 +28,18 @@ class GRANTLEETHEME_EXPORT Engine : public KTextTemplate::Engine
 
 public:
     /*!
+     * \brief Constructs a Grantlee engine.
+     * \param parent Optional parent QObject
      */
     explicit Engine(QObject *parent = nullptr);
     /*!
+     * \brief Destroys the Engine.
      */
     ~Engine() override;
 
     /*!
+     * \brief Returns the KI18n localizer for this engine.
+     * \return A shared pointer to the GrantleeKi18nLocalizer instance
      */
     [[nodiscard]] QSharedPointer<GrantleeKi18nLocalizer> localizer() const;
 

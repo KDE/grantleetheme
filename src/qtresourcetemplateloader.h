@@ -24,13 +24,22 @@ class GRANTLEETHEME_EXPORT QtResourceTemplateLoader : public KTextTemplate::File
 {
 public:
     /*!
+     * \brief Constructs a QtResourceTemplateLoader.
+     * \param localizer Optional localizer instance for template localization
      */
     explicit QtResourceTemplateLoader(const QSharedPointer<KTextTemplate::AbstractLocalizer> localizer = QSharedPointer<KTextTemplate::AbstractLocalizer>());
     /*!
+     * \brief Loads a template by name from Qt resources.
+     * \param fileName The name of the template file to load
+     * \param engine The Grantlee engine instance
+     * \return The loaded template object
      */
     [[nodiscard]] KTextTemplate::Template loadByName(const QString &fileName, const KTextTemplate::Engine *engine) const override;
 
     /*!
+     * \brief Checks whether a template can be loaded with the given name.
+     * \param name The template name to check
+     * \return true if the template can be loaded, false otherwise
      */
     [[nodiscard]] bool canLoadTemplate(const QString &name) const override;
 };
