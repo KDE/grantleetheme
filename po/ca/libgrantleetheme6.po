@@ -50,6 +50,3 @@ msgstr "Error en renderitzar la plantilla"
 #, kde-format
 msgid "Download new Templates…"
 msgstr "Baixa plantilles noves…"
-
-#~ msgid "Download New Themes..."
-#~ msgstr "Baixa temes nous..."
