@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: l 10n\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 11:52+0000\n"
-"PO-Revision-Date: 2013-09-04 01:41+0000\n"
+"PO-Revision-Date: 2026-03-11 02:12+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: lt\n"
 "Language: lt\n"
@@ -17,33 +17,34 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n==1 ? 0 : n%10>=2 && (n%100<10 || n"
 "%100>=20) ? 1 : n%10==0 || (n%100>10 && n%100<20) ? 2 : 3);\n"
+"X-Generator: Poedit 3.8\n"
 
 #: grantleetheme.cpp:74
 #, kde-format
 msgid "Template"
-msgstr ""
+msgstr "Šablonas"
 
 #: grantleetheme.cpp:74
 #, kde-format
 msgid "Error message"
-msgstr ""
+msgstr "Klaidos pranešimas"
 
 #: grantleetheme.cpp:80
 #, kde-format
 msgid "(null template)"
-msgstr ""
+msgstr "(nulinis šablonas)"
 
 #: grantleetheme.cpp:193
 #, kde-format
 msgid "Template parsing error"
-msgstr ""
+msgstr "Šablono nagrinėjimo klaida"
 
 #: grantleetheme.cpp:198
 #, kde-format
 msgid "Template rendering error"
-msgstr ""
+msgstr "Šablono atvaizdavimo klaida"
 
 #: grantleethememanager.cpp:47
 #, kde-format
 msgid "Download new Templates…"
-msgstr ""
+msgstr "Atsisiųsti naujų šablonų…"
