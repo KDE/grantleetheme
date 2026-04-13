@@ -36,6 +36,6 @@ public:
     QString email;
     QSharedPointer<KTextTemplate::FileSystemTemplateLoader> loader;
     static QSharedPointer<GrantleeKi18nLocalizer> sLocalizer;
-    static KTextTemplate::Engine *sEngine;
+    static std::unique_ptr<KTextTemplate::Engine> sEngine;
 };
 }

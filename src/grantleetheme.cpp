@@ -21,7 +21,7 @@
 using namespace GrantleeTheme;
 
 QSharedPointer<GrantleeKi18nLocalizer> GrantleeTheme::ThemePrivate::sLocalizer;
-KTextTemplate::Engine *GrantleeTheme::ThemePrivate::sEngine = nullptr;
+std::unique_ptr<KTextTemplate::Engine> GrantleeTheme::ThemePrivate::sEngine;
 
 ThemePrivate::ThemePrivate()
 
@@ -34,7 +34,7 @@ ThemePrivate::~ThemePrivate() = default;
 
 void ThemePrivate::setupEngine()
 {
-    sEngine = new GrantleeTheme::Engine();
+    sEngine = std::make_unique<GrantleeTheme::Engine>();
 }
 
 void ThemePrivate::setupLoader()
@@ -188,7 +188,7 @@ QString Theme::render(const QString &templateName, const QVariantHash &data, con
                                      << ", please check your installation. Tried in these dirs:" << d->loader->templateDirs();
         return {};
     }
-    KTextTemplate::Template tpl = d->loader->loadByName(templateName, ThemePrivate::sEngine);
+    KTextTemplate::Template tpl = d->loader->loadByName(templateName, ThemePrivate::sEngine.get());
     if (!tpl || tpl->error()) {
         return d->errorTemplate(i18n("Template parsing error"), templateName, tpl);
     }
