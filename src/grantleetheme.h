@@ -8,7 +8,7 @@
 #include "grantleetheme_export.h"
 
 #include <QSharedDataPointer>
-#include <QString>
+
 #include <QStringList>
 #include <QVariantHash>
 
