@@ -8,7 +8,6 @@
 #include "grantleetheme_debug.h"
 #include "grantleetheme_p.h"
 #include "grantleethemeengine.h"
-#include "qtresourcetemplateloader.h"
 #include <config-grantleetheme.h>
 
 #include <KConfig>
@@ -51,7 +50,7 @@ void ThemePrivate::setupLoader()
         dir.cdUp();
         templatePaths << dir.absolutePath();
     }
-    loader = QSharedPointer<GrantleeTheme::QtResourceTemplateLoader>::create();
+    loader = QSharedPointer<KTextTemplate::FileSystemTemplateLoader>::create();
     loader->setTemplateDirs(templatePaths);
     loader->setTheme(dirName);
 

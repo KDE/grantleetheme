@@ -15,9 +15,3 @@ new tags into the Grantlee theme syntax:
 The library provides GrantleeKI18nLocalizer, a Grantlee::AbstractLocalizer
 subclass that integrates with Ki18n (the KDE localization framework) instead
 of the Qt localization system.
-
-## Qt Resource System support ##
-
-Grantlee only supports loading templates from files on disk currently.
-The GrantleeTheme library provides QtResourceTemplateLoader, which
-allows loading Grantlee templates from the Qt Resource System.

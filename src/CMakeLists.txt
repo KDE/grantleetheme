@@ -13,13 +13,11 @@ target_sources(
         grantleethememanager.cpp
         grantleethemeengine.cpp
         grantleeki18nlocalizer.cpp
-        qtresourcetemplateloader.cpp
         genericformatter.h
         grantleetheme.h
         grantleethememanager.h
         grantleethemeengine.h
         grantleeki18nlocalizer.h
-        qtresourcetemplateloader.h
 )
 
 configure_file(config-grantleetheme.h.in ${CMAKE_CURRENT_BINARY_DIR}/config-grantleetheme.h)
@@ -85,7 +83,6 @@ ecm_generate_headers(GrantleeTheme_CamelCase_HEADERS
   GrantleeThemeManager
   GrantleeTheme
   GrantleeThemeEngine
-  QtResourceTemplateLoader
   GrantleeKi18nLocalizer
   REQUIRED_HEADERS GrantleeTheme_HEADERS
   PREFIX GrantleeTheme
