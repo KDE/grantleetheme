@@ -15,6 +15,7 @@
 #include <KConfigGroup>
 #include <KLocalizedString>
 
+#include <QCoreApplication>
 #include <QDir>
 #include <QSharedPointer>
 
@@ -35,6 +36,9 @@ ThemePrivate::~ThemePrivate() = default;
 void ThemePrivate::setupEngine()
 {
     sEngine = std::make_unique<GrantleeTheme::Engine>();
+    QObject::connect(QCoreApplication::instance(), &QCoreApplication::aboutToQuit, sEngine.get(), [&]() {
+        sEngine.reset();
+    });
 }
 
 void ThemePrivate::setupLoader()
