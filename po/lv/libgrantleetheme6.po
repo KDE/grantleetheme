@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: grantleetheme\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:52+0000\n"
+"POT-Creation-Date: 2026-07-10 00:45+0000\n"
 "PO-Revision-Date: 2024-05-26 21:04+0300\n"
 "Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
@@ -18,27 +18,27 @@ msgstr ""
 "2);\n"
 "X-Generator: Lokalize 24.02.2\n"
 
-#: grantleetheme.cpp:74
+#: grantleetheme.cpp:78
 #, kde-format
 msgid "Template"
 msgstr "Veidne"
 
-#: grantleetheme.cpp:74
+#: grantleetheme.cpp:78
 #, kde-format
 msgid "Error message"
 msgstr "Kļūdas ziņojums"
 
-#: grantleetheme.cpp:80
+#: grantleetheme.cpp:84
 #, kde-format
 msgid "(null template)"
 msgstr "(tukša veidne)"
 
-#: grantleetheme.cpp:193
+#: grantleetheme.cpp:197
 #, kde-format
 msgid "Template parsing error"
 msgstr "Veidnes parsēšanas kļūda"
 
-#: grantleetheme.cpp:198
+#: grantleetheme.cpp:202
 #, kde-format
 msgid "Template rendering error"
 msgstr "Veidnes atveidošanas kļūda"

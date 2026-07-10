@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libgrantleetheme\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:52+0000\n"
+"POT-Creation-Date: 2026-07-10 00:45+0000\n"
 "PO-Revision-Date: 2017-04-26 21:17+0100\n"
 "Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@linux.sk>\n"
@@ -15,27 +15,27 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 "X-Generator: Lokalize 2.0\n"
 
-#: grantleetheme.cpp:74
+#: grantleetheme.cpp:78
 #, kde-format
 msgid "Template"
 msgstr "Šablóna"
 
-#: grantleetheme.cpp:74
+#: grantleetheme.cpp:78
 #, kde-format
 msgid "Error message"
 msgstr "Chybová správa"
 
-#: grantleetheme.cpp:80
+#: grantleetheme.cpp:84
 #, kde-format
 msgid "(null template)"
 msgstr "(nulová šablóna)"
 
-#: grantleetheme.cpp:193
+#: grantleetheme.cpp:197
 #, kde-format
 msgid "Template parsing error"
 msgstr "Chyba spracovania šablóny"
 
-#: grantleetheme.cpp:198
+#: grantleetheme.cpp:202
 #, kde-format
 msgid "Template rendering error"
 msgstr "Chyba renderovania šablóny"

@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libgrantleetheme\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:52+0000\n"
+"POT-Creation-Date: 2026-07-10 00:45+0000\n"
 "PO-Revision-Date: 2017-05-07 21:01+0200\n"
 "Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
@@ -18,27 +18,27 @@ msgstr ""
 "X-Text-Markup: kde4\n"
 "X-Environment: kde\n"
 
-#: grantleetheme.cpp:74
+#: grantleetheme.cpp:78
 #, kde-format
 msgid "Template"
 msgstr "Шаблон"
 
-#: grantleetheme.cpp:74
+#: grantleetheme.cpp:78
 #, kde-format
 msgid "Error message"
 msgstr "Порука грешке"
 
-#: grantleetheme.cpp:80
+#: grantleetheme.cpp:84
 #, kde-format
 msgid "(null template)"
 msgstr "(нулти шаблон)"
 
-#: grantleetheme.cpp:193
+#: grantleetheme.cpp:197
 #, kde-format
 msgid "Template parsing error"
 msgstr "Грешка рашчлањивања шаблона"
 
-#: grantleetheme.cpp:198
+#: grantleetheme.cpp:202
 #, kde-format
 msgid "Template rendering error"
 msgstr "Грешка рендеровања шаблона"

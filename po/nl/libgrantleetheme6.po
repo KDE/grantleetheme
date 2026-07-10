@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:52+0000\n"
+"POT-Creation-Date: 2026-07-10 00:45+0000\n"
 "PO-Revision-Date: 2024-05-12 13:47+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -17,27 +17,27 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 24.02.2\n"
 
-#: grantleetheme.cpp:74
+#: grantleetheme.cpp:78
 #, kde-format
 msgid "Template"
 msgstr "Sjabloon"
 
-#: grantleetheme.cpp:74
+#: grantleetheme.cpp:78
 #, kde-format
 msgid "Error message"
 msgstr "Foutmelding"
 
-#: grantleetheme.cpp:80
+#: grantleetheme.cpp:84
 #, kde-format
 msgid "(null template)"
 msgstr "(nul-sjabloon)"
 
-#: grantleetheme.cpp:193
+#: grantleetheme.cpp:197
 #, kde-format
 msgid "Template parsing error"
 msgstr "Ontleedfout in sjabloon"
 
-#: grantleetheme.cpp:198
+#: grantleetheme.cpp:202
 #, kde-format
 msgid "Template rendering error"
 msgstr "Renderingfout in sjabloon"
