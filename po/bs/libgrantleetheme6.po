@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: grantle\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-10 00:45+0000\n"
+"POT-Creation-Date: 2026-07-12 00:44+0000\n"
 "PO-Revision-Date: 2013-10-19 10:52+0000\n"
 "Last-Translator: Samir Ribić <Unknown>\n"
 "Language-Team: bosanski <bs@li.org>\n"
@@ -20,27 +20,27 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 
-#: grantleetheme.cpp:78
+#: grantleetheme.cpp:77
 #, kde-format
 msgid "Template"
 msgstr ""
 
-#: grantleetheme.cpp:78
+#: grantleetheme.cpp:77
 #, kde-format
 msgid "Error message"
 msgstr ""
 
-#: grantleetheme.cpp:84
+#: grantleetheme.cpp:83
 #, kde-format
 msgid "(null template)"
 msgstr ""
 
-#: grantleetheme.cpp:197
+#: grantleetheme.cpp:196
 #, kde-format
 msgid "Template parsing error"
 msgstr ""
 
-#: grantleetheme.cpp:202
+#: grantleetheme.cpp:201
 #, kde-format
 msgid "Template rendering error"
 msgstr ""

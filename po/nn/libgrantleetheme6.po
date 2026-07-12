@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: grantleetheme\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-10 00:45+0000\n"
+"POT-Creation-Date: 2026-07-12 00:44+0000\n"
 "PO-Revision-Date: 2024-07-21 14:21+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@nuug.no>\n"
@@ -18,27 +18,27 @@ msgstr ""
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
 
-#: grantleetheme.cpp:78
+#: grantleetheme.cpp:77
 #, kde-format
 msgid "Template"
 msgstr "Mal"
 
-#: grantleetheme.cpp:78
+#: grantleetheme.cpp:77
 #, kde-format
 msgid "Error message"
 msgstr "Feilmelding"
 
-#: grantleetheme.cpp:84
+#: grantleetheme.cpp:83
 #, kde-format
 msgid "(null template)"
 msgstr "(nullmal)"
 
-#: grantleetheme.cpp:197
+#: grantleetheme.cpp:196
 #, kde-format
 msgid "Template parsing error"
 msgstr "Feil ved tolking av mal"
 
-#: grantleetheme.cpp:202
+#: grantleetheme.cpp:201
 #, kde-format
 msgid "Template rendering error"
 msgstr "Feil ved vising av mal"

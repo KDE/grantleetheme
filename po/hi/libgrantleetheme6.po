@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: grantleetheme\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-10 00:45+0000\n"
+"POT-Creation-Date: 2026-07-12 00:44+0000\n"
 "PO-Revision-Date: 2024-12-15 19:32+0530\n"
 "Last-Translator: kali <skkalwar999@gmail.com>\n"
 "Language-Team: Hindi <kde-i18n-doc@kde.org>\n"
@@ -20,27 +20,27 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
 "X-Generator: Lokalize 24.08.2\n"
 
-#: grantleetheme.cpp:78
+#: grantleetheme.cpp:77
 #, kde-format
 msgid "Template"
 msgstr "साँचा"
 
-#: grantleetheme.cpp:78
+#: grantleetheme.cpp:77
 #, kde-format
 msgid "Error message"
 msgstr "त्रुटि संदेश"
 
-#: grantleetheme.cpp:84
+#: grantleetheme.cpp:83
 #, kde-format
 msgid "(null template)"
 msgstr "(शून्य साँचा)"
 
-#: grantleetheme.cpp:197
+#: grantleetheme.cpp:196
 #, kde-format
 msgid "Template parsing error"
 msgstr "साँचा पारसिंग त्रुटि"
 
-#: grantleetheme.cpp:202
+#: grantleetheme.cpp:201
 #, kde-format
 msgid "Template rendering error"
 msgstr "साँचा रेंडरिंग त्रुटि"
