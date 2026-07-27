@@ -71,22 +71,6 @@ public:
      */
     [[nodiscard]] QString localizePluralString(const QString &string, const QString &pluralForm, const QVariantList &arguments) const override;
 
-    // Only exception, Grantlee's implementation is not using QLocale for this
-    // for some reason
-    /*!
-     * \brief Localizes a monetary value using KI18n.
-     * \param value The monetary value to localize
-     * \param currentCode The currency code
-     * \return The localized monetary value as a string
-     */
-    [[nodiscard]] QString localizeMonetaryValue(qreal value, const QString &currentCode) const override;
-
-    /*!
-     * \brief Returns the current locale.
-     * \return The current locale identifier
-     */
-    [[nodiscard]] QString currentLocale() const override;
-
     /*!
      * \brief Sets the application translation domain.
      * \param domain The translation domain to use

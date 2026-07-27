@@ -93,21 +93,6 @@ QString GrantleeKi18nLocalizer::localizePluralString(const QString &string, cons
     return processArguments(str, arguments);
 }
 
-QString GrantleeKi18nLocalizer::localizeMonetaryValue(qreal value, const QString &currencySymbol) const
-{
-    return QLocale(currentLocale()).toCurrencyString(value, currencySymbol);
-}
-
-QString GrantleeKi18nLocalizer::currentLocale() const
-{
-    QString locale = KTextTemplate::QtLocalizer::currentLocale();
-    const int f = locale.indexOf(QLatin1Char('_'));
-    if (f >= 0) {
-        locale.truncate(f);
-    }
-    return locale;
-}
-
 void GrantleeKi18nLocalizer::setApplicationDomain(const QByteArray &domain)
 {
     mApplicationDomain = domain;
