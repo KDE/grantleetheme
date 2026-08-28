@@ -12,8 +12,6 @@
 
 #include <QVariant>
 
-class QString;
-
 namespace GrantleeTheme
 {
 class GenericFormatterPrivate;

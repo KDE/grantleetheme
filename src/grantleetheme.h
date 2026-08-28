@@ -16,6 +16,10 @@ class GrantleeThemeTest;
 
 namespace GrantleeTheme
 {
+class ThemeManager;
+class ThemeManagerPrivate;
+class ThemePrivate;
+
 /*!
  * \class GrantleeTheme::Theme
  * \inmodule GrantleeTheme
@@ -23,9 +27,6 @@ namespace GrantleeTheme
  *
  * \brief The Theme class.
  */
-class ThemeManager;
-class ThemeManagerPrivate;
-class ThemePrivate;
 class GRANTLEETHEME_EXPORT Theme
 {
 public:
