@@ -122,14 +122,14 @@ KTextTemplate::Node *ColorMixTag::getNode(const QString &tagContent, KTextTempla
         varName = parts.at(5);
     }
 
-    return new ColorMixNode(parts.at(1), parts.at(2), ratio, varName);
+    return new ColorMixNode(parts.at(1), parts.at(2), ratio, std::move(varName));
 }
 
-ColorMixNode::ColorMixNode(const QString &color1Name, const QString &color2Name, double ratio, const QString &varName, QObject *parent)
+ColorMixNode::ColorMixNode(QString color1Name, QString color2Name, double ratio, QString varName, QObject *parent)
     : KTextTemplate::Node(parent)
-    , m_color1Name(color1Name)
-    , m_color2Name(color2Name)
-    , m_varName(varName)
+    , m_color1Name(std::move(color1Name))
+    , m_color2Name(std::move(color2Name))
+    , m_varName(std::move(varName))
     , m_ratio(ratio)
 {
 }

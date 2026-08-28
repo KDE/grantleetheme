@@ -118,7 +118,7 @@ public:
                         }
                         theme.d->name = themeName;
                     }
-                    alreadyLoadedThemeName << themeName;
+                    alreadyLoadedThemeName << std::move(themeName);
                     auto it = themes.find(dirName);
                     if (it != themes.end()) {
                         (*it).addThemePath(dirIt.filePath());

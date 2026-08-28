@@ -108,7 +108,7 @@ class ColorMixNode : public KTextTemplate::Node
 {
     Q_OBJECT
 public:
-    explicit ColorMixNode(const QString &color1Name, const QString &color2Name, double ratio, const QString &varName, QObject *parent = nullptr);
+    explicit ColorMixNode(QString color1Name, QString color2Name, double ratio, QString varName, QObject *parent = nullptr);
     ~ColorMixNode() override;
     void render(KTextTemplate::OutputStream *stream, KTextTemplate::Context *c) const override;
 

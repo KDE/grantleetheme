@@ -64,7 +64,7 @@ KTextTemplate::Node *IconTag::getNode(const QString &tagContent, KTextTemplate::
         altText = parts.at(3);
     }
 
-    return new IconNode(parts.at(1), sizeOrGroup, altText);
+    return new IconNode(parts.at(1), sizeOrGroup, std::move(altText));
 }
 
 IconNode::IconNode(QObject *parent)
@@ -72,10 +72,10 @@ IconNode::IconNode(QObject *parent)
 {
 }
 
-IconNode::IconNode(const QString &iconName, int sizeOrGroup, const QString &altText, QObject *parent)
+IconNode::IconNode(QString iconName, int sizeOrGroup, QString altText, QObject *parent)
     : KTextTemplate::Node(parent)
-    , mIconName(iconName)
-    , mAltText(altText)
+    , mIconName(std::move(iconName))
+    , mAltText(std::move(altText))
     , mSizeOrGroup(sizeOrGroup)
 {
 }
