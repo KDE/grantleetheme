@@ -8,10 +8,8 @@
 #pragma once
 #include "grantleetheme_export.h"
 #include <KTextTemplate/QtLocalizer>
-#include <QObject>
 
-#include <QLocale>
-#include <QVariantHash>
+#include <QVariantList>
 
 class KLocalizedString;
 namespace GrantleeTheme

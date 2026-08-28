@@ -6,7 +6,6 @@
 
 #include "colorscheme.h"
 #include <KTextTemplate/MetaType>
-#include <QObject>
 
 #include <KColorScheme>
 

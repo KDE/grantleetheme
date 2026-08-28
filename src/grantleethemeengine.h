@@ -9,6 +9,8 @@
 #include <KTextTemplate/Engine>
 #include <QSharedPointer>
 
+#include <memory>
+
 #include "grantleetheme_export.h"
 
 namespace GrantleeTheme

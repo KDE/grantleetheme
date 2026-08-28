@@ -7,7 +7,6 @@
 #include "palette.h"
 
 #include <KTextTemplate/MetaType>
-#include <QObject>
 
 #include <QPalette>
 using namespace Qt::Literals::StringLiterals;

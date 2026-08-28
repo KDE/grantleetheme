@@ -17,8 +17,6 @@
 #include <KSharedConfig>
 #include <KToggleAction>
 #include <QAction>
-#include <QIcon>
-#include <QPointer>
 
 #include <QActionGroup>
 #include <QDir>

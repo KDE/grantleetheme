@@ -10,7 +10,7 @@
 
 #include <memory>
 
-#include <QVariant>
+#include <QVariantHash>
 
 namespace GrantleeTheme
 {

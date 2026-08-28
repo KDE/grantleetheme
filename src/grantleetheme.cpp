@@ -8,7 +8,6 @@
 #include "grantleetheme_debug.h"
 #include "grantleetheme_p.h"
 #include "grantleethemeengine.h"
-#include <config-grantleetheme.h>
 
 #include <KConfig>
 #include <KConfigGroup>
