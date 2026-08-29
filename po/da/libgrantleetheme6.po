@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-12 00:44+0000\n"
+"POT-Creation-Date: 2026-08-29 00:46+0000\n"
 "PO-Revision-Date: 2022-08-08 17:28+0200\n"
 "Last-Translator: Martin Schlander <mschlander@opensuse.org>\n"
 "Language-Team: Danish <kde-i18n-doc@kde.org>\n"
@@ -17,32 +17,32 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 21.12.3\n"
 
-#: grantleetheme.cpp:77
+#: grantleetheme.cpp:76
 #, kde-format
 msgid "Template"
 msgstr "Skabelon"
 
-#: grantleetheme.cpp:77
+#: grantleetheme.cpp:76
 #, kde-format
 msgid "Error message"
 msgstr "Fejlmeddelelse"
 
-#: grantleetheme.cpp:83
+#: grantleetheme.cpp:82
 #, kde-format
 msgid "(null template)"
 msgstr "(null-skabelon)"
 
-#: grantleetheme.cpp:196
+#: grantleetheme.cpp:195
 #, kde-format
 msgid "Template parsing error"
 msgstr "Fortolkningsfejl i skabelon"
 
-#: grantleetheme.cpp:201
+#: grantleetheme.cpp:200
 #, kde-format
 msgid "Template rendering error"
 msgstr "Renderingsfejl i skabelon"
 
-#: grantleethememanager.cpp:47
+#: grantleethememanager.cpp:45
 #, fuzzy, kde-format
 #| msgid "Download new Templates..."
 msgid "Download new Templates…"

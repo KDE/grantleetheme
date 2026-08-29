@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: grantleetheme\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-12 00:44+0000\n"
+"POT-Creation-Date: 2026-08-29 00:46+0000\n"
 "PO-Revision-Date: 2026-03-20 08:13+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -18,32 +18,32 @@ msgstr ""
 "n % 10 == 0) ? 2 : 3));\n"
 "X-Generator: Lokalize 25.12.3\n"
 
-#: grantleetheme.cpp:77
+#: grantleetheme.cpp:76
 #, kde-format
 msgid "Template"
 msgstr "תבנית"
 
-#: grantleetheme.cpp:77
+#: grantleetheme.cpp:76
 #, kde-format
 msgid "Error message"
 msgstr "הודעת שגיאה"
 
-#: grantleetheme.cpp:83
+#: grantleetheme.cpp:82
 #, kde-format
 msgid "(null template)"
 msgstr "(תבנית ריקה)"
 
-#: grantleetheme.cpp:196
+#: grantleetheme.cpp:195
 #, kde-format
 msgid "Template parsing error"
 msgstr "שגיאת פיענוח תבנית"
 
-#: grantleetheme.cpp:201
+#: grantleetheme.cpp:200
 #, kde-format
 msgid "Template rendering error"
 msgstr "שגיאת עיבוד תבנית"
 
-#: grantleethememanager.cpp:47
+#: grantleethememanager.cpp:45
 #, kde-format
 msgid "Download new Templates…"
 msgstr "הורדת תבניות חדשות…"

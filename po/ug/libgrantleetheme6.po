@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libgrantleetheme\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-12 00:44+0000\n"
+"POT-Creation-Date: 2026-08-29 00:46+0000\n"
 "PO-Revision-Date: 2026-05-30 16:30-0400\n"
 "Last-Translator: Abduqadir Abliz <sahranbay@gmail.com>\n"
 "Language-Team: Uyghur <kde-i18n-doc@kde.org>\n"
@@ -18,32 +18,32 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Poedit 3.9\n"
 
-#: grantleetheme.cpp:77
+#: grantleetheme.cpp:76
 #, kde-format
 msgid "Template"
 msgstr "قېلىپ"
 
-#: grantleetheme.cpp:77
+#: grantleetheme.cpp:76
 #, kde-format
 msgid "Error message"
 msgstr "خاتالىق ئۇچۇرى"
 
-#: grantleetheme.cpp:83
+#: grantleetheme.cpp:82
 #, kde-format
 msgid "(null template)"
 msgstr "(بوش قېلىپ)"
 
-#: grantleetheme.cpp:196
+#: grantleetheme.cpp:195
 #, kde-format
 msgid "Template parsing error"
 msgstr "قېلىپ يېشىش خاتالىقى"
 
-#: grantleetheme.cpp:201
+#: grantleetheme.cpp:200
 #, kde-format
 msgid "Template rendering error"
 msgstr "قېلىپ شەكىللەندۈرۈش خاتالىقى"
 
-#: grantleethememanager.cpp:47
+#: grantleethememanager.cpp:45
 #, kde-format
 msgid "Download new Templates…"
 msgstr "يېڭى قېلىپ چۈشۈر…"
