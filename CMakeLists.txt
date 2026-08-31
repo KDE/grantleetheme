@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.29)
 
-set(KF_MIN_VERSION "6.27.0")
+set(KF_MIN_VERSION "6.28.0")
 set(PIM_VERSION "6.8.40")
 set(QT_REQUIRED_VERSION "6.9.0")
 project(GrantleeTheme VERSION ${PIM_VERSION})
