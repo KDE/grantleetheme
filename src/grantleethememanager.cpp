@@ -230,7 +230,7 @@ public:
         }
         for (KToggleAction *act : std::as_const(themesActionList)) {
             if (act->data().toString() == themeName) {
-                return static_cast<KToggleAction *>(act);
+                return act;
             }
         }
         return nullptr;
