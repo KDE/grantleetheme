@@ -320,8 +320,7 @@ GrantleeTheme::Theme ThemeManager::theme(const QString &themeName)
 QString ThemeManager::pathFromThemes(const QString &themesRelativePath, const QString &themeName, const QString &defaultDesktopFileName)
 {
     if (!themesRelativePath.isEmpty()) {
-        QStringList themesDirectories;
-        themesDirectories = QStandardPaths::locateAll(QStandardPaths::GenericDataLocation, themesRelativePath, QStandardPaths::LocateDirectory);
+        QStringList themesDirectories = QStandardPaths::locateAll(QStandardPaths::GenericDataLocation, themesRelativePath, QStandardPaths::LocateDirectory);
         if (themesDirectories.count() < 2) {
             // Make sure to add local directory
             const QString localDirectory = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1Char('/') + themesRelativePath;
