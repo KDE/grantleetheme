@@ -83,8 +83,6 @@ IconNode::IconNode(QString iconName, int sizeOrGroup, QString altText, QObject *
 IconNode::~IconNode() = default;
 void IconNode::render(KTextTemplate::OutputStream *stream, KTextTemplate::Context *c) const
 {
-    Q_UNUSED(c)
-
     QString iconName = mIconName;
     if (iconName.startsWith(QLatin1Char('"')) && iconName.endsWith(QLatin1Char('"'))) {
         iconName = iconName.mid(1, iconName.size() - 2);
