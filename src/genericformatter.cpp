@@ -5,11 +5,11 @@
 */
 
 #include "genericformatter.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "grantleeki18nlocalizer.h"
 #include "grantleethemeengine.h"
 
+using namespace Qt::Literals::StringLiterals;
 using namespace GrantleeTheme;
 
 class GrantleeTheme::GenericFormatterPrivate
