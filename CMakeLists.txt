@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.29)
 
 set(KF_MIN_VERSION "6.29.0")
-set(PIM_VERSION "6.8.40")
+set(PIM_VERSION "6.8.41")
 set(QT_REQUIRED_VERSION "6.9.0")
 project(GrantleeTheme VERSION ${PIM_VERSION})
 
@@ -109,6 +109,7 @@ find_package(
         Widgets
         Network
 )
+find_package(KF6CoreAddons ${KF_MIN_VERSION} CONFIG REQUIRED)
 find_package(KF6GuiAddons ${KF_MIN_VERSION} CONFIG REQUIRED)
 find_package(KF6I18n ${KF_MIN_VERSION} CONFIG REQUIRED)
 find_package(KF6IconThemes ${KF_MIN_VERSION} CONFIG REQUIRED)

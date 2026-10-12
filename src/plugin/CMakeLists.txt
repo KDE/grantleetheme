@@ -7,6 +7,7 @@ target_sources(
         kdegrantleeplugin.cpp
         color.cpp
         colorscheme.cpp
+        format.cpp
         icon.cpp
         palette.cpp
         kdegrantleeplugin.h
@@ -27,10 +28,12 @@ endif()
 kpim_grantlee_adjust_plugin_name(kde_grantlee_plugin)
 target_link_libraries(
     kde_grantlee_plugin
-    KF6::TextTemplate
-    KF6::IconThemes
-    KF6::GuiAddons
-    KF6::ColorScheme
+    PRIVATE
+        KF6::TextTemplate
+        KF6::IconThemes
+        KF6::GuiAddons
+        KF6::ColorScheme
+        KF6::CoreAddons
 )
 
 install(TARGETS kde_grantlee_plugin LIBRARY DESTINATION ${KDE_INSTALL_PLUGINDIR}/kf6/ktexttemplate/)

@@ -5,6 +5,7 @@ Dependencies:
  - 'on': ['Linux', 'FreeBSD', 'Windows']
    'require':
     'frameworks/extra-cmake-modules': '@latest-kf6'
+    'frameworks/kcoreaddons': '@latest-kf6'
     'frameworks/kguiaddons': '@latest-kf6'
     'frameworks/ki18n': '@latest-kf6'
     'frameworks/kiconthemes': '@latest-kf6'

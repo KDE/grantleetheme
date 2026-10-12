@@ -8,8 +8,11 @@
 #include "kdegrantleeplugin.h"
 #include "color.h"
 #include "colorscheme.h"
+#include "format.h"
 #include "icon.h"
 #include "palette.h"
+
+using namespace Qt::Literals;
 
 KDEGrantleePlugin::KDEGrantleePlugin(QObject *parent)
     : QObject(parent)
@@ -39,6 +42,7 @@ QHash<QString, KTextTemplate::Filter *> KDEGrantleePlugin::filters(const QString
     filters.insert(QStringLiteral("colorLighter"), new ColorLighterFilter());
     filters.insert(QStringLiteral("colorDarker"), new ColorDarkerFilter());
     filters.insert(QStringLiteral("colorSetAlpha"), new ColorSetAlphaFilter());
+    filters.insert(u"kformatDateTime"_s, new KFormatDateTimeFilter);
     return filters;
 }
 
