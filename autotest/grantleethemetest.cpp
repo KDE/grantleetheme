@@ -19,7 +19,7 @@
 #include <KSharedConfig>
 
 // taken from tst_qstandardpaths
-#if defined(Q_OS_UNIX) && !defined(Q_OS_MAC) && !defined(Q_OS_BLACKBERRY) && !defined(Q_OS_ANDROID)
+#if defined(Q_OS_UNIX) && !defined(Q_OS_MACOS) && !defined(Q_OS_BLACKBERRY) && !defined(Q_OS_ANDROID)
 #define Q_XDG_PLATFORM
 #endif
 
