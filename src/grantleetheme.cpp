@@ -22,10 +22,7 @@ using namespace GrantleeTheme;
 QSharedPointer<GrantleeKi18nLocalizer> GrantleeTheme::ThemePrivate::sLocalizer;
 std::unique_ptr<KTextTemplate::Engine> GrantleeTheme::ThemePrivate::sEngine;
 
-ThemePrivate::ThemePrivate()
-
-{
-}
+ThemePrivate::ThemePrivate() = default;
 
 ThemePrivate::ThemePrivate(const ThemePrivate &other) = default;
 
@@ -116,14 +113,7 @@ bool Theme::operator==(const Theme &other) const
     return isValid() && other.isValid() && d->absolutePaths == other.d->absolutePaths;
 }
 
-Theme &Theme::operator=(const Theme &other)
-{
-    if (this != &other) {
-        d = other.d;
-    }
-
-    return *this;
-}
+Theme &Theme::operator=(const Theme &other) = default;
 
 bool Theme::isValid() const
 {
