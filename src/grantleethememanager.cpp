@@ -150,6 +150,7 @@ public:
                 menu->removeAction(downloadThemesAction);
             }
         }
+        qDeleteAll(themesActionList);
         themesActionList.clear();
     }
 
