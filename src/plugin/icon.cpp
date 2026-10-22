@@ -120,9 +120,10 @@ void IconNode::render(KTextTemplate::OutputStream *stream, KTextTemplate::Contex
 
     const QString html =
         QStringLiteral("<img src=\"%1\" align=\"top\" height=\"%2\" width=\"%2\" alt=\"%3\" title=\"%4\" />")
-            .arg(iconPath)
+            .arg(iconPath.toHtmlEscaped())
             .arg(mSizeOrGroup < KIconLoader::LastGroup ? KIconLoader::global()->currentSize(static_cast<KIconLoader::Group>(mSizeOrGroup)) : mSizeOrGroup)
-            .arg(altText.isEmpty() ? iconName : altText, altText); // title is intentionally blank if no alt is provided
+            .arg(altText.isEmpty() ? iconName.toHtmlEscaped() : altText.toHtmlEscaped(),
+                 altText.toHtmlEscaped()); // title is intentionally blank if no alt is provided
     (*stream) << KTextTemplate::SafeString(html, KTextTemplate::SafeString::IsSafe);
 }
 
