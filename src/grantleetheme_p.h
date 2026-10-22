@@ -6,14 +6,20 @@
 
 #pragma once
 
-#include "grantleeki18nlocalizer.h"
 #include "grantleetheme.h"
-#include <KTextTemplate/Engine>
 #include <KTextTemplate/Template>
-#include <KTextTemplate/TemplateLoader>
+#include <memory>
+
+namespace KTextTemplate
+{
+class Context;
+class Engine;
+class FileSystemTemplateLoader;
+}
 
 namespace GrantleeTheme
 {
+class GrantleeKi18nLocalizer;
 class GRANTLEETHEME_NO_EXPORT ThemePrivate : public QSharedData
 {
 public:

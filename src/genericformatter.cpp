@@ -9,6 +9,9 @@
 #include "grantleeki18nlocalizer.h"
 #include "grantleethemeengine.h"
 
+#include <KTextTemplate/Context>
+#include <KTextTemplate/TemplateLoader>
+
 using namespace Qt::Literals::StringLiterals;
 using namespace GrantleeTheme;
 

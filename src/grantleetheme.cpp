@@ -5,6 +5,7 @@
 */
 
 #include "grantleetheme.h"
+#include "grantleeki18nlocalizer.h"
 #include "grantleetheme_debug.h"
 #include "grantleetheme_p.h"
 #include "grantleethemeengine.h"

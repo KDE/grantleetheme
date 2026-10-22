@@ -7,8 +7,6 @@
 
 #include <KTextTemplate/Filter>
 
-#include <QObject>
-
 class KFormatDateTimeFilter : public KTextTemplate::Filter
 {
 public:

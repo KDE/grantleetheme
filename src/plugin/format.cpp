@@ -8,6 +8,7 @@
 
 #include <KFormat>
 #include <KTextTemplate/SafeString>
+#include <kcoreaddons_version.h>
 
 #include <QDateTime>
 #include <QMetaEnum>

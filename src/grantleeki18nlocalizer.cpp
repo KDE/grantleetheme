@@ -9,7 +9,6 @@
 #include "grantleetheme_debug.h"
 
 #include <KTextTemplate/SafeString>
-#include <QDebug>
 
 #include <KLocalizedString>
 using namespace GrantleeTheme;

@@ -8,7 +8,7 @@
 
 #include <QMenu>
 #include <QStandardPaths>
-#include <qtest.h>
+#include <QTest>
 
 #include <KActionCollection>
 #include <KActionMenu>

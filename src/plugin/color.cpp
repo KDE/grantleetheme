@@ -7,7 +7,6 @@
 #include "color.h"
 #include <KTextTemplate/Exception>
 #include <KTextTemplate/MetaType>
-#include <KTextTemplate/Parser>
 #include <KTextTemplate/Variable>
 
 #include <KColorUtils>

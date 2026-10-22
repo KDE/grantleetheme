@@ -7,12 +7,13 @@
 #include "grantleethemetest.h"
 #include "grantleetheme.h"
 
+#include <QDir>
 #include <QFile>
 #include <QPalette>
 #include <QProcess>
 #include <QRegularExpression>
 #include <QStandardPaths>
-#include <qtest.h>
+#include <QTest>
 
 #include <KColorScheme>
 #include <KConfigGroup>

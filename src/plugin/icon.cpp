@@ -7,7 +7,6 @@
 
 #include "icon.h"
 #include <KTextTemplate/Exception>
-#include <KTextTemplate/Parser>
 #include <KTextTemplate/Variable>
 
 #include <KIconLoader>
