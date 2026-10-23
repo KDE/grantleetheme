@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-21 00:52+0000\n"
+"POT-Creation-Date: 2026-10-23 00:49+0000\n"
 "PO-Revision-Date: 2024-05-21 22:33+0300\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -23,27 +23,27 @@ msgstr ""
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
 
-#: grantleetheme.cpp:73
+#: grantleetheme.cpp:74
 #, kde-format
 msgid "Template"
 msgstr "Шаблон"
 
-#: grantleetheme.cpp:73
+#: grantleetheme.cpp:74
 #, kde-format
 msgid "Error message"
 msgstr "Ошибка"
 
-#: grantleetheme.cpp:79
+#: grantleetheme.cpp:80
 #, kde-format
 msgid "(null template)"
 msgstr "(пустой шаблон)"
 
-#: grantleetheme.cpp:185
+#: grantleetheme.cpp:186
 #, kde-format
 msgid "Template parsing error"
 msgstr "Не удалось разобрать шаблон"
 
-#: grantleetheme.cpp:190
+#: grantleetheme.cpp:191
 #, kde-format
 msgid "Template rendering error"
 msgstr "Не удалось создать документ по шаблону"
