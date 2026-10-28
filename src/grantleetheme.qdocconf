@@ -20,8 +20,8 @@ qhp.projects            = GrantleeTheme
 
 qhp.GrantleeTheme.file                = grantleetheme.qhp
 qhp.GrantleeTheme.namespace           = org.kde.grantleetheme.$QT_VERSION_TAG
-qhp.GrantleeTheme.virtualFolder       = kmbox
-qhp.GrantleeTheme.indexTitle          = KMbox
+qhp.GrantleeTheme.virtualFolder       = grantleetheme
+qhp.GrantleeTheme.indexTitle          = GrantleeTheme
 qhp.GrantleeTheme.indexRoot           =
 
 qhp.GrantleeTheme.subprojects         = classes
