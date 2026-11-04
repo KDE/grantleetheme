@@ -4,6 +4,14 @@ set(KF_MIN_VERSION "6.30.0")
 set(PIM_VERSION "6.8.41")
 set(QT_REQUIRED_VERSION "6.9.0")
 project(GrantleeTheme VERSION ${PIM_VERSION})
+# use a different SOVERSION for each minor release because we don't guarantee any ABI stability;
+# bump the SOVERSION with the first development version, i.e. major.minor.40
+if(PROJECT_VERSION_PATCH VERSION_GREATER_EQUAL "40")
+    math(EXPR minorPlus1 "${PROJECT_VERSION_MINOR} + 1")
+    set(PROJECT_SOVERSION ${PROJECT_VERSION_MAJOR}.${minorPlus1})
+else()
+    set(PROJECT_SOVERSION ${PROJECT_VERSION_MAJOR}.${PROJECT_VERSION_MINOR})
+endif()
 
 find_package(ECM ${KF_MIN_VERSION} CONFIG REQUIRED)
 set(CMAKE_MODULE_PATH
@@ -121,7 +129,7 @@ find_package(KF6TextTemplate CONFIG REQUIRED)
 ecm_setup_version(PROJECT VARIABLE_PREFIX GRANTLEETHEME
                         VERSION_HEADER "${CMAKE_CURRENT_BINARY_DIR}/src/grantleetheme_version.h"
                         PACKAGE_VERSION_FILE "${CMAKE_CURRENT_BINARY_DIR}/KPim6GrantleeThemeConfigVersion.cmake"
-                        SOVERSION 6
+                        SOVERSION ${PROJECT_SOVERSION}
 )
 
 ########### Targets ###########
