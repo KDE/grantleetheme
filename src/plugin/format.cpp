@@ -28,7 +28,7 @@ QVariant KFormatDateTimeFilter::doFilter(const QVariant &input, const QVariant &
         format = QLocale::LongFormat;
     }
 
-#if KCOREADDONS_VERSION >= QT_VERSION_CHECK(6, 31, 0)
+#if KCOREADDONS_VERSION >= QT_VERSION_CHECK(6, 32, 0)
     KFormat::TimeFormatOptions opts = {};
     const auto me = QMetaEnum::fromType<KFormat::TimeFormatOptions>();
     for (int i = 0; i < me.keyCount(); ++i) {
