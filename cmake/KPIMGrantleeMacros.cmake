@@ -5,9 +5,9 @@ macro(kpim_grantlee_adjust_plugin_name pluginname)
             PREFIX
                 ""
             LIBRARY_OUTPUT_DIRECTORY
-                "${CMAKE_BINARY_DIR}/bin/grantlee"
+                "${CMAKE_BINARY_DIR}/bin/kf6/ktexttemplate"
             RUNTIME_OUTPUT_DIRECTORY
-                "${CMAKE_BINARY_DIR}/bin/grantlee"
+                "${CMAKE_BINARY_DIR}/bin/kf6/ktexttemplate"
             DEBUG_POSTFIX
                 "d"
     )
@@ -20,9 +20,9 @@ macro(kpim_grantlee_adjust_plugin_name pluginname)
             ${pluginname}
             PROPERTIES
                 LIBRARY_OUTPUT_DIRECTORY_${CFG}
-                    "${CMAKE_BINARY_DIR}/bin/grantlee"
+                    "${CMAKE_BINARY_DIR}/bin/kf6/ktexttemplate"
                 RUNTIME_OUTPUT_DIRECTORY_${CFG}
-                    "${CMAKE_BINARY_DIR}/bin/grantlee"
+                    "${CMAKE_BINARY_DIR}/bin/kf6/ktexttemplate"
         )
     endforeach()
 endmacro()
