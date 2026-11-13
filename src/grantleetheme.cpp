@@ -100,6 +100,8 @@ Theme::Theme(const QString &themePath, const QString &dirName, const QString &de
         d->description = group.readEntry("Description", QString());
         d->themeFileName = group.readEntry("FileName", QString());
         d->displayExtraVariables = group.readEntry("DisplayExtraVariables", QStringList());
+        d->author = group.readEntry("Author", QString());
+        d->email = group.readEntry("AuthorEmail", QString());
     }
 }
 

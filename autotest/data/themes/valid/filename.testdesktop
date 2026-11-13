@@ -2,3 +2,5 @@
 Name=Example
 Description=Example theme for header.
 FileName=header.html
+Author=Example Author
+AuthorEmail=author@example.org

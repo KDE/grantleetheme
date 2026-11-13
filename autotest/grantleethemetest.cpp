@@ -82,13 +82,17 @@ void GrantleeThemeTest::shouldLoadTheme_data()
     QTest::addColumn<QString>("filename");
     QTest::addColumn<bool>("isvalid");
     QTest::addColumn<QStringList>("displayExtraVariables");
+    QTest::addColumn<QString>("author");
+    QTest::addColumn<QString>("authorEmail");
 
-    QTest::newRow("valid theme") << QStringLiteral("valid") << QStringLiteral("filename.testdesktop") << true << QStringList();
-    QTest::newRow("not existing theme") << QStringLiteral("notvalid") << QStringLiteral("filename.testdesktop") << false << QStringList();
+    QTest::newRow("valid theme") << QStringLiteral("valid") << QStringLiteral("filename.testdesktop") << true << QStringList()
+                                 << QStringLiteral("Example Author") << QStringLiteral("author@example.org");
+    QTest::newRow("not existing theme") << QStringLiteral("notvalid") << QStringLiteral("filename.testdesktop") << false << QStringList() << QString()
+                                        << QString();
     QStringList extraVariables;
     extraVariables << QStringLiteral("foo") << QStringLiteral("bla");
     QTest::newRow("valid with extra variable") << QStringLiteral("valid-with-extravariables") << QStringLiteral("filename.testdesktop") << true
-                                               << extraVariables;
+                                               << extraVariables << QString() << QString();
 }
 
 void GrantleeThemeTest::shouldLoadTheme()
@@ -97,11 +101,15 @@ void GrantleeThemeTest::shouldLoadTheme()
     QFETCH(QString, filename);
     QFETCH(bool, isvalid);
     QFETCH(QStringList, displayExtraVariables);
+    QFETCH(QString, author);
+    QFETCH(QString, authorEmail);
 
     GrantleeTheme::Theme theme(QStringLiteral(GRANTLEETHEME_DATA_DIR "/themes/") + dirname, dirname, filename);
     QCOMPARE(theme.isValid(), isvalid);
     QCOMPARE(theme.displayExtraVariables(), displayExtraVariables);
     QCOMPARE(theme.dirName(), dirname);
+    QCOMPARE(theme.author(), author);
+    QCOMPARE(theme.authorEmail(), authorEmail);
 }
 
 bool GrantleeThemeTest::validateHtml(const QString &themePath, const QString &name, const QString &html)
