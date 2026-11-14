@@ -1,6 +1,7 @@
 include($KDE_DOCS/global/qt-module-defaults.qdocconf)
 
 project = GrantleeTheme
+moduleheader = grantleetheme_qdocmoduleheader.h
 description = KDE PIM Grantlee theme support library.
 
 
