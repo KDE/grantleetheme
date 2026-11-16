@@ -10,7 +10,7 @@
 
     \section2 Building with CMake
 
-    \include {module-use.qdocinc} {building with cmake} {KPim6} {GrantleeTheme} {KPim6::GrantleeTheme}
+    \include {module-use.qdocinc} {building with cmake nomodule} {KPim6GrantleeTheme} {KPim6::GrantleeTheme}
 
     \section1 API Reference
 
