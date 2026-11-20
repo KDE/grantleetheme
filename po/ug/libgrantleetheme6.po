@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libgrantleetheme\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-23 00:49+0000\n"
+"POT-Creation-Date: 2026-11-19 19:10+0000\n"
 "PO-Revision-Date: 2026-09-23 06:56+0900\n"
 "Last-Translator: Abduqadir Abliz <sahranbay@gmail.com>\n"
 "Language-Team: Uyghur <kde-i18n-doc@kde.org>\n"
@@ -33,12 +33,12 @@ msgstr "خاتالىق ئۇچۇرى"
 msgid "(null template)"
 msgstr "(بوش قېلىپ)"
 
-#: grantleetheme.cpp:186
+#: grantleetheme.cpp:188
 #, kde-format
 msgid "Template parsing error"
 msgstr "قېلىپ يېشىش خاتالىقى"
 
-#: grantleetheme.cpp:191
+#: grantleetheme.cpp:193
 #, kde-format
 msgid "Template rendering error"
 msgstr "قېلىپ شەكىللەندۈرۈش خاتالىقى"

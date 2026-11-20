@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libgrantleetheme\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-23 00:49+0000\n"
+"POT-Creation-Date: 2026-11-19 19:10+0000\n"
 "PO-Revision-Date: 2025-02-05 23:49-0300\n"
 "Last-Translator: Guilherme Marçal Silva <guimarcalsilva@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -35,12 +35,12 @@ msgstr "Mensagem de erro"
 msgid "(null template)"
 msgstr "(modelo nulo)"
 
-#: grantleetheme.cpp:186
+#: grantleetheme.cpp:188
 #, kde-format
 msgid "Template parsing error"
 msgstr "Erro no análise do modelo"
 
-#: grantleetheme.cpp:191
+#: grantleetheme.cpp:193
 #, kde-format
 msgid "Template rendering error"
 msgstr "Erro de processamento do modelo"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: grantleetheme\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-23 00:49+0000\n"
+"POT-Creation-Date: 2026-11-19 19:10+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Irish Gaelic <kde-i18n-doc@kde.org>\n"
@@ -33,12 +33,12 @@ msgstr ""
 msgid "(null template)"
 msgstr ""
 
-#: grantleetheme.cpp:186
+#: grantleetheme.cpp:188
 #, kde-format
 msgid "Template parsing error"
 msgstr ""
 
-#: grantleetheme.cpp:191
+#: grantleetheme.cpp:193
 #, kde-format
 msgid "Template rendering error"
 msgstr ""

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-23 00:49+0000\n"
+"POT-Creation-Date: 2026-11-19 19:10+0000\n"
 "PO-Revision-Date: 2024-05-12 12:03+0200\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -33,12 +33,12 @@ msgstr "Mensaje de error"
 msgid "(null template)"
 msgstr "(plantilla nula)"
 
-#: grantleetheme.cpp:186
+#: grantleetheme.cpp:188
 #, kde-format
 msgid "Template parsing error"
 msgstr "Error de análisis de la plantilla"
 
-#: grantleetheme.cpp:191
+#: grantleetheme.cpp:193
 #, kde-format
 msgid "Template rendering error"
 msgstr "Error de representación de la plantilla"
