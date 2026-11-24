@@ -125,7 +125,7 @@ find_package(KF6NewStuff ${KF_MIN_VERSION} CONFIG REQUIRED)
 find_package(KF6XmlGui ${KF_MIN_VERSION} CONFIG REQUIRED)
 find_package(KF6ColorScheme ${KF_MIN_VERSION} CONFIG REQUIRED)
 
-find_package(KF6TextTemplate CONFIG REQUIRED)
+find_package(KF6TextTemplate ${KF_MIN_VERSION} CONFIG REQUIRED)
 ecm_setup_version(PROJECT VARIABLE_PREFIX GRANTLEETHEME
                         VERSION_HEADER "${CMAKE_CURRENT_BINARY_DIR}/src/grantleetheme_version.h"
                         PACKAGE_VERSION_FILE "${CMAKE_CURRENT_BINARY_DIR}/KPim6GrantleeThemeConfigVersion.cmake"
