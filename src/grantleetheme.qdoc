@@ -7,3 +7,9 @@
 
     \brief KDE PIM Grantlee theme support library.
 */
+
+/*!
+    \namespace GrantleeTheme
+    \inmodule GrantleeTheme
+    \brief The GrantleeTheme namespace contains the classes of the GrantleeTheme module.
+*/
