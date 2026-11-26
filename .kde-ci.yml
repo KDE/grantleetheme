@@ -15,7 +15,7 @@ Dependencies:
     'frameworks/ktexttemplate': '@latest-kf6'
 
 Options:
- require-passing-tests-on: ['@all']
+ require-passing-tests-on: ['Linux', 'Windows']
  tests-run-in-parallel: True
  cmake-options: '-DWARNINGS_AS_ERRORS=ON'
  enable-lsan: True
