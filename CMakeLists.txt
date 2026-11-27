@@ -134,13 +134,12 @@ ecm_setup_version(PROJECT VARIABLE_PREFIX GRANTLEETHEME
 
 ########### Targets ###########
 
-add_definitions(-DQT_NO_CONTEXTLESS_CONNECT)
-if(KF6_VERSION VERSION_GREATER_EQUAL "6.33.0")
-    add_definitions(-DQT_LEAN_HEADERS=2)
-endif()
-add_definitions(-DQT_NO_JAVA_STYLE_ITERATORS)
 if(ECM_VERSION VERSION_GREATER_EQUAL "6.33.0")
-    add_definitions(-DQT_NO_QPAIR)
+    add_compile_definitions(QT_ENABLE_STRICT_MODE_UP_TO=0x060C00)
+else()
+    add_definitions(-DQT_NO_JAVA_STYLE_ITERATORS)
+    add_definitions(-DQT_NO_CONTEXTLESS_CONNECT)
+    add_compile_definitions(QT_ENABLE_STRICT_MODE_UP_TO=0x060B00)
 endif()
 if(CMAKE_CXX_COMPILER_ID MATCHES "Clang")
     # Not setting for GNU due to too many warnings related to private members of base classes or around lambdas
@@ -191,7 +190,6 @@ if(WARNINGS_AS_ERRORS)
         add_compile_options(-Wno-error=deprecated-declarations)
     endif()
 endif()
-add_compile_definitions(QT_ENABLE_STRICT_MODE_UP_TO=0x060B00)
 
 add_subdirectory(src)
 if(BUILD_TESTING)
